@@ -1,0 +1,4 @@
+C:/Users/matej/Documents/projects/hoverGate_fw/cmake-build-debug/CMakeFiles/hoverGate_fw.elf.dir
+C:/Users/matej/Documents/projects/hoverGate_fw/cmake-build-debug/CMakeFiles/UPLOAD.dir
+C:/Users/matej/Documents/projects/hoverGate_fw/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/matej/Documents/projects/hoverGate_fw/cmake-build-debug/CMakeFiles/rebuild_cache.dir
