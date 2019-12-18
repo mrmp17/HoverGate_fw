@@ -23,6 +23,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include <stdbool.h>
+#include <stdint.h>
 
 /* USER CODE END Includes */
 
@@ -50,6 +52,10 @@ TIM_HandleTypeDef htim1;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
+bool enableBLDC = false;
+bool dir = false;
+uint32_t pwm = 200;
+
 
 /* USER CODE END PV */
 
@@ -66,6 +72,157 @@ static void MX_TIM1_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void phaseSetPWM(uint8_t phase, uint32_t pwm_set){
+    switch(phase){
+        case 1:
+            __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, pwm_set);
+            HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+            HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_1);
+            break;
+        case 2:
+            __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, pwm_set);
+            HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+            HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
+            break;
+        case 3:
+            __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3, pwm_set);
+            HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
+            HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_3);
+            break;
+    }
+
+}
+void phaseSetLOW(uint8_t phase){
+    switch(phase){
+        case 1:
+            __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 0);
+            HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+            HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_1);
+            break;
+        case 2:
+            __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 0);
+            HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+            HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
+            break;
+        case 3:
+            __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3, 0);
+            HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
+            HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_3);
+            break;
+    }
+
+
+}
+void phaseSetFLOAT(uint8_t phase){
+    switch(phase){
+        case 1:
+            HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
+            HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_1);
+            __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 0);
+            break;
+        case 2:
+            HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_2);
+            HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_2);
+            __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 0);
+            break;
+        case 3:
+            HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_3);
+            HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_3);
+            __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3, 0);
+            break;
+    }
+}
+
+void setPhases(uint8_t pos, uint32_t pwm_val, bool direction, bool is_enabled){
+    if(!is_enabled){
+        phaseSetFLOAT(1);
+        phaseSetFLOAT(2);
+        phaseSetFLOAT(3);
+        return;
+    }
+    switch(pos){
+        case 1:
+            if(!direction){
+                phaseSetFLOAT(1);
+                phaseSetPWM(2, pwm_val);
+                phaseSetLOW(3);
+            }
+            else{
+                phaseSetFLOAT(1);
+                phaseSetPWM(3, pwm_val);
+                phaseSetLOW(2);
+            }
+            break;
+        case 2:
+            if(!direction){
+                phaseSetFLOAT(3);
+                phaseSetPWM(2, pwm_val);
+                phaseSetLOW(1);
+            }
+            else{
+                phaseSetFLOAT(3);
+                phaseSetPWM(1, pwm_val);
+                phaseSetLOW(2);
+            }
+            break;
+        case 3:
+            if(!direction){
+                phaseSetFLOAT(2);
+                phaseSetPWM(3, pwm_val);
+                phaseSetLOW(1);
+            }
+            else{
+                phaseSetFLOAT(2);
+                phaseSetPWM(1, pwm_val);
+                phaseSetLOW(3);
+            }
+            break;
+        case 4:
+            if(!direction){
+                phaseSetFLOAT(1);
+                phaseSetPWM(3, pwm_val);
+                phaseSetLOW(2);
+            }
+            else{
+                phaseSetFLOAT(1);
+                phaseSetPWM(2, pwm_val);
+                phaseSetLOW(3);
+            }
+            break;
+        case 5:
+            if(!direction){
+                phaseSetFLOAT(3);
+                phaseSetPWM(1, pwm_val);
+                phaseSetLOW(2);
+            }
+            else{
+                phaseSetFLOAT(3);
+                phaseSetPWM(2, pwm_val);
+                phaseSetLOW(1);
+            }
+            break;
+        case 6:
+            if(!direction){
+                phaseSetFLOAT(2);
+                phaseSetPWM(1, pwm_val);
+                phaseSetLOW(3);
+            }
+            else{
+                phaseSetFLOAT(2);
+                phaseSetPWM(3, pwm_val);
+                phaseSetLOW(1);
+            }
+            break;
+        default:
+            phaseSetFLOAT(1);
+            phaseSetFLOAT(2);
+            phaseSetFLOAT(3);
+            break;
+    }
+
+
+
+}
 
 /* USER CODE END 0 */
 
@@ -104,12 +261,34 @@ int main(void)
   MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
 
+
+
+
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  int n = 1;
+  HAL_Delay(2000);
   while (1)
   {
+//      HAL_GPIO_TogglePin(BUZZ_GPIO_Port, BUZZ_Pin);
+//      HAL_Delay(1000);
+
+
+      setPhases(1, 100, false, true);
+      if(n<7) n++;
+      else{
+          n=1;
+          //HAL_Delay(1000);
+      }
+      HAL_GPIO_TogglePin(BP_LED_GPIO_Port, BP_LED_Pin);
+      HAL_Delay(200);
+
+
+
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -194,7 +373,7 @@ static void MX_ADC1_Init(void)
   */
   sConfig.Channel = ADC_CHANNEL_4;
   sConfig.Rank = ADC_REGULAR_RANK_1;
-  sConfig.SamplingTime = ADC_SAMPLETIME_55CYCLES_5;
+  sConfig.SamplingTime = ADC_SAMPLETIME_71CYCLES_5;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
   {
     Error_Handler();
@@ -203,7 +382,6 @@ static void MX_ADC1_Init(void)
   */
   sConfig.Channel = ADC_CHANNEL_6;
   sConfig.Rank = ADC_REGULAR_RANK_2;
-  sConfig.SamplingTime = ADC_SAMPLETIME_71CYCLES_5;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
   {
     Error_Handler();
@@ -228,6 +406,8 @@ static void MX_TIM1_Init(void)
 
   TIM_ClockConfigTypeDef sClockSourceConfig = {0};
   TIM_MasterConfigTypeDef sMasterConfig = {0};
+  TIM_OC_InitTypeDef sConfigOC = {0};
+  TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig = {0};
 
   /* USER CODE BEGIN TIM1_Init 1 */
 
@@ -235,7 +415,7 @@ static void MX_TIM1_Init(void)
   htim1.Instance = TIM1;
   htim1.Init.Prescaler = 0;
   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim1.Init.Period = 0;
+  htim1.Init.Period = 2000;
   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim1.Init.RepetitionCounter = 0;
   htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
@@ -248,15 +428,50 @@ static void MX_TIM1_Init(void)
   {
     Error_Handler();
   }
+  if (HAL_TIM_PWM_Init(&htim1) != HAL_OK)
+  {
+    Error_Handler();
+  }
   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
   if (HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig) != HAL_OK)
   {
     Error_Handler();
   }
+  sConfigOC.OCMode = TIM_OCMODE_PWM1;
+  sConfigOC.Pulse = 400;
+  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+  sConfigOC.OCNPolarity = TIM_OCNPOLARITY_HIGH;
+  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+  sConfigOC.OCIdleState = TIM_OCIDLESTATE_RESET;
+  sConfigOC.OCNIdleState = TIM_OCNIDLESTATE_RESET;
+  if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sBreakDeadTimeConfig.OffStateRunMode = TIM_OSSR_DISABLE;
+  sBreakDeadTimeConfig.OffStateIDLEMode = TIM_OSSI_DISABLE;
+  sBreakDeadTimeConfig.LockLevel = TIM_LOCKLEVEL_OFF;
+  sBreakDeadTimeConfig.DeadTime = 5;
+  sBreakDeadTimeConfig.BreakState = TIM_BREAK_DISABLE;
+  sBreakDeadTimeConfig.BreakPolarity = TIM_BREAKPOLARITY_HIGH;
+  sBreakDeadTimeConfig.AutomaticOutput = TIM_AUTOMATICOUTPUT_DISABLE;
+  if (HAL_TIMEx_ConfigBreakDeadTime(&htim1, &sBreakDeadTimeConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
   /* USER CODE BEGIN TIM1_Init 2 */
 
   /* USER CODE END TIM1_Init 2 */
+  HAL_TIM_MspPostInit(&htim1);
 
 }
 
@@ -325,32 +540,42 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(BP_LED_GPIO_Port, BP_LED_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin : PC14 */
-  GPIO_InitStruct.Pin = GPIO_PIN_14;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(BUZZ_GPIO_Port, BUZZ_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin : PD1 */
-  GPIO_InitStruct.Pin = GPIO_PIN_1;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : PB10 */
-  GPIO_InitStruct.Pin = GPIO_PIN_10;
+  /*Configure GPIO pin : BP_LED_Pin */
+  GPIO_InitStruct.Pin = BP_LED_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+  HAL_GPIO_Init(BP_LED_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : PB11 */
-  GPIO_InitStruct.Pin = GPIO_PIN_11;
+  /*Configure GPIO pin : HALL_C_Pin */
+  GPIO_InitStruct.Pin = HALL_C_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+  HAL_GPIO_Init(HALL_C_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : HALL_B_Pin */
+  GPIO_InitStruct.Pin = HALL_B_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(HALL_B_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : BUZZ_Pin */
+  GPIO_InitStruct.Pin = BUZZ_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(BUZZ_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : HALL_A_Pin */
+  GPIO_InitStruct.Pin = HALL_A_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(HALL_A_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure peripheral I/O remapping */
   __HAL_AFIO_REMAP_PD01_ENABLE();

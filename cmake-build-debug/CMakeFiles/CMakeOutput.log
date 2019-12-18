@@ -35,11 +35,11 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: C:/Users/matej/Documents/projects/hoverGate_fw/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_98012/fast 
-C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_98012.dir\build.make CMakeFiles/cmTC_98012.dir/build
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_82c48/fast 
+C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_82c48.dir\build.make CMakeFiles/cmTC_82c48.dir/build
 mingw32-make.exe[1]: Entering directory 'C:/Users/matej/Documents/projects/hoverGate_fw/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_98012.dir/CMakeCCompilerABI.c.obj
-C:\ARM_GCC\bin\arm-none-eabi-gcc.exe   -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=gnu99    -v -o CMakeFiles\cmTC_98012.dir\CMakeCCompilerABI.c.obj   -c "C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\share\cmake-3.14\Modules\CMakeCCompilerABI.c"
+Building C object CMakeFiles/cmTC_82c48.dir/CMakeCCompilerABI.c.obj
+C:\ARM_GCC\bin\arm-none-eabi-gcc.exe   -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=gnu99    -v -o CMakeFiles\cmTC_82c48.dir\CMakeCCompilerABI.c.obj   -c "C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\share\cmake-3.14\Modules\CMakeCCompilerABI.c"
 Using built-in specs.
 Reading specs from c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/nosys.specs
 rename spec link_gcc_c_sequence to nosys_link_gcc_c_sequence
@@ -52,8 +52,8 @@ Target: arm-none-eabi
 Configured with: /tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/src/gcc/configure --build=x86_64-linux-gnu --host=i686-w64-mingw32 --target=arm-none-eabi --prefix=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-mingw --libexecdir=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-mingw/lib --infodir=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-mingw/share/doc/gcc-arm-none-eabi/info --mandir=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-mingw/share/doc/gcc-arm-none-eabi/man --htmldir=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-mingw/share/doc/gcc-arm-none-eabi/html --pdfdir=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-mingw/share/doc/gcc-arm-none-eabi/pdf --enable-languages=c,c++ --enable-mingw-wildcard --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --with-gnu-as --with-gnu-ld --with-headers=yes --with-newlib --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-mingw/arm-none-eabi --with-libiconv-prefix=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/build-mingw/host-libs/usr --with-gmp=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/build-mingw/host-libs/usr --with-mpfr=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/build-mingw/host-libs/usr --with-mpc=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/build-mingw/host-libs/usr --with-isl=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/build-mingw/host-libs/usr --with-libelf=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/build-mingw/host-libs/usr --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --with-pkgversion='GNU Tools for Arm Embedded Processors 7-2018-q2-update' --with-multilib-list=rmprofile
 Thread model: single
 gcc version 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907] (GNU Tools for Arm Embedded Processors 7-2018-q2-update) 
-COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=gnu99' '-v' '-o' 'CMakeFiles\cmTC_98012.dir\CMakeCCompilerABI.c.obj' '-c'
- c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/cc1.exe -isystem =/include/newlib-nano -quiet -v -imultilib thumb/v7-m -iprefix c:\arm_gcc\bin\../lib/gcc/arm-none-eabi/7.3.1/ -isysroot c:\arm_gcc\bin\../arm-none-eabi -D__USES_INITFINI__ C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\share\cmake-3.14\Modules\CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mcpu=cortex-m3 -mthumb -mthumb-interwork -auxbase-strip CMakeFiles\cmTC_98012.dir\CMakeCCompilerABI.c.obj -g -std=gnu99 -version -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -o C:\Users\matej\AppData\Local\Temp\cc4hskI4.s
+COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=gnu99' '-v' '-o' 'CMakeFiles\cmTC_82c48.dir\CMakeCCompilerABI.c.obj' '-c'
+ c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/cc1.exe -isystem =/include/newlib-nano -quiet -v -imultilib thumb/v7-m -iprefix c:\arm_gcc\bin\../lib/gcc/arm-none-eabi/7.3.1/ -isysroot c:\arm_gcc\bin\../arm-none-eabi -D__USES_INITFINI__ C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\share\cmake-3.14\Modules\CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mcpu=cortex-m3 -mthumb -mthumb-interwork -auxbase-strip CMakeFiles\cmTC_82c48.dir\CMakeCCompilerABI.c.obj -g -std=gnu99 -version -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -o C:\Users\matej\AppData\Local\Temp\cc0MqEIV.s
 GNU C99 (GNU Tools for Arm Embedded Processors 7-2018-q2-update) version 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907] (arm-none-eabi)
 	compiled by GNU C version 5.3.1 20160211, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.15-GMP
 
@@ -75,15 +75,15 @@ GNU C99 (GNU Tools for Arm Embedded Processors 7-2018-q2-update) version 7.3.1 2
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 4f14656f92b62aff6b971726b2e649b7
-COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=gnu99' '-v' '-o' 'CMakeFiles\cmTC_98012.dir\CMakeCCompilerABI.c.obj' '-c'
- c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/bin/as.exe -v -mcpu=cortex-m3 -mthumb-interwork -meabi=5 -o CMakeFiles\cmTC_98012.dir\CMakeCCompilerABI.c.obj C:\Users\matej\AppData\Local\Temp\cc4hskI4.s
+COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=gnu99' '-v' '-o' 'CMakeFiles\cmTC_82c48.dir\CMakeCCompilerABI.c.obj' '-c'
+ c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/bin/as.exe -v -mcpu=cortex-m3 -mthumb-interwork -meabi=5 -o CMakeFiles\cmTC_82c48.dir\CMakeCCompilerABI.c.obj C:\Users\matej\AppData\Local\Temp\cc0MqEIV.s
 GNU assembler version 2.30.0 (arm-none-eabi) using BFD version (GNU Tools for Arm Embedded Processors 7-2018-q2-update) 2.30.0.20180329
 COMPILER_PATH=c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/;c:/arm_gcc/bin/../lib/gcc/;c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/bin/
 LIBRARY_PATH=c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/;c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/;c:/arm_gcc/bin/../arm-none-eabi/lib/thumb/v7-m/;c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/;c:/arm_gcc/bin/../lib/gcc/;c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/;c:/arm_gcc/bin/../arm-none-eabi/lib/
-COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=gnu99' '-v' '-o' 'CMakeFiles\cmTC_98012.dir\CMakeCCompilerABI.c.obj' '-c'
-Linking C executable cmTC_98012
-"C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_98012.dir\link.txt --verbose=1
-C:\ARM_GCC\bin\arm-none-eabi-gcc.exe -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=gnu99   -Wl,-gc-sections,--print-memory-usage -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld -v CMakeFiles/cmTC_98012.dir/CMakeCCompilerABI.c.obj  -o cmTC_98012 
+COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=gnu99' '-v' '-o' 'CMakeFiles\cmTC_82c48.dir\CMakeCCompilerABI.c.obj' '-c'
+Linking C executable cmTC_82c48
+"C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_82c48.dir\link.txt --verbose=1
+C:\ARM_GCC\bin\arm-none-eabi-gcc.exe -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=gnu99   -Wl,-gc-sections,--print-memory-usage -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld -v CMakeFiles/cmTC_82c48.dir/CMakeCCompilerABI.c.obj  -o cmTC_82c48 
 Using built-in specs.
 Reading specs from c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/nosys.specs
 rename spec link_gcc_c_sequence to nosys_link_gcc_c_sequence
@@ -99,13 +99,13 @@ Thread model: single
 gcc version 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907] (GNU Tools for Arm Embedded Processors 7-2018-q2-update) 
 COMPILER_PATH=c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/;c:/arm_gcc/bin/../lib/gcc/;c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/bin/
 LIBRARY_PATH=c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/;c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/;c:/arm_gcc/bin/../arm-none-eabi/lib/thumb/v7-m/;c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/;c:/arm_gcc/bin/../lib/gcc/;c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/;c:/arm_gcc/bin/../arm-none-eabi/lib/
-COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=gnu99' '-T' 'C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld' '-v' '-o' 'cmTC_98012'
- c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/collect2.exe -plugin c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/liblto_plugin-0.dll -plugin-opt=c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\matej\AppData\Local\Temp\ccg4oyNg.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lg_nano -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys --sysroot=c:\arm_gcc\bin\../arm-none-eabi -X -o cmTC_98012 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/crt0.o -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m -Lc:/arm_gcc/bin/../arm-none-eabi/lib/thumb/v7-m -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1 -Lc:/arm_gcc/bin/../lib/gcc -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib -Lc:/arm_gcc/bin/../arm-none-eabi/lib -gc-sections --print-memory-usage CMakeFiles/cmTC_98012.dir/CMakeCCompilerABI.c.obj --start-group -lgcc -lg_nano -lc_nano --end-group --start-group -lgcc -lc_nano -lnosys --end-group --start-group -lgcc -lc_nano -lnosys --end-group c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtend.o c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld
+COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=gnu99' '-T' 'C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld' '-v' '-o' 'cmTC_82c48'
+ c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/collect2.exe -plugin c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/liblto_plugin-0.dll -plugin-opt=c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\matej\AppData\Local\Temp\ccgFjJIb.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lg_nano -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys --sysroot=c:\arm_gcc\bin\../arm-none-eabi -X -o cmTC_82c48 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/crt0.o -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m -Lc:/arm_gcc/bin/../arm-none-eabi/lib/thumb/v7-m -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1 -Lc:/arm_gcc/bin/../lib/gcc -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib -Lc:/arm_gcc/bin/../arm-none-eabi/lib -gc-sections --print-memory-usage CMakeFiles/cmTC_82c48.dir/CMakeCCompilerABI.c.obj --start-group -lgcc -lg_nano -lc_nano --end-group --start-group -lgcc -lc_nano -lnosys --end-group --start-group -lgcc -lc_nano -lnosys --end-group c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtend.o c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld
 Memory region         Used Size  Region Size  %age Used
              RAM:        1568 B        20 KB      7.66%
            FLASH:          96 B        64 KB      0.15c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol Reset_Handler; defaulting to 08000000%
 
-COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=gnu99' '-T' 'C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld' '-v' '-o' 'cmTC_98012'
+COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=gnu99' '-T' 'C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld' '-v' '-o' 'cmTC_82c48'
 mingw32-make.exe[1]: Leaving directory 'C:/Users/matej/Documents/projects/hoverGate_fw/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
@@ -128,11 +128,11 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(arm-none-eabi-ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: C:/Users/matej/Documents/projects/hoverGate_fw/cmake-build-debug/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_98012/fast ]
-  ignore line: [C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_98012.dir\build.make CMakeFiles/cmTC_98012.dir/build]
+  ignore line: [Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_82c48/fast ]
+  ignore line: [C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_82c48.dir\build.make CMakeFiles/cmTC_82c48.dir/build]
   ignore line: [mingw32-make.exe[1]: Entering directory 'C:/Users/matej/Documents/projects/hoverGate_fw/cmake-build-debug/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_98012.dir/CMakeCCompilerABI.c.obj]
-  ignore line: [C:\ARM_GCC\bin\arm-none-eabi-gcc.exe   -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=gnu99    -v -o CMakeFiles\cmTC_98012.dir\CMakeCCompilerABI.c.obj   -c "C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\share\cmake-3.14\Modules\CMakeCCompilerABI.c"]
+  ignore line: [Building C object CMakeFiles/cmTC_82c48.dir/CMakeCCompilerABI.c.obj]
+  ignore line: [C:\ARM_GCC\bin\arm-none-eabi-gcc.exe   -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=gnu99    -v -o CMakeFiles\cmTC_82c48.dir\CMakeCCompilerABI.c.obj   -c "C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\share\cmake-3.14\Modules\CMakeCCompilerABI.c"]
   ignore line: [Using built-in specs.]
   ignore line: [Reading specs from c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/nosys.specs]
   ignore line: [rename spec link_gcc_c_sequence to nosys_link_gcc_c_sequence]
@@ -145,8 +145,8 @@ Parsed C implicit link information from above output:
   ignore line: [Configured with: /tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/src/gcc/configure --build=x86_64-linux-gnu --host=i686-w64-mingw32 --target=arm-none-eabi --prefix=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-mingw --libexecdir=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-mingw/lib --infodir=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-mingw/share/doc/gcc-arm-none-eabi/info --mandir=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-mingw/share/doc/gcc-arm-none-eabi/man --htmldir=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-mingw/share/doc/gcc-arm-none-eabi/html --pdfdir=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-mingw/share/doc/gcc-arm-none-eabi/pdf --enable-languages=c,c++ --enable-mingw-wildcard --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --with-gnu-as --with-gnu-ld --with-headers=yes --with-newlib --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-mingw/arm-none-eabi --with-libiconv-prefix=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/build-mingw/host-libs/usr --with-gmp=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/build-mingw/host-libs/usr --with-mpfr=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/build-mingw/host-libs/usr --with-mpc=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/build-mingw/host-libs/usr --with-isl=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/build-mingw/host-libs/usr --with-libelf=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/build-mingw/host-libs/usr --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --with-pkgversion='GNU Tools for Arm Embedded Processors 7-2018-q2-update' --with-multilib-list=rmprofile]
   ignore line: [Thread model: single]
   ignore line: [gcc version 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907] (GNU Tools for Arm Embedded Processors 7-2018-q2-update) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=gnu99' '-v' '-o' 'CMakeFiles\cmTC_98012.dir\CMakeCCompilerABI.c.obj' '-c']
-  ignore line: [ c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/cc1.exe -isystem =/include/newlib-nano -quiet -v -imultilib thumb/v7-m -iprefix c:\arm_gcc\bin\../lib/gcc/arm-none-eabi/7.3.1/ -isysroot c:\arm_gcc\bin\../arm-none-eabi -D__USES_INITFINI__ C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\share\cmake-3.14\Modules\CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mcpu=cortex-m3 -mthumb -mthumb-interwork -auxbase-strip CMakeFiles\cmTC_98012.dir\CMakeCCompilerABI.c.obj -g -std=gnu99 -version -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -o C:\Users\matej\AppData\Local\Temp\cc4hskI4.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=gnu99' '-v' '-o' 'CMakeFiles\cmTC_82c48.dir\CMakeCCompilerABI.c.obj' '-c']
+  ignore line: [ c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/cc1.exe -isystem =/include/newlib-nano -quiet -v -imultilib thumb/v7-m -iprefix c:\arm_gcc\bin\../lib/gcc/arm-none-eabi/7.3.1/ -isysroot c:\arm_gcc\bin\../arm-none-eabi -D__USES_INITFINI__ C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\share\cmake-3.14\Modules\CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mcpu=cortex-m3 -mthumb -mthumb-interwork -auxbase-strip CMakeFiles\cmTC_82c48.dir\CMakeCCompilerABI.c.obj -g -std=gnu99 -version -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -o C:\Users\matej\AppData\Local\Temp\cc0MqEIV.s]
   ignore line: [GNU C99 (GNU Tools for Arm Embedded Processors 7-2018-q2-update) version 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907] (arm-none-eabi)]
   ignore line: [	compiled by GNU C version 5.3.1 20160211, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.15-GMP]
   ignore line: []
@@ -168,8 +168,8 @@ Parsed C implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 4f14656f92b62aff6b971726b2e649b7]
-  ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=gnu99' '-v' '-o' 'CMakeFiles\cmTC_98012.dir\CMakeCCompilerABI.c.obj' '-c']
-  ignore line: [ c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/bin/as.exe -v -mcpu=cortex-m3 -mthumb-interwork -meabi=5 -o CMakeFiles\cmTC_98012.dir\CMakeCCompilerABI.c.obj C:\Users\matej\AppData\Local\Temp\cc4hskI4.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=gnu99' '-v' '-o' 'CMakeFiles\cmTC_82c48.dir\CMakeCCompilerABI.c.obj' '-c']
+  ignore line: [ c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/bin/as.exe -v -mcpu=cortex-m3 -mthumb-interwork -meabi=5 -o CMakeFiles\cmTC_82c48.dir\CMakeCCompilerABI.c.obj C:\Users\matej\AppData\Local\Temp\cc0MqEIV.s]
   ignore line: [GNU assembler version 2.30.0 (arm-none-eabi) using BFD version (GNU Tools for Arm Embedded Processors 7-2018-q2-update) 2.30.0.20180329]
   ignore line: [COMPILER_PATH=c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/]
   ignore line: [c:/arm_gcc/bin/../lib/gcc/]
@@ -181,10 +181,10 @@ Parsed C implicit link information from above output:
   ignore line: [c:/arm_gcc/bin/../lib/gcc/]
   ignore line: [c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/]
   ignore line: [c:/arm_gcc/bin/../arm-none-eabi/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=gnu99' '-v' '-o' 'CMakeFiles\cmTC_98012.dir\CMakeCCompilerABI.c.obj' '-c']
-  ignore line: [Linking C executable cmTC_98012]
-  ignore line: ["C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_98012.dir\link.txt --verbose=1]
-  ignore line: [C:\ARM_GCC\bin\arm-none-eabi-gcc.exe -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=gnu99   -Wl,-gc-sections,--print-memory-usage -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld -v CMakeFiles/cmTC_98012.dir/CMakeCCompilerABI.c.obj  -o cmTC_98012 ]
+  ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=gnu99' '-v' '-o' 'CMakeFiles\cmTC_82c48.dir\CMakeCCompilerABI.c.obj' '-c']
+  ignore line: [Linking C executable cmTC_82c48]
+  ignore line: ["C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_82c48.dir\link.txt --verbose=1]
+  ignore line: [C:\ARM_GCC\bin\arm-none-eabi-gcc.exe -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=gnu99   -Wl,-gc-sections,--print-memory-usage -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld -v CMakeFiles/cmTC_82c48.dir/CMakeCCompilerABI.c.obj  -o cmTC_82c48 ]
   ignore line: [Using built-in specs.]
   ignore line: [Reading specs from c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/nosys.specs]
   ignore line: [rename spec link_gcc_c_sequence to nosys_link_gcc_c_sequence]
@@ -208,13 +208,13 @@ Parsed C implicit link information from above output:
   ignore line: [c:/arm_gcc/bin/../lib/gcc/]
   ignore line: [c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/]
   ignore line: [c:/arm_gcc/bin/../arm-none-eabi/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=gnu99' '-T' 'C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld' '-v' '-o' 'cmTC_98012']
-  link line: [ c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/collect2.exe -plugin c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/liblto_plugin-0.dll -plugin-opt=c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\matej\AppData\Local\Temp\ccg4oyNg.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lg_nano -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys --sysroot=c:\arm_gcc\bin\../arm-none-eabi -X -o cmTC_98012 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/crt0.o -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m -Lc:/arm_gcc/bin/../arm-none-eabi/lib/thumb/v7-m -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1 -Lc:/arm_gcc/bin/../lib/gcc -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib -Lc:/arm_gcc/bin/../arm-none-eabi/lib -gc-sections --print-memory-usage CMakeFiles/cmTC_98012.dir/CMakeCCompilerABI.c.obj --start-group -lgcc -lg_nano -lc_nano --end-group --start-group -lgcc -lc_nano -lnosys --end-group --start-group -lgcc -lc_nano -lnosys --end-group c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtend.o c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld]
+  ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=gnu99' '-T' 'C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld' '-v' '-o' 'cmTC_82c48']
+  link line: [ c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/collect2.exe -plugin c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/liblto_plugin-0.dll -plugin-opt=c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\matej\AppData\Local\Temp\ccgFjJIb.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lg_nano -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys --sysroot=c:\arm_gcc\bin\../arm-none-eabi -X -o cmTC_82c48 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/crt0.o -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m -Lc:/arm_gcc/bin/../arm-none-eabi/lib/thumb/v7-m -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1 -Lc:/arm_gcc/bin/../lib/gcc -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib -Lc:/arm_gcc/bin/../arm-none-eabi/lib -gc-sections --print-memory-usage CMakeFiles/cmTC_82c48.dir/CMakeCCompilerABI.c.obj --start-group -lgcc -lg_nano -lc_nano --end-group --start-group -lgcc -lc_nano -lnosys --end-group --start-group -lgcc -lc_nano -lnosys --end-group c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtend.o c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld]
     arg [c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/collect2.exe] ==> ignore
     arg [-plugin] ==> ignore
     arg [c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/liblto_plugin-0.dll] ==> ignore
     arg [-plugin-opt=c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/lto-wrapper.exe] ==> ignore
-    arg [-plugin-opt=-fresolution=C:\Users\matej\AppData\Local\Temp\ccg4oyNg.res] ==> ignore
+    arg [-plugin-opt=-fresolution=C:\Users\matej\AppData\Local\Temp\ccgFjJIb.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lg_nano] ==> ignore
     arg [-plugin-opt=-pass-through=-lc_nano] ==> ignore
@@ -227,7 +227,7 @@ Parsed C implicit link information from above output:
     arg [--sysroot=c:\arm_gcc\bin\../arm-none-eabi] ==> ignore
     arg [-X] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_98012] ==> ignore
+    arg [cmTC_82c48] ==> ignore
     arg [c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o] ==> ignore
     arg [c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o] ==> ignore
     arg [c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/crt0.o] ==> ignore
@@ -240,7 +240,7 @@ Parsed C implicit link information from above output:
     arg [-Lc:/arm_gcc/bin/../arm-none-eabi/lib] ==> dir [c:/arm_gcc/bin/../arm-none-eabi/lib]
     arg [-gc-sections] ==> ignore
     arg [--print-memory-usage] ==> ignore
-    arg [CMakeFiles/cmTC_98012.dir/CMakeCCompilerABI.c.obj] ==> ignore
+    arg [CMakeFiles/cmTC_82c48.dir/CMakeCCompilerABI.c.obj] ==> ignore
     arg [--start-group] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [-lg_nano] ==> lib [g_nano]
@@ -277,14 +277,14 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: C:/Users/matej/Documents/projects/hoverGate_fw/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_4106e/fast 
-C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_4106e.dir\build.make CMakeFiles/cmTC_4106e.dir/build
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_5ee5c/fast 
+C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_5ee5c.dir\build.make CMakeFiles/cmTC_5ee5c.dir/build
 mingw32-make.exe[1]: Entering directory 'C:/Users/matej/Documents/projects/hoverGate_fw/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_4106e.dir/feature_tests.c.obj
-C:\ARM_GCC\bin\arm-none-eabi-gcc.exe   -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=gnu99    -std=c11 -o CMakeFiles\cmTC_4106e.dir\feature_tests.c.obj   -c C:\Users\matej\Documents\projects\hoverGate_fw\cmake-build-debug\CMakeFiles\feature_tests.c
-Linking C executable cmTC_4106e
-"C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_4106e.dir\link.txt --verbose=1
-C:\ARM_GCC\bin\arm-none-eabi-gcc.exe -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=gnu99   -Wl,-gc-sections,--print-memory-usage -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld  CMakeFiles/cmTC_4106e.dir/feature_tests.c.obj  -o cmTC_4106e 
+Building C object CMakeFiles/cmTC_5ee5c.dir/feature_tests.c.obj
+C:\ARM_GCC\bin\arm-none-eabi-gcc.exe   -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=gnu99    -std=c11 -o CMakeFiles\cmTC_5ee5c.dir\feature_tests.c.obj   -c C:\Users\matej\Documents\projects\hoverGate_fw\cmake-build-debug\CMakeFiles\feature_tests.c
+Linking C executable cmTC_5ee5c
+"C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_5ee5c.dir\link.txt --verbose=1
+C:\ARM_GCC\bin\arm-none-eabi-gcc.exe -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=gnu99   -Wl,-gc-sections,--print-memory-usage -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld  CMakeFiles/cmTC_5ee5c.dir/feature_tests.c.obj  -o cmTC_5ee5c 
 Memory region         Used Size  Region Size  %age Used
              RAM:        1568 B        20 KB      7.66%
            FLASH:          96 B        64 KB      0.15c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol Reset_Handler; defaulting to 08000000%
@@ -297,14 +297,14 @@ mingw32-make.exe[1]: Leaving directory 'C:/Users/matej/Documents/projects/hoverG
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: C:/Users/matej/Documents/projects/hoverGate_fw/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_000d1/fast 
-C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_000d1.dir\build.make CMakeFiles/cmTC_000d1.dir/build
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_896da/fast 
+C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_896da.dir\build.make CMakeFiles/cmTC_896da.dir/build
 mingw32-make.exe[1]: Entering directory 'C:/Users/matej/Documents/projects/hoverGate_fw/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_000d1.dir/feature_tests.c.obj
-C:\ARM_GCC\bin\arm-none-eabi-gcc.exe   -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=gnu99    -std=c99 -o CMakeFiles\cmTC_000d1.dir\feature_tests.c.obj   -c C:\Users\matej\Documents\projects\hoverGate_fw\cmake-build-debug\CMakeFiles\feature_tests.c
-Linking C executable cmTC_000d1
-"C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_000d1.dir\link.txt --verbose=1
-C:\ARM_GCC\bin\arm-none-eabi-gcc.exe -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=gnu99   -Wl,-gc-sections,--print-memory-usage -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld  CMakeFiles/cmTC_000d1.dir/feature_tests.c.obj  -o cmTC_000d1 
+Building C object CMakeFiles/cmTC_896da.dir/feature_tests.c.obj
+C:\ARM_GCC\bin\arm-none-eabi-gcc.exe   -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=gnu99    -std=c99 -o CMakeFiles\cmTC_896da.dir\feature_tests.c.obj   -c C:\Users\matej\Documents\projects\hoverGate_fw\cmake-build-debug\CMakeFiles\feature_tests.c
+Linking C executable cmTC_896da
+"C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_896da.dir\link.txt --verbose=1
+C:\ARM_GCC\bin\arm-none-eabi-gcc.exe -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=gnu99   -Wl,-gc-sections,--print-memory-usage -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld  CMakeFiles/cmTC_896da.dir/feature_tests.c.obj  -o cmTC_896da 
 Memory region         Used Size  Region Size  %age Used
              RAM:        1568 B        20 KB      7.66%
            FLASH:          96 B        64 KB      0.15c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol Reset_Handler; defaulting to 08000000%
@@ -317,14 +317,14 @@ mingw32-make.exe[1]: Leaving directory 'C:/Users/matej/Documents/projects/hoverG
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: C:/Users/matej/Documents/projects/hoverGate_fw/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_1fdbd/fast 
-C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_1fdbd.dir\build.make CMakeFiles/cmTC_1fdbd.dir/build
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_14577/fast 
+C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_14577.dir\build.make CMakeFiles/cmTC_14577.dir/build
 mingw32-make.exe[1]: Entering directory 'C:/Users/matej/Documents/projects/hoverGate_fw/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_1fdbd.dir/feature_tests.c.obj
-C:\ARM_GCC\bin\arm-none-eabi-gcc.exe   -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=gnu99    -std=c90 -o CMakeFiles\cmTC_1fdbd.dir\feature_tests.c.obj   -c C:\Users\matej\Documents\projects\hoverGate_fw\cmake-build-debug\CMakeFiles\feature_tests.c
-Linking C executable cmTC_1fdbd
-"C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_1fdbd.dir\link.txt --verbose=1
-C:\ARM_GCC\bin\arm-none-eabi-gcc.exe -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=gnu99   -Wl,-gc-sections,--print-memory-usage -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld  CMakeFiles/cmTC_1fdbd.dir/feature_tests.c.obj  -o cmTC_1fdbd 
+Building C object CMakeFiles/cmTC_14577.dir/feature_tests.c.obj
+C:\ARM_GCC\bin\arm-none-eabi-gcc.exe   -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=gnu99    -std=c90 -o CMakeFiles\cmTC_14577.dir\feature_tests.c.obj   -c C:\Users\matej\Documents\projects\hoverGate_fw\cmake-build-debug\CMakeFiles\feature_tests.c
+Linking C executable cmTC_14577
+"C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_14577.dir\link.txt --verbose=1
+C:\ARM_GCC\bin\arm-none-eabi-gcc.exe -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=gnu99   -Wl,-gc-sections,--print-memory-usage -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld  CMakeFiles/cmTC_14577.dir/feature_tests.c.obj  -o cmTC_14577 
 Memory region         Used Size  Region Size  %age Used
              RAM:        1568 B        20 KB      7.66%
            FLASH:          96 B        64 KB      0.15c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol Reset_Handler; defaulting to 08000000%
@@ -335,11 +335,11 @@ mingw32-make.exe[1]: Leaving directory 'C:/Users/matej/Documents/projects/hoverG
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: C:/Users/matej/Documents/projects/hoverGate_fw/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_56bfa/fast 
-C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_56bfa.dir\build.make CMakeFiles/cmTC_56bfa.dir/build
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_fe9e3/fast 
+C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_fe9e3.dir\build.make CMakeFiles/cmTC_fe9e3.dir/build
 mingw32-make.exe[1]: Entering directory 'C:/Users/matej/Documents/projects/hoverGate_fw/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_56bfa.dir/CMakeCXXCompilerABI.cpp.obj
-C:\ARM_GCC\bin\arm-none-eabi-g++.exe    -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=c++11    -v -o CMakeFiles\cmTC_56bfa.dir\CMakeCXXCompilerABI.cpp.obj -c "C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\share\cmake-3.14\Modules\CMakeCXXCompilerABI.cpp"
+Building CXX object CMakeFiles/cmTC_fe9e3.dir/CMakeCXXCompilerABI.cpp.obj
+C:\ARM_GCC\bin\arm-none-eabi-g++.exe    -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=c++11    -v -o CMakeFiles\cmTC_fe9e3.dir\CMakeCXXCompilerABI.cpp.obj -c "C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\share\cmake-3.14\Modules\CMakeCXXCompilerABI.cpp"
 Using built-in specs.
 Reading specs from c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/nosys.specs
 rename spec link_gcc_c_sequence to nosys_link_gcc_c_sequence
@@ -352,8 +352,8 @@ Target: arm-none-eabi
 Configured with: /tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/src/gcc/configure --build=x86_64-linux-gnu --host=i686-w64-mingw32 --target=arm-none-eabi --prefix=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-mingw --libexecdir=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-mingw/lib --infodir=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-mingw/share/doc/gcc-arm-none-eabi/info --mandir=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-mingw/share/doc/gcc-arm-none-eabi/man --htmldir=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-mingw/share/doc/gcc-arm-none-eabi/html --pdfdir=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-mingw/share/doc/gcc-arm-none-eabi/pdf --enable-languages=c,c++ --enable-mingw-wildcard --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --with-gnu-as --with-gnu-ld --with-headers=yes --with-newlib --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-mingw/arm-none-eabi --with-libiconv-prefix=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/build-mingw/host-libs/usr --with-gmp=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/build-mingw/host-libs/usr --with-mpfr=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/build-mingw/host-libs/usr --with-mpc=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/build-mingw/host-libs/usr --with-isl=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/build-mingw/host-libs/usr --with-libelf=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/build-mingw/host-libs/usr --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --with-pkgversion='GNU Tools for Arm Embedded Processors 7-2018-q2-update' --with-multilib-list=rmprofile
 Thread model: single
 gcc version 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907] (GNU Tools for Arm Embedded Processors 7-2018-q2-update) 
-COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=c++11' '-v' '-o' 'CMakeFiles\cmTC_56bfa.dir\CMakeCXXCompilerABI.cpp.obj' '-c'
- c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/cc1plus.exe -isystem =/include/newlib-nano -quiet -v -imultilib thumb/v7-m -iprefix c:\arm_gcc\bin\../lib/gcc/arm-none-eabi/7.3.1/ -isysroot c:\arm_gcc\bin\../arm-none-eabi -D__USES_INITFINI__ C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\share\cmake-3.14\Modules\CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mcpu=cortex-m3 -mthumb -mthumb-interwork -auxbase-strip CMakeFiles\cmTC_56bfa.dir\CMakeCXXCompilerABI.cpp.obj -g -std=c++11 -version -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -o C:\Users\matej\AppData\Local\Temp\ccLSk3Wj.s
+COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=c++11' '-v' '-o' 'CMakeFiles\cmTC_fe9e3.dir\CMakeCXXCompilerABI.cpp.obj' '-c'
+ c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/cc1plus.exe -isystem =/include/newlib-nano -quiet -v -imultilib thumb/v7-m -iprefix c:\arm_gcc\bin\../lib/gcc/arm-none-eabi/7.3.1/ -isysroot c:\arm_gcc\bin\../arm-none-eabi -D__USES_INITFINI__ C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\share\cmake-3.14\Modules\CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mcpu=cortex-m3 -mthumb -mthumb-interwork -auxbase-strip CMakeFiles\cmTC_fe9e3.dir\CMakeCXXCompilerABI.cpp.obj -g -std=c++11 -version -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -o C:\Users\matej\AppData\Local\Temp\ccfLPvDe.s
 GNU C++11 (GNU Tools for Arm Embedded Processors 7-2018-q2-update) version 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907] (arm-none-eabi)
 	compiled by GNU C version 5.3.1 20160211, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.15-GMP
 
@@ -381,15 +381,15 @@ GNU C++11 (GNU Tools for Arm Embedded Processors 7-2018-q2-update) version 7.3.1
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 9dfb31144bcc1131924fafc00375d088
-COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=c++11' '-v' '-o' 'CMakeFiles\cmTC_56bfa.dir\CMakeCXXCompilerABI.cpp.obj' '-c'
- c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/bin/as.exe -v -mcpu=cortex-m3 -mthumb-interwork -meabi=5 -o CMakeFiles\cmTC_56bfa.dir\CMakeCXXCompilerABI.cpp.obj C:\Users\matej\AppData\Local\Temp\ccLSk3Wj.s
+COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=c++11' '-v' '-o' 'CMakeFiles\cmTC_fe9e3.dir\CMakeCXXCompilerABI.cpp.obj' '-c'
+ c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/bin/as.exe -v -mcpu=cortex-m3 -mthumb-interwork -meabi=5 -o CMakeFiles\cmTC_fe9e3.dir\CMakeCXXCompilerABI.cpp.obj C:\Users\matej\AppData\Local\Temp\ccfLPvDe.s
 GNU assembler version 2.30.0 (arm-none-eabi) using BFD version (GNU Tools for Arm Embedded Processors 7-2018-q2-update) 2.30.0.20180329
 COMPILER_PATH=c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/;c:/arm_gcc/bin/../lib/gcc/;c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/bin/
 LIBRARY_PATH=c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/;c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/;c:/arm_gcc/bin/../arm-none-eabi/lib/thumb/v7-m/;c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/;c:/arm_gcc/bin/../lib/gcc/;c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/;c:/arm_gcc/bin/../arm-none-eabi/lib/
-COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=c++11' '-v' '-o' 'CMakeFiles\cmTC_56bfa.dir\CMakeCXXCompilerABI.cpp.obj' '-c'
-Linking CXX executable cmTC_56bfa
-"C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_56bfa.dir\link.txt --verbose=1
-C:\ARM_GCC\bin\arm-none-eabi-g++.exe  -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=c++11   -Wl,-gc-sections,--print-memory-usage -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld -v CMakeFiles/cmTC_56bfa.dir/CMakeCXXCompilerABI.cpp.obj  -o cmTC_56bfa 
+COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=c++11' '-v' '-o' 'CMakeFiles\cmTC_fe9e3.dir\CMakeCXXCompilerABI.cpp.obj' '-c'
+Linking CXX executable cmTC_fe9e3
+"C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_fe9e3.dir\link.txt --verbose=1
+C:\ARM_GCC\bin\arm-none-eabi-g++.exe  -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=c++11   -Wl,-gc-sections,--print-memory-usage -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld -v CMakeFiles/cmTC_fe9e3.dir/CMakeCXXCompilerABI.cpp.obj  -o cmTC_fe9e3 
 Using built-in specs.
 Reading specs from c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/nosys.specs
 rename spec link_gcc_c_sequence to nosys_link_gcc_c_sequence
@@ -405,13 +405,13 @@ Thread model: single
 gcc version 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907] (GNU Tools for Arm Embedded Processors 7-2018-q2-update) 
 COMPILER_PATH=c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/;c:/arm_gcc/bin/../lib/gcc/;c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/bin/
 LIBRARY_PATH=c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/;c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/;c:/arm_gcc/bin/../arm-none-eabi/lib/thumb/v7-m/;c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/;c:/arm_gcc/bin/../lib/gcc/;c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/;c:/arm_gcc/bin/../arm-none-eabi/lib/
-COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=c++11' '-T' 'C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld' '-v' '-o' 'cmTC_56bfa'
- c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/collect2.exe -plugin c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/liblto_plugin-0.dll -plugin-opt=c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\matej\AppData\Local\Temp\ccDuUKny.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lg_nano -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys --sysroot=c:\arm_gcc\bin\../arm-none-eabi -X -o cmTC_56bfa c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/crt0.o -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m -Lc:/arm_gcc/bin/../arm-none-eabi/lib/thumb/v7-m -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1 -Lc:/arm_gcc/bin/../lib/gcc -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib -Lc:/arm_gcc/bin/../arm-none-eabi/lib -gc-sections --print-memory-usage CMakeFiles/cmTC_56bfa.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++_nano -lm --start-group -lgcc -lg_nano -lc_nano --end-group --start-group -lgcc -lc_nano -lnosys --end-group --start-group -lgcc -lc_nano -lnosys --end-group c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtend.o c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld
+COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=c++11' '-T' 'C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld' '-v' '-o' 'cmTC_fe9e3'
+ c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/collect2.exe -plugin c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/liblto_plugin-0.dll -plugin-opt=c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\matej\AppData\Local\Temp\ccr3hN8q.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lg_nano -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys --sysroot=c:\arm_gcc\bin\../arm-none-eabi -X -o cmTC_fe9e3 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/crt0.o -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m -Lc:/arm_gcc/bin/../arm-none-eabi/lib/thumb/v7-m -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1 -Lc:/arm_gcc/bin/../lib/gcc -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib -Lc:/arm_gcc/bin/../arm-none-eabi/lib -gc-sections --print-memory-usage CMakeFiles/cmTC_fe9e3.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++_nano -lm --start-group -lgcc -lg_nano -lc_nano --end-group --start-group -lgcc -lc_nano -lnosys --end-group --start-group -lgcc -lc_nano -lnosys --end-group c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtend.o c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld
 Memory region         Used Size  Region Size  %age Used
              RAM:        1568 B        20 KB      7.66%
            FLASH:          96 B        64 KB      0.15c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol Reset_Handler; defaulting to 08000000%
 
-COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=c++11' '-T' 'C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld' '-v' '-o' 'cmTC_56bfa'
+COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=c++11' '-T' 'C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld' '-v' '-o' 'cmTC_fe9e3'
 mingw32-make.exe[1]: Leaving directory 'C:/Users/matej/Documents/projects/hoverGate_fw/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
@@ -440,11 +440,11 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(arm-none-eabi-ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: C:/Users/matej/Documents/projects/hoverGate_fw/cmake-build-debug/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_56bfa/fast ]
-  ignore line: [C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_56bfa.dir\build.make CMakeFiles/cmTC_56bfa.dir/build]
+  ignore line: [Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_fe9e3/fast ]
+  ignore line: [C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_fe9e3.dir\build.make CMakeFiles/cmTC_fe9e3.dir/build]
   ignore line: [mingw32-make.exe[1]: Entering directory 'C:/Users/matej/Documents/projects/hoverGate_fw/cmake-build-debug/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_56bfa.dir/CMakeCXXCompilerABI.cpp.obj]
-  ignore line: [C:\ARM_GCC\bin\arm-none-eabi-g++.exe    -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=c++11    -v -o CMakeFiles\cmTC_56bfa.dir\CMakeCXXCompilerABI.cpp.obj -c "C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\share\cmake-3.14\Modules\CMakeCXXCompilerABI.cpp"]
+  ignore line: [Building CXX object CMakeFiles/cmTC_fe9e3.dir/CMakeCXXCompilerABI.cpp.obj]
+  ignore line: [C:\ARM_GCC\bin\arm-none-eabi-g++.exe    -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=c++11    -v -o CMakeFiles\cmTC_fe9e3.dir\CMakeCXXCompilerABI.cpp.obj -c "C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\share\cmake-3.14\Modules\CMakeCXXCompilerABI.cpp"]
   ignore line: [Using built-in specs.]
   ignore line: [Reading specs from c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/nosys.specs]
   ignore line: [rename spec link_gcc_c_sequence to nosys_link_gcc_c_sequence]
@@ -457,8 +457,8 @@ Parsed CXX implicit link information from above output:
   ignore line: [Configured with: /tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/src/gcc/configure --build=x86_64-linux-gnu --host=i686-w64-mingw32 --target=arm-none-eabi --prefix=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-mingw --libexecdir=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-mingw/lib --infodir=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-mingw/share/doc/gcc-arm-none-eabi/info --mandir=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-mingw/share/doc/gcc-arm-none-eabi/man --htmldir=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-mingw/share/doc/gcc-arm-none-eabi/html --pdfdir=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-mingw/share/doc/gcc-arm-none-eabi/pdf --enable-languages=c,c++ --enable-mingw-wildcard --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --with-gnu-as --with-gnu-ld --with-headers=yes --with-newlib --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-mingw/arm-none-eabi --with-libiconv-prefix=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/build-mingw/host-libs/usr --with-gmp=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/build-mingw/host-libs/usr --with-mpfr=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/build-mingw/host-libs/usr --with-mpc=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/build-mingw/host-libs/usr --with-isl=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/build-mingw/host-libs/usr --with-libelf=/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/build-mingw/host-libs/usr --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --with-pkgversion='GNU Tools for Arm Embedded Processors 7-2018-q2-update' --with-multilib-list=rmprofile]
   ignore line: [Thread model: single]
   ignore line: [gcc version 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907] (GNU Tools for Arm Embedded Processors 7-2018-q2-update) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=c++11' '-v' '-o' 'CMakeFiles\cmTC_56bfa.dir\CMakeCXXCompilerABI.cpp.obj' '-c']
-  ignore line: [ c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/cc1plus.exe -isystem =/include/newlib-nano -quiet -v -imultilib thumb/v7-m -iprefix c:\arm_gcc\bin\../lib/gcc/arm-none-eabi/7.3.1/ -isysroot c:\arm_gcc\bin\../arm-none-eabi -D__USES_INITFINI__ C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\share\cmake-3.14\Modules\CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mcpu=cortex-m3 -mthumb -mthumb-interwork -auxbase-strip CMakeFiles\cmTC_56bfa.dir\CMakeCXXCompilerABI.cpp.obj -g -std=c++11 -version -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -o C:\Users\matej\AppData\Local\Temp\ccLSk3Wj.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=c++11' '-v' '-o' 'CMakeFiles\cmTC_fe9e3.dir\CMakeCXXCompilerABI.cpp.obj' '-c']
+  ignore line: [ c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/cc1plus.exe -isystem =/include/newlib-nano -quiet -v -imultilib thumb/v7-m -iprefix c:\arm_gcc\bin\../lib/gcc/arm-none-eabi/7.3.1/ -isysroot c:\arm_gcc\bin\../arm-none-eabi -D__USES_INITFINI__ C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\share\cmake-3.14\Modules\CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mcpu=cortex-m3 -mthumb -mthumb-interwork -auxbase-strip CMakeFiles\cmTC_fe9e3.dir\CMakeCXXCompilerABI.cpp.obj -g -std=c++11 -version -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -o C:\Users\matej\AppData\Local\Temp\ccfLPvDe.s]
   ignore line: [GNU C++11 (GNU Tools for Arm Embedded Processors 7-2018-q2-update) version 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907] (arm-none-eabi)]
   ignore line: [	compiled by GNU C version 5.3.1 20160211, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.15-GMP]
   ignore line: []
@@ -486,8 +486,8 @@ Parsed CXX implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 9dfb31144bcc1131924fafc00375d088]
-  ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=c++11' '-v' '-o' 'CMakeFiles\cmTC_56bfa.dir\CMakeCXXCompilerABI.cpp.obj' '-c']
-  ignore line: [ c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/bin/as.exe -v -mcpu=cortex-m3 -mthumb-interwork -meabi=5 -o CMakeFiles\cmTC_56bfa.dir\CMakeCXXCompilerABI.cpp.obj C:\Users\matej\AppData\Local\Temp\ccLSk3Wj.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=c++11' '-v' '-o' 'CMakeFiles\cmTC_fe9e3.dir\CMakeCXXCompilerABI.cpp.obj' '-c']
+  ignore line: [ c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/bin/as.exe -v -mcpu=cortex-m3 -mthumb-interwork -meabi=5 -o CMakeFiles\cmTC_fe9e3.dir\CMakeCXXCompilerABI.cpp.obj C:\Users\matej\AppData\Local\Temp\ccfLPvDe.s]
   ignore line: [GNU assembler version 2.30.0 (arm-none-eabi) using BFD version (GNU Tools for Arm Embedded Processors 7-2018-q2-update) 2.30.0.20180329]
   ignore line: [COMPILER_PATH=c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/]
   ignore line: [c:/arm_gcc/bin/../lib/gcc/]
@@ -499,10 +499,10 @@ Parsed CXX implicit link information from above output:
   ignore line: [c:/arm_gcc/bin/../lib/gcc/]
   ignore line: [c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/]
   ignore line: [c:/arm_gcc/bin/../arm-none-eabi/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=c++11' '-v' '-o' 'CMakeFiles\cmTC_56bfa.dir\CMakeCXXCompilerABI.cpp.obj' '-c']
-  ignore line: [Linking CXX executable cmTC_56bfa]
-  ignore line: ["C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_56bfa.dir\link.txt --verbose=1]
-  ignore line: [C:\ARM_GCC\bin\arm-none-eabi-g++.exe  -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=c++11   -Wl,-gc-sections,--print-memory-usage -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld -v CMakeFiles/cmTC_56bfa.dir/CMakeCXXCompilerABI.cpp.obj  -o cmTC_56bfa ]
+  ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=c++11' '-v' '-o' 'CMakeFiles\cmTC_fe9e3.dir\CMakeCXXCompilerABI.cpp.obj' '-c']
+  ignore line: [Linking CXX executable cmTC_fe9e3]
+  ignore line: ["C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_fe9e3.dir\link.txt --verbose=1]
+  ignore line: [C:\ARM_GCC\bin\arm-none-eabi-g++.exe  -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=c++11   -Wl,-gc-sections,--print-memory-usage -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld -v CMakeFiles/cmTC_fe9e3.dir/CMakeCXXCompilerABI.cpp.obj  -o cmTC_fe9e3 ]
   ignore line: [Using built-in specs.]
   ignore line: [Reading specs from c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/nosys.specs]
   ignore line: [rename spec link_gcc_c_sequence to nosys_link_gcc_c_sequence]
@@ -526,13 +526,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [c:/arm_gcc/bin/../lib/gcc/]
   ignore line: [c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/]
   ignore line: [c:/arm_gcc/bin/../arm-none-eabi/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=c++11' '-T' 'C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld' '-v' '-o' 'cmTC_56bfa']
-  link line: [ c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/collect2.exe -plugin c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/liblto_plugin-0.dll -plugin-opt=c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\matej\AppData\Local\Temp\ccDuUKny.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lg_nano -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys --sysroot=c:\arm_gcc\bin\../arm-none-eabi -X -o cmTC_56bfa c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/crt0.o -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m -Lc:/arm_gcc/bin/../arm-none-eabi/lib/thumb/v7-m -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1 -Lc:/arm_gcc/bin/../lib/gcc -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib -Lc:/arm_gcc/bin/../arm-none-eabi/lib -gc-sections --print-memory-usage CMakeFiles/cmTC_56bfa.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++_nano -lm --start-group -lgcc -lg_nano -lc_nano --end-group --start-group -lgcc -lc_nano -lnosys --end-group --start-group -lgcc -lc_nano -lnosys --end-group c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtend.o c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld]
+  ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m3' '-mthumb' '-mthumb-interwork' '-ffunction-sections' '-fdata-sections' '-g' '-fno-common' '-fmessage-length=0' '-specs=nosys.specs' '-specs=nano.specs' '-std=c++11' '-T' 'C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld' '-v' '-o' 'cmTC_fe9e3']
+  link line: [ c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/collect2.exe -plugin c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/liblto_plugin-0.dll -plugin-opt=c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\matej\AppData\Local\Temp\ccr3hN8q.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lg_nano -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys --sysroot=c:\arm_gcc\bin\../arm-none-eabi -X -o cmTC_fe9e3 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/crt0.o -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m -Lc:/arm_gcc/bin/../arm-none-eabi/lib/thumb/v7-m -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1 -Lc:/arm_gcc/bin/../lib/gcc -Lc:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib -Lc:/arm_gcc/bin/../arm-none-eabi/lib -gc-sections --print-memory-usage CMakeFiles/cmTC_fe9e3.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++_nano -lm --start-group -lgcc -lg_nano -lc_nano --end-group --start-group -lgcc -lc_nano -lnosys --end-group --start-group -lgcc -lc_nano -lnosys --end-group c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtend.o c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld]
     arg [c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/collect2.exe] ==> ignore
     arg [-plugin] ==> ignore
     arg [c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/liblto_plugin-0.dll] ==> ignore
     arg [-plugin-opt=c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/lto-wrapper.exe] ==> ignore
-    arg [-plugin-opt=-fresolution=C:\Users\matej\AppData\Local\Temp\ccDuUKny.res] ==> ignore
+    arg [-plugin-opt=-fresolution=C:\Users\matej\AppData\Local\Temp\ccr3hN8q.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lg_nano] ==> ignore
     arg [-plugin-opt=-pass-through=-lc_nano] ==> ignore
@@ -545,7 +545,7 @@ Parsed CXX implicit link information from above output:
     arg [--sysroot=c:\arm_gcc\bin\../arm-none-eabi] ==> ignore
     arg [-X] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_56bfa] ==> ignore
+    arg [cmTC_fe9e3] ==> ignore
     arg [c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o] ==> ignore
     arg [c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o] ==> ignore
     arg [c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/crt0.o] ==> ignore
@@ -558,7 +558,7 @@ Parsed CXX implicit link information from above output:
     arg [-Lc:/arm_gcc/bin/../arm-none-eabi/lib] ==> dir [c:/arm_gcc/bin/../arm-none-eabi/lib]
     arg [-gc-sections] ==> ignore
     arg [--print-memory-usage] ==> ignore
-    arg [CMakeFiles/cmTC_56bfa.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+    arg [CMakeFiles/cmTC_fe9e3.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
     arg [-lstdc++_nano] ==> lib [stdc++_nano]
     arg [-lm] ==> lib [m]
     arg [--start-group] ==> ignore
@@ -597,14 +597,14 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
 Change Dir: C:/Users/matej/Documents/projects/hoverGate_fw/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_9eba6/fast 
-C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_9eba6.dir\build.make CMakeFiles/cmTC_9eba6.dir/build
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_68d7d/fast 
+C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_68d7d.dir\build.make CMakeFiles/cmTC_68d7d.dir/build
 mingw32-make.exe[1]: Entering directory 'C:/Users/matej/Documents/projects/hoverGate_fw/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_9eba6.dir/feature_tests.cxx.obj
-C:\ARM_GCC\bin\arm-none-eabi-g++.exe    -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=c++11    -std=c++1z -o CMakeFiles\cmTC_9eba6.dir\feature_tests.cxx.obj -c C:\Users\matej\Documents\projects\hoverGate_fw\cmake-build-debug\CMakeFiles\feature_tests.cxx
-Linking CXX executable cmTC_9eba6
-"C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_9eba6.dir\link.txt --verbose=1
-C:\ARM_GCC\bin\arm-none-eabi-g++.exe  -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=c++11   -Wl,-gc-sections,--print-memory-usage -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld  CMakeFiles/cmTC_9eba6.dir/feature_tests.cxx.obj  -o cmTC_9eba6 
+Building CXX object CMakeFiles/cmTC_68d7d.dir/feature_tests.cxx.obj
+C:\ARM_GCC\bin\arm-none-eabi-g++.exe    -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=c++11    -std=c++1z -o CMakeFiles\cmTC_68d7d.dir\feature_tests.cxx.obj -c C:\Users\matej\Documents\projects\hoverGate_fw\cmake-build-debug\CMakeFiles\feature_tests.cxx
+Linking CXX executable cmTC_68d7d
+"C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_68d7d.dir\link.txt --verbose=1
+C:\ARM_GCC\bin\arm-none-eabi-g++.exe  -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=c++11   -Wl,-gc-sections,--print-memory-usage -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld  CMakeFiles/cmTC_68d7d.dir/feature_tests.cxx.obj  -o cmTC_68d7d 
 Memory region         Used Size  Region Size  %age Used
              RAM:        1568 B        20 KB      7.66%
            FLASH:          96 B        64 KB      0.15c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol Reset_Handler; defaulting to 08000000%
@@ -617,14 +617,14 @@ mingw32-make.exe[1]: Leaving directory 'C:/Users/matej/Documents/projects/hoverG
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: C:/Users/matej/Documents/projects/hoverGate_fw/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_0316d/fast 
-C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_0316d.dir\build.make CMakeFiles/cmTC_0316d.dir/build
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_e8cd8/fast 
+C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_e8cd8.dir\build.make CMakeFiles/cmTC_e8cd8.dir/build
 mingw32-make.exe[1]: Entering directory 'C:/Users/matej/Documents/projects/hoverGate_fw/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_0316d.dir/feature_tests.cxx.obj
-C:\ARM_GCC\bin\arm-none-eabi-g++.exe    -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=c++11    -std=c++14 -o CMakeFiles\cmTC_0316d.dir\feature_tests.cxx.obj -c C:\Users\matej\Documents\projects\hoverGate_fw\cmake-build-debug\CMakeFiles\feature_tests.cxx
-Linking CXX executable cmTC_0316d
-"C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_0316d.dir\link.txt --verbose=1
-C:\ARM_GCC\bin\arm-none-eabi-g++.exe  -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=c++11   -Wl,-gc-sections,--print-memory-usage -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld  CMakeFiles/cmTC_0316d.dir/feature_tests.cxx.obj  -o cmTC_0316d 
+Building CXX object CMakeFiles/cmTC_e8cd8.dir/feature_tests.cxx.obj
+C:\ARM_GCC\bin\arm-none-eabi-g++.exe    -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=c++11    -std=c++14 -o CMakeFiles\cmTC_e8cd8.dir\feature_tests.cxx.obj -c C:\Users\matej\Documents\projects\hoverGate_fw\cmake-build-debug\CMakeFiles\feature_tests.cxx
+Linking CXX executable cmTC_e8cd8
+"C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_e8cd8.dir\link.txt --verbose=1
+C:\ARM_GCC\bin\arm-none-eabi-g++.exe  -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=c++11   -Wl,-gc-sections,--print-memory-usage -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld  CMakeFiles/cmTC_e8cd8.dir/feature_tests.cxx.obj  -o cmTC_e8cd8 
 Memory region         Used Size  Region Size  %age Used
              RAM:        1568 B        20 KB      7.66%
            FLASH:          96 B        64 KB      0.15c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol Reset_Handler; defaulting to 08000000%
@@ -637,14 +637,14 @@ mingw32-make.exe[1]: Leaving directory 'C:/Users/matej/Documents/projects/hoverG
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: C:/Users/matej/Documents/projects/hoverGate_fw/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_f5520/fast 
-C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_f5520.dir\build.make CMakeFiles/cmTC_f5520.dir/build
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_f4bb2/fast 
+C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_f4bb2.dir\build.make CMakeFiles/cmTC_f4bb2.dir/build
 mingw32-make.exe[1]: Entering directory 'C:/Users/matej/Documents/projects/hoverGate_fw/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_f5520.dir/feature_tests.cxx.obj
-C:\ARM_GCC\bin\arm-none-eabi-g++.exe    -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=c++11    -std=c++11 -o CMakeFiles\cmTC_f5520.dir\feature_tests.cxx.obj -c C:\Users\matej\Documents\projects\hoverGate_fw\cmake-build-debug\CMakeFiles\feature_tests.cxx
-Linking CXX executable cmTC_f5520
-"C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_f5520.dir\link.txt --verbose=1
-C:\ARM_GCC\bin\arm-none-eabi-g++.exe  -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=c++11   -Wl,-gc-sections,--print-memory-usage -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld  CMakeFiles/cmTC_f5520.dir/feature_tests.cxx.obj  -o cmTC_f5520 
+Building CXX object CMakeFiles/cmTC_f4bb2.dir/feature_tests.cxx.obj
+C:\ARM_GCC\bin\arm-none-eabi-g++.exe    -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=c++11    -std=c++11 -o CMakeFiles\cmTC_f4bb2.dir\feature_tests.cxx.obj -c C:\Users\matej\Documents\projects\hoverGate_fw\cmake-build-debug\CMakeFiles\feature_tests.cxx
+Linking CXX executable cmTC_f4bb2
+"C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_f4bb2.dir\link.txt --verbose=1
+C:\ARM_GCC\bin\arm-none-eabi-g++.exe  -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=c++11   -Wl,-gc-sections,--print-memory-usage -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld  CMakeFiles/cmTC_f4bb2.dir/feature_tests.cxx.obj  -o cmTC_f4bb2 
 Memory region         Used Size  Region Size  %age Used
              RAM:        1568 B        20 KB      7.66%
            FLASH:          96 B        64 KB      0.15c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol Reset_Handler; defaulting to 08000000%
@@ -657,14 +657,14 @@ mingw32-make.exe[1]: Leaving directory 'C:/Users/matej/Documents/projects/hoverG
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: C:/Users/matej/Documents/projects/hoverGate_fw/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_a25a9/fast 
-C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_a25a9.dir\build.make CMakeFiles/cmTC_a25a9.dir/build
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_0b46b/fast 
+C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_0b46b.dir\build.make CMakeFiles/cmTC_0b46b.dir/build
 mingw32-make.exe[1]: Entering directory 'C:/Users/matej/Documents/projects/hoverGate_fw/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_a25a9.dir/feature_tests.cxx.obj
-C:\ARM_GCC\bin\arm-none-eabi-g++.exe    -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=c++11    -std=c++98 -o CMakeFiles\cmTC_a25a9.dir\feature_tests.cxx.obj -c C:\Users\matej\Documents\projects\hoverGate_fw\cmake-build-debug\CMakeFiles\feature_tests.cxx
-Linking CXX executable cmTC_a25a9
-"C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_a25a9.dir\link.txt --verbose=1
-C:\ARM_GCC\bin\arm-none-eabi-g++.exe  -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=c++11   -Wl,-gc-sections,--print-memory-usage -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld  CMakeFiles/cmTC_a25a9.dir/feature_tests.cxx.obj  -o cmTC_a25a9 
+Building CXX object CMakeFiles/cmTC_0b46b.dir/feature_tests.cxx.obj
+C:\ARM_GCC\bin\arm-none-eabi-g++.exe    -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=c++11    -std=c++98 -o CMakeFiles\cmTC_0b46b.dir\feature_tests.cxx.obj -c C:\Users\matej\Documents\projects\hoverGate_fw\cmake-build-debug\CMakeFiles\feature_tests.cxx
+Linking CXX executable cmTC_0b46b
+"C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_0b46b.dir\link.txt --verbose=1
+C:\ARM_GCC\bin\arm-none-eabi-g++.exe  -mcpu=cortex-m3  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=c++11   -Wl,-gc-sections,--print-memory-usage -T C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld  CMakeFiles/cmTC_0b46b.dir/feature_tests.cxx.obj  -o cmTC_0b46b 
 Memory region         Used Size  Region Size  %age Used
              RAM:        1568 B        20 KB      7.66%
            FLASH:          96 B        64 KB      0.15c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol Reset_Handler; defaulting to 08000000%
