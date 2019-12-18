@@ -271,6 +271,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   int n = 1;
   HAL_Delay(2000);
+  //TODO: should increase dead-time in timer config. (32 in original FW)
   while (1)
   {
 //      HAL_GPIO_TogglePin(BUZZ_GPIO_Port, BUZZ_Pin);
