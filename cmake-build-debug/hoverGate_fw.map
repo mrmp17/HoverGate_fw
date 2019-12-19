@@ -980,7 +980,7 @@ LOAD c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
                 0x08000000                g_pfnVectors
                 0x0800010c                . = ALIGN (0x4)
 
-.text           0x0800010c     0x3768
+.text           0x0800010c     0x3790
                 0x0800010c                . = ALIGN (0x4)
  *(.text)
  .text          0x0800010c       0x40 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
@@ -1176,200 +1176,200 @@ LOAD c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
  .text.setPhases
                 0x08002d4c      0x1cc CMakeFiles/hoverGate_fw.elf.dir/Src/main.c.obj
                 0x08002d4c                setPhases
- .text.main     0x08002f18       0x64 CMakeFiles/hoverGate_fw.elf.dir/Src/main.c.obj
+ .text.main     0x08002f18       0x70 CMakeFiles/hoverGate_fw.elf.dir/Src/main.c.obj
                 0x08002f18                main
  .text.SystemClock_Config
-                0x08002f7c       0xb0 CMakeFiles/hoverGate_fw.elf.dir/Src/main.c.obj
-                0x08002f7c                SystemClock_Config
+                0x08002f88       0xb0 CMakeFiles/hoverGate_fw.elf.dir/Src/main.c.obj
+                0x08002f88                SystemClock_Config
  .text.MX_ADC1_Init
-                0x0800302c       0x9c CMakeFiles/hoverGate_fw.elf.dir/Src/main.c.obj
+                0x08003038       0x9c CMakeFiles/hoverGate_fw.elf.dir/Src/main.c.obj
  .text.MX_TIM1_Init
-                0x080030c8      0x174 CMakeFiles/hoverGate_fw.elf.dir/Src/main.c.obj
+                0x080030d4      0x174 CMakeFiles/hoverGate_fw.elf.dir/Src/main.c.obj
  .text.MX_USART2_UART_Init
-                0x0800323c       0x54 CMakeFiles/hoverGate_fw.elf.dir/Src/main.c.obj
+                0x08003248       0x54 CMakeFiles/hoverGate_fw.elf.dir/Src/main.c.obj
  .text.MX_DMA_Init
-                0x08003290       0x3c CMakeFiles/hoverGate_fw.elf.dir/Src/main.c.obj
+                0x0800329c       0x3c CMakeFiles/hoverGate_fw.elf.dir/Src/main.c.obj
  .text.MX_GPIO_Init
-                0x080032cc      0x14c CMakeFiles/hoverGate_fw.elf.dir/Src/main.c.obj
+                0x080032d8      0x168 CMakeFiles/hoverGate_fw.elf.dir/Src/main.c.obj
  .text.Error_Handler
-                0x08003418        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/main.c.obj
-                0x08003418                Error_Handler
+                0x08003440        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/main.c.obj
+                0x08003440                Error_Handler
  .text.HAL_MspInit
-                0x08003424       0x64 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_hal_msp.c.obj
-                0x08003424                HAL_MspInit
+                0x0800344c       0x64 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_hal_msp.c.obj
+                0x0800344c                HAL_MspInit
  .text.HAL_ADC_MspInit
-                0x08003488       0xd0 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_hal_msp.c.obj
-                0x08003488                HAL_ADC_MspInit
+                0x080034b0       0xd0 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_hal_msp.c.obj
+                0x080034b0                HAL_ADC_MspInit
  .text.HAL_TIM_Base_MspInit
-                0x08003558       0x3c CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_hal_msp.c.obj
-                0x08003558                HAL_TIM_Base_MspInit
+                0x08003580       0x3c CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_hal_msp.c.obj
+                0x08003580                HAL_TIM_Base_MspInit
  .text.HAL_TIM_MspPostInit
-                0x08003594       0x9c CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_hal_msp.c.obj
-                0x08003594                HAL_TIM_MspPostInit
+                0x080035bc       0x9c CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_hal_msp.c.obj
+                0x080035bc                HAL_TIM_MspPostInit
  .text.HAL_UART_MspInit
-                0x08003630       0xa4 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_hal_msp.c.obj
-                0x08003630                HAL_UART_MspInit
+                0x08003658       0xa4 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_hal_msp.c.obj
+                0x08003658                HAL_UART_MspInit
  .text.NMI_Handler
-                0x080036d4        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
-                0x080036d4                NMI_Handler
+                0x080036fc        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
+                0x080036fc                NMI_Handler
  .text.HardFault_Handler
-                0x080036e0        0x6 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
-                0x080036e0                HardFault_Handler
+                0x08003708        0x6 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
+                0x08003708                HardFault_Handler
  .text.MemManage_Handler
-                0x080036e6        0x6 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
-                0x080036e6                MemManage_Handler
+                0x0800370e        0x6 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
+                0x0800370e                MemManage_Handler
  .text.BusFault_Handler
-                0x080036ec        0x6 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
-                0x080036ec                BusFault_Handler
+                0x08003714        0x6 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
+                0x08003714                BusFault_Handler
  .text.UsageFault_Handler
-                0x080036f2        0x6 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
-                0x080036f2                UsageFault_Handler
+                0x0800371a        0x6 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
+                0x0800371a                UsageFault_Handler
  .text.SVC_Handler
-                0x080036f8        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
-                0x080036f8                SVC_Handler
+                0x08003720        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
+                0x08003720                SVC_Handler
  .text.DebugMon_Handler
-                0x08003704        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
-                0x08003704                DebugMon_Handler
+                0x0800372c        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
+                0x0800372c                DebugMon_Handler
  .text.PendSV_Handler
-                0x08003710        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
-                0x08003710                PendSV_Handler
+                0x08003738        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
+                0x08003738                PendSV_Handler
  .text.SysTick_Handler
-                0x0800371c        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
-                0x0800371c                SysTick_Handler
+                0x08003744        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
+                0x08003744                SysTick_Handler
  .text.DMA1_Channel1_IRQHandler
-                0x08003728       0x14 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
-                0x08003728                DMA1_Channel1_IRQHandler
+                0x08003750       0x14 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
+                0x08003750                DMA1_Channel1_IRQHandler
  .text.USART2_IRQHandler
-                0x0800373c       0x14 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
-                0x0800373c                USART2_IRQHandler
+                0x08003764       0x14 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
+                0x08003764                USART2_IRQHandler
  .text.SystemInit
-                0x08003750       0x68 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
-                0x08003750                SystemInit
+                0x08003778       0x68 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
+                0x08003778                SystemInit
  .text.Reset_Handler
-                0x080037b8       0x48 CMakeFiles/hoverGate_fw.elf.dir/startup/startup_stm32f103xb.s.obj
-                0x080037b8                Reset_Handler
+                0x080037e0       0x48 CMakeFiles/hoverGate_fw.elf.dir/startup/startup_stm32f103xb.s.obj
+                0x080037e0                Reset_Handler
  .text.Default_Handler
-                0x08003800        0x2 CMakeFiles/hoverGate_fw.elf.dir/startup/startup_stm32f103xb.s.obj
-                0x08003800                RTC_Alarm_IRQHandler
-                0x08003800                EXTI2_IRQHandler
-                0x08003800                TIM1_CC_IRQHandler
-                0x08003800                PVD_IRQHandler
-                0x08003800                EXTI3_IRQHandler
-                0x08003800                EXTI0_IRQHandler
-                0x08003800                I2C2_EV_IRQHandler
-                0x08003800                ADC1_2_IRQHandler
-                0x08003800                SPI1_IRQHandler
-                0x08003800                TAMPER_IRQHandler
-                0x08003800                DMA1_Channel4_IRQHandler
-                0x08003800                USART3_IRQHandler
-                0x08003800                RTC_IRQHandler
-                0x08003800                DMA1_Channel7_IRQHandler
-                0x08003800                CAN1_RX1_IRQHandler
-                0x08003800                TIM4_IRQHandler
-                0x08003800                I2C1_EV_IRQHandler
-                0x08003800                DMA1_Channel6_IRQHandler
-                0x08003800                TIM3_IRQHandler
-                0x08003800                RCC_IRQHandler
-                0x08003800                TIM1_TRG_COM_IRQHandler
-                0x08003800                Default_Handler
-                0x08003800                EXTI15_10_IRQHandler
-                0x08003800                EXTI9_5_IRQHandler
-                0x08003800                SPI2_IRQHandler
-                0x08003800                DMA1_Channel5_IRQHandler
-                0x08003800                EXTI4_IRQHandler
-                0x08003800                USB_LP_CAN1_RX0_IRQHandler
-                0x08003800                USB_HP_CAN1_TX_IRQHandler
-                0x08003800                DMA1_Channel3_IRQHandler
-                0x08003800                TIM1_UP_IRQHandler
-                0x08003800                WWDG_IRQHandler
-                0x08003800                TIM2_IRQHandler
-                0x08003800                TIM1_BRK_IRQHandler
-                0x08003800                EXTI1_IRQHandler
-                0x08003800                I2C2_ER_IRQHandler
-                0x08003800                DMA1_Channel2_IRQHandler
-                0x08003800                CAN1_SCE_IRQHandler
-                0x08003800                FLASH_IRQHandler
-                0x08003800                USART1_IRQHandler
-                0x08003800                I2C1_ER_IRQHandler
-                0x08003800                USBWakeUp_IRQHandler
- *fill*         0x08003802        0x2 
+                0x08003828        0x2 CMakeFiles/hoverGate_fw.elf.dir/startup/startup_stm32f103xb.s.obj
+                0x08003828                RTC_Alarm_IRQHandler
+                0x08003828                EXTI2_IRQHandler
+                0x08003828                TIM1_CC_IRQHandler
+                0x08003828                PVD_IRQHandler
+                0x08003828                EXTI3_IRQHandler
+                0x08003828                EXTI0_IRQHandler
+                0x08003828                I2C2_EV_IRQHandler
+                0x08003828                ADC1_2_IRQHandler
+                0x08003828                SPI1_IRQHandler
+                0x08003828                TAMPER_IRQHandler
+                0x08003828                DMA1_Channel4_IRQHandler
+                0x08003828                USART3_IRQHandler
+                0x08003828                RTC_IRQHandler
+                0x08003828                DMA1_Channel7_IRQHandler
+                0x08003828                CAN1_RX1_IRQHandler
+                0x08003828                TIM4_IRQHandler
+                0x08003828                I2C1_EV_IRQHandler
+                0x08003828                DMA1_Channel6_IRQHandler
+                0x08003828                TIM3_IRQHandler
+                0x08003828                RCC_IRQHandler
+                0x08003828                TIM1_TRG_COM_IRQHandler
+                0x08003828                Default_Handler
+                0x08003828                EXTI15_10_IRQHandler
+                0x08003828                EXTI9_5_IRQHandler
+                0x08003828                SPI2_IRQHandler
+                0x08003828                DMA1_Channel5_IRQHandler
+                0x08003828                EXTI4_IRQHandler
+                0x08003828                USB_LP_CAN1_RX0_IRQHandler
+                0x08003828                USB_HP_CAN1_TX_IRQHandler
+                0x08003828                DMA1_Channel3_IRQHandler
+                0x08003828                TIM1_UP_IRQHandler
+                0x08003828                WWDG_IRQHandler
+                0x08003828                TIM2_IRQHandler
+                0x08003828                TIM1_BRK_IRQHandler
+                0x08003828                EXTI1_IRQHandler
+                0x08003828                I2C2_ER_IRQHandler
+                0x08003828                DMA1_Channel2_IRQHandler
+                0x08003828                CAN1_SCE_IRQHandler
+                0x08003828                FLASH_IRQHandler
+                0x08003828                USART1_IRQHandler
+                0x08003828                I2C1_ER_IRQHandler
+                0x08003828                USBWakeUp_IRQHandler
+ *fill*         0x0800382a        0x2 
  .text.__libc_init_array
-                0x08003804       0x48 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-init.o)
-                0x08003804                __libc_init_array
- .text.memset   0x0800384c       0x10 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-memset.o)
-                0x0800384c                memset
+                0x0800382c       0x48 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-init.o)
+                0x0800382c                __libc_init_array
+ .text.memset   0x08003874       0x10 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-memset.o)
+                0x08003874                memset
  *(.glue_7)
- .glue_7        0x0800385c        0x0 linker stubs
+ .glue_7        0x08003884        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x0800385c        0x0 linker stubs
+ .glue_7t       0x08003884        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x0800385c        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+ .eh_frame      0x08003884        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
  *(.init)
- .init          0x0800385c        0x4 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o
-                0x0800385c                _init
- .init          0x08003860        0x8 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
+ .init          0x08003884        0x4 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o
+                0x08003884                _init
+ .init          0x08003888        0x8 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
  *(.fini)
- .fini          0x08003868        0x4 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o
-                0x08003868                _fini
- .fini          0x0800386c        0x8 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
-                0x08003874                . = ALIGN (0x4)
-                0x08003874                _etext = .
+ .fini          0x08003890        0x4 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o
+                0x08003890                _fini
+ .fini          0x08003894        0x8 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
+                0x0800389c                . = ALIGN (0x4)
+                0x0800389c                _etext = .
 
-.vfp11_veneer   0x08003874        0x0
- .vfp11_veneer  0x08003874        0x0 linker stubs
+.vfp11_veneer   0x0800389c        0x0
+ .vfp11_veneer  0x0800389c        0x0 linker stubs
 
-.v4_bx          0x08003874        0x0
- .v4_bx         0x08003874        0x0 linker stubs
+.v4_bx          0x0800389c        0x0
+ .v4_bx         0x0800389c        0x0 linker stubs
 
-.iplt           0x08003874        0x0
- .iplt          0x08003874        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+.iplt           0x0800389c        0x0
+ .iplt          0x0800389c        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
 
-.rodata         0x08003874       0x2c
-                0x08003874                . = ALIGN (0x4)
+.rodata         0x0800389c       0x2c
+                0x0800389c                . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x08003874       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
+ .rodata        0x0800389c       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
  *(.rodata*)
- *fill*         0x08003886        0x2 
+ *fill*         0x080038ae        0x2 
  .rodata.AHBPrescTable
-                0x08003888       0x10 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
-                0x08003888                AHBPrescTable
+                0x080038b0       0x10 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
+                0x080038b0                AHBPrescTable
  .rodata.APBPrescTable
-                0x08003898        0x8 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
-                0x08003898                APBPrescTable
-                0x080038a0                . = ALIGN (0x4)
+                0x080038c0        0x8 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
+                0x080038c0                APBPrescTable
+                0x080038c8                . = ALIGN (0x4)
 
-.rel.dyn        0x080038a0        0x0
- .rel.iplt      0x080038a0        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+.rel.dyn        0x080038c8        0x0
+ .rel.iplt      0x080038c8        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x080038a0        0x0
-                0x080038a0                __exidx_start = .
+.ARM            0x080038c8        0x0
+                0x080038c8                __exidx_start = .
  *(.ARM.exidx*)
-                0x080038a0                __exidx_end = .
+                0x080038c8                __exidx_end = .
 
-.preinit_array  0x080038a0        0x0
-                0x080038a0                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x080038c8        0x0
+                0x080038c8                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x080038a0                PROVIDE (__preinit_array_end = .)
+                0x080038c8                PROVIDE (__preinit_array_end = .)
 
-.init_array     0x080038a0        0x4
-                0x080038a0                PROVIDE (__init_array_start = .)
+.init_array     0x080038c8        0x4
+                0x080038c8                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x080038a0        0x4 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
-                0x080038a4                PROVIDE (__init_array_end = .)
+ .init_array    0x080038c8        0x4 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+                0x080038cc                PROVIDE (__init_array_end = .)
 
-.fini_array     0x080038a4        0x4
+.fini_array     0x080038cc        0x4
                 [!provide]                PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x080038a4        0x4 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+ .fini_array    0x080038cc        0x4 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
                 [!provide]                PROVIDE (__fini_array_end = .)
-                0x080038a8                _sidata = LOADADDR (.data)
+                0x080038d0                _sidata = LOADADDR (.data)
 
-.data           0x20000000        0xc load address 0x080038a8
+.data           0x20000000        0xc load address 0x080038d0
                 0x20000000                . = ALIGN (0x4)
                 0x20000000                _sdata = .
  *(.data)
@@ -1387,11 +1387,11 @@ LOAD c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
                 0x2000000c                . = ALIGN (0x4)
                 0x2000000c                _edata = .
 
-.igot.plt       0x2000000c        0x0 load address 0x080038b4
+.igot.plt       0x2000000c        0x0 load address 0x080038dc
  .igot.plt      0x2000000c        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
                 0x2000000c                . = ALIGN (0x4)
 
-.bss            0x2000000c      0x114 load address 0x080038b4
+.bss            0x2000000c      0x114 load address 0x080038dc
                 0x2000000c                _sbss = .
                 0x2000000c                __bss_start__ = _sbss
  *(.bss)
@@ -1414,7 +1414,7 @@ LOAD c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
                 0x20000120                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x20000120      0x600 load address 0x080038b4
+                0x20000120      0x600 load address 0x080038dc
                 0x20000120                . = ALIGN (0x8)
                 0x20000120                PROVIDE (end = .)
                 [!provide]                PROVIDE (_end = .)
@@ -1557,7 +1557,7 @@ OUTPUT(hoverGate_fw.elf elf32-littlearm)
  .debug_ranges  0x00000ba0       0x18 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
  .debug_ranges  0x00000bb8       0x20 CMakeFiles/hoverGate_fw.elf.dir/startup/startup_stm32f103xb.s.obj
 
-.debug_line     0x00000000     0x594f
+.debug_line     0x00000000     0x5955
  .debug_line    0x00000000      0x41e CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
  .debug_line    0x0000041e      0x7ad CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
  .debug_line    0x00000bcb      0x4ef CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
@@ -1568,11 +1568,11 @@ OUTPUT(hoverGate_fw.elf elf32-littlearm)
  .debug_line    0x000023fa     0x1321 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
  .debug_line    0x0000371b      0x888 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
  .debug_line    0x00003fa3      0xb67 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .debug_line    0x00004b0a      0x4ac CMakeFiles/hoverGate_fw.elf.dir/Src/main.c.obj
- .debug_line    0x00004fb6      0x36c CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_hal_msp.c.obj
- .debug_line    0x00005322      0x31b CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
- .debug_line    0x0000563d      0x269 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
- .debug_line    0x000058a6       0xa9 CMakeFiles/hoverGate_fw.elf.dir/startup/startup_stm32f103xb.s.obj
+ .debug_line    0x00004b0a      0x4b2 CMakeFiles/hoverGate_fw.elf.dir/Src/main.c.obj
+ .debug_line    0x00004fbc      0x36c CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_hal_msp.c.obj
+ .debug_line    0x00005328      0x31b CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
+ .debug_line    0x00005643      0x269 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
+ .debug_line    0x000058ac       0xa9 CMakeFiles/hoverGate_fw.elf.dir/startup/startup_stm32f103xb.s.obj
 
 .debug_str      0x00000000     0x3b97
  .debug_str     0x00000000      0x808 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj

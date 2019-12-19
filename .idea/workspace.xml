@@ -2,8 +2,8 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="hoverGate_fw" targetName="UPLOAD" />
       <config projectName="hoverGate_fw" targetName="hoverGate_fw.elf" />
+      <config projectName="hoverGate_fw" targetName="UPLOAD" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -13,8 +13,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f1149c8-a152-4efe-bef3-3cee35c64369" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/hoverGate_fw.elf.dir/Src/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/hoverGate_fw.elf.dir/Src/main.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/hoverGate_fw.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/hoverGate_fw.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/hoverGate_fw.elf" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/hoverGate_fw.elf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/hoverGate_fw.hex" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/hoverGate_fw.hex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/hoverGate_fw.map" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/hoverGate_fw.map" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,8 +40,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Src/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-154">
-              <caret line="438" column="3" lean-forward="true" selection-start-line="438" selection-start-column="3" selection-end-line="438" selection-end-column="3" />
+            <state relative-caret-position="213">
+              <caret line="271" column="120" selection-start-line="271" selection-start-column="120" selection-end-line="271" selection-end-column="120" />
               <folding>
                 <element signature="e#985#1005#0" expanded="true" />
               </folding>
@@ -71,8 +74,8 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-14" />
     <option name="y" value="-14" />
-    <option name="width" value="2589" />
-    <option name="height" value="1469" />
+    <option name="width" value="2590" />
+    <option name="height" value="1470" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -154,11 +157,34 @@
       <option name="project" value="LOCAL" />
       <updated>1576692301565</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fixed critical error (inverted LOW side outputs). set CHxN pwm polarity low and idle state set. added power latch output.">
+      <created>1576752570790</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1576752570790</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Fixed critical error (inverted LOW side outputs). set CHxN pwm polarity low and idle state set. added power latch output.">
+      <created>1576752664980</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1576752664980</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24536000" />
+    <option name="totallyTimeSpent" value="25286000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1477" height="797" extended-state="6" />
@@ -173,10 +199,10 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39925718" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Serial Monitor" order="7" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32882884" />
+      <window_info anchor="bottom" id="Serial Monitor" order="7" weight="0.32882884" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.3286908" />
+      <window_info active="true" anchor="bottom" id="Messages" order="9" visible="true" weight="0.21771772" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="12" />
@@ -188,8 +214,11 @@
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="added dead-time note" />
-    <option name="LAST_COMMIT_MESSAGE" value="added dead-time note" />
+    <MESSAGE value="Fixed critical error (inverted LOW side outputs). set CHxN pwm polarity low and idle state set. added power latch output." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed critical error (inverted LOW side outputs). set CHxN pwm polarity low and idle state set. added power latch output." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c">
@@ -204,8 +233,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Src/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-154">
-          <caret line="438" column="3" lean-forward="true" selection-start-line="438" selection-start-column="3" selection-end-line="438" selection-end-column="3" />
+        <state relative-caret-position="213">
+          <caret line="271" column="120" selection-start-line="271" selection-start-column="120" selection-end-line="271" selection-end-column="120" />
           <folding>
             <element signature="e#985#1005#0" expanded="true" />
           </folding>

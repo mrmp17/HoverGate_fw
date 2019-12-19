@@ -64,6 +64,8 @@ void Error_Handler(void);
 #define BP_LED_GPIO_Port GPIOC
 #define HALL_C_Pin GPIO_PIN_14
 #define HALL_C_GPIO_Port GPIOC
+#define POWER_SW_Pin GPIO_PIN_15
+#define POWER_SW_GPIO_Port GPIOC
 #define HALL_B_Pin GPIO_PIN_1
 #define HALL_B_GPIO_Port GPIOD
 #define V_BAT_Pin GPIO_PIN_4
