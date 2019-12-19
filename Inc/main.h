@@ -70,10 +70,24 @@ void Error_Handler(void);
 #define V_BAT_GPIO_Port GPIOA
 #define I_BAT_Pin GPIO_PIN_6
 #define I_BAT_GPIO_Port GPIOA
+#define POWER_LATCH_Pin GPIO_PIN_2
+#define POWER_LATCH_GPIO_Port GPIOB
 #define BUZZ_Pin GPIO_PIN_10
 #define BUZZ_GPIO_Port GPIOB
 #define HALL_A_Pin GPIO_PIN_11
 #define HALL_A_GPIO_Port GPIOB
+#define Y_LOW_Pin GPIO_PIN_13
+#define Y_LOW_GPIO_Port GPIOB
+#define B_LOW_Pin GPIO_PIN_14
+#define B_LOW_GPIO_Port GPIOB
+#define G_LOW_Pin GPIO_PIN_15
+#define G_LOW_GPIO_Port GPIOB
+#define Y_HIGH_Pin GPIO_PIN_8
+#define Y_HIGH_GPIO_Port GPIOA
+#define B_HIGH_Pin GPIO_PIN_9
+#define B_HIGH_GPIO_Port GPIOA
+#define G_HIGH_Pin GPIO_PIN_10
+#define G_HIGH_GPIO_Port GPIOA
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
