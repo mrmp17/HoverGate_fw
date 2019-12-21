@@ -74,17 +74,23 @@ static void MX_TIM1_Init(void);
 /* USER CODE BEGIN 0 */
 void phaseSetPWM(uint8_t phase, uint32_t pwm_set){
     switch(phase){
-        case 1:
+      case 1:
+            HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
+            HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_1);
             __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, pwm_set);
             HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
             HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_1);
             break;
         case 2:
+            HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_2);
+            HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_2);
             __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, pwm_set);
             HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
             HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
             break;
         case 3:
+            HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_3);
+            HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_3);
             __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3, pwm_set);
             HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
             HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_3);
@@ -95,16 +101,22 @@ void phaseSetPWM(uint8_t phase, uint32_t pwm_set){
 void phaseSetLOW(uint8_t phase){
     switch(phase){
         case 1:
+            HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
+            HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_1);
             __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 0);
             HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
             HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_1);
             break;
         case 2:
+            HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_2);
+            HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_2);
             __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 0);
             HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
             HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
             break;
         case 3:
+            HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_3);
+            HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_3);
             __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3, 0);
             HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
             HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_3);
@@ -272,20 +284,134 @@ int main(void)
   HAL_GPIO_WritePin(POWER_LATCH_GPIO_Port, POWER_LATCH_Pin, GPIO_PIN_SET); //Set power latch. should keep logic power ON
   int n = 1;
   HAL_Delay(2000);
+
+  HAL_GPIO_TogglePin(BUZZ_GPIO_Port, BUZZ_Pin);
+  HAL_GPIO_TogglePin(BP_LED_GPIO_Port, BP_LED_Pin);
+  HAL_Delay(100);
+  HAL_GPIO_TogglePin(BUZZ_GPIO_Port, BUZZ_Pin);
+  HAL_GPIO_TogglePin(BP_LED_GPIO_Port, BP_LED_Pin);
+  HAL_Delay(400);
+  HAL_GPIO_TogglePin(BUZZ_GPIO_Port, BUZZ_Pin);
+  HAL_GPIO_TogglePin(BP_LED_GPIO_Port, BP_LED_Pin);
+  HAL_Delay(100);
+  HAL_GPIO_TogglePin(BUZZ_GPIO_Port, BUZZ_Pin);
+  HAL_GPIO_TogglePin(BP_LED_GPIO_Port, BP_LED_Pin);
+  HAL_Delay(400);
+
+//  phaseSetLOW(3);
+//
+//  phaseSetPWM(1, 500);
+//  HAL_Delay(10);
+//  phaseSetLOW(2);
+//  HAL_Delay(10);
+//  phaseSetFLOAT(1);
+//  HAL_Delay(10);
+//  phaseSetPWM(2, 100);
+//  HAL_Delay(10);
+//  phaseSetLOW(1);
+//  HAL_Delay(10);
+//  phaseSetFLOAT(2);
+//  HAL_Delay(10);
+//  phaseSetFLOAT(1);
+
+  /*
+   * float
+   * pwm
+   * float
+   * low
+   *
+   * float
+   * low
+   * pwm
+   * float
+   */
+
+  //set 1 low
+  //HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
+  //HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_1);
+
+//  __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 500);  //phase high, pwm is at 500
+//  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+//  HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
+//  HAL_Delay(10);
+
+//  HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
+//  HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_1);
+//  __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 500);  //phase high, pwm is at 500
+//  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+//  HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_1);
+//  HAL_Delay(10);
+//
+//  HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
+//  HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_1);
+//  __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 0);  //phase low - h at 0, l at 1 - low side on
+//  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+//  HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_1);
+//  HAL_Delay(10);
+//
+//  HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
+//  HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_1);
+//  __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 500);  //phase high, pwm is at 500
+//  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+//  HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_1);
+//  HAL_Delay(10);
+//
+//
+//  HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
+//  HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_1);
+//  __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 0);  //float
+
+
+
+
+
+
+//  phaseSetFLOAT(2);
+//  phaseSetFLOAT(2);
+//  phaseSetFLOAT(3);
+
+  //HAL_Delay(100000);
+
+  for(int i = 0 ; i<90 ; i++){
+    static int n = 1;
+    setPhases(n, 100, false, true);
+    if(n==6){
+      n = 1;
+    }
+    else{
+      n++;
+    }
+    HAL_Delay(80);
+  }
+  phaseSetFLOAT(1);
+  phaseSetFLOAT(2);
+  phaseSetFLOAT(3);
+
+  HAL_GPIO_TogglePin(BUZZ_GPIO_Port, BUZZ_Pin);
+  HAL_GPIO_TogglePin(BP_LED_GPIO_Port, BP_LED_Pin);
+  HAL_Delay(100);
+  HAL_GPIO_TogglePin(BUZZ_GPIO_Port, BUZZ_Pin);
+  HAL_GPIO_TogglePin(BP_LED_GPIO_Port, BP_LED_Pin);
+  HAL_Delay(400);
+  HAL_GPIO_TogglePin(BUZZ_GPIO_Port, BUZZ_Pin);
+  HAL_GPIO_TogglePin(BP_LED_GPIO_Port, BP_LED_Pin);
+  HAL_Delay(100);
+  HAL_GPIO_TogglePin(BUZZ_GPIO_Port, BUZZ_Pin);
+  HAL_GPIO_TogglePin(BP_LED_GPIO_Port, BP_LED_Pin);
+  HAL_Delay(400);
+
   while (1)
   {
-//      HAL_GPIO_TogglePin(BUZZ_GPIO_Port, BUZZ_Pin);
-//      HAL_Delay(1000);
 
 
-      setPhases(1, 100, false, true);
-      if(n<7) n++;
-      else{
-          n=1;
-          //HAL_Delay(1000);
-      }
-      HAL_GPIO_TogglePin(BP_LED_GPIO_Port, BP_LED_Pin);
-      HAL_Delay(200);
+
+
+
+
+
+
+
+
 
 
 
@@ -458,8 +584,8 @@ static void MX_TIM1_Init(void)
   {
     Error_Handler();
   }
-  sBreakDeadTimeConfig.OffStateRunMode = TIM_OSSR_DISABLE;
-  sBreakDeadTimeConfig.OffStateIDLEMode = TIM_OSSI_DISABLE;
+  sBreakDeadTimeConfig.OffStateRunMode = TIM_OSSR_ENABLE;
+  sBreakDeadTimeConfig.OffStateIDLEMode = TIM_OSSI_ENABLE;
   sBreakDeadTimeConfig.LockLevel = TIM_LOCKLEVEL_OFF;
   sBreakDeadTimeConfig.DeadTime = 32;
   sBreakDeadTimeConfig.BreakState = TIM_BREAK_DISABLE;
