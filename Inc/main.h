@@ -54,7 +54,7 @@ extern "C" {
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
-
+void TIM3_IRQHandler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/

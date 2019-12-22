@@ -23,6 +23,7 @@
 #include "stm32f1xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+//#include "BLDC_driver.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -57,6 +58,7 @@
 
 /* External variables --------------------------------------------------------*/
 extern DMA_HandleTypeDef hdma_adc1;
+extern TIM_HandleTypeDef htim3;
 extern UART_HandleTypeDef huart2;
 /* USER CODE BEGIN EV */
 
@@ -212,6 +214,21 @@ void DMA1_Channel1_IRQHandler(void)
 
   /* USER CODE END DMA1_Channel1_IRQn 1 */
 }
+
+///**
+//  * @brief This function handles TIM3 global interrupt. //@matej: this is now in main file!
+//  */
+//void TIM3_IRQHandler(void)
+//{
+//  /* USER CODE BEGIN TIM3_IRQn 0 */
+//  //BLDC.interrupt_handler();
+//
+//  /* USER CODE END TIM3_IRQn 0 */
+//  HAL_TIM_IRQHandler(&htim3);
+//  /* USER CODE BEGIN TIM3_IRQn 1 */
+//
+//  /* USER CODE END TIM3_IRQn 1 */
+//}
 
 /**
   * @brief This function handles USART2 global interrupt.

@@ -28,6 +28,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "BLDC_driver.h"
 
 /* USER CODE END Includes */
 
@@ -38,6 +39,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define ADC_BUFF_LEN 2
 
 /* USER CODE END PD */
 
@@ -49,6 +51,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+uint32_t ADC_buffer [ADC_BUFF_LEN] = {0};
 
 /* USER CODE END PV */
 
@@ -60,7 +63,23 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+BLDC_driver BLDC;
 
+//this interrupt handler is transfered from _it file!
+/**
+  * @brief This function handles TIM3 global interrupt.
+  */
+void TIM3_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM3_IRQn 0 */
+  BLDC.interrupt_handler();
+
+  /* USER CODE END TIM3_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim3);
+  /* USER CODE BEGIN TIM3_IRQn 1 */
+
+  /* USER CODE END TIM3_IRQn 1 */
+}
 /* USER CODE END 0 */
 
 /**
@@ -96,8 +115,17 @@ int main(void)
   MX_ADC1_Init();
   MX_USART2_UART_Init();
   MX_TIM1_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-
+  //HAL_ADCEx_Calibration_Start(&hadc1);  //calibrate ADC
+  //HAL_Delay(10);
+  //HAL_ADC_Start_DMA(&hadc1, ADC_buffer, ADC_BUFF_LEN); //start continuous adc conversion
+  HAL_GPIO_WritePin(POWER_LATCH_GPIO_Port, POWER_LATCH_Pin, GPIO_PIN_SET);
+  HAL_Delay(2000);
+  HAL_GPIO_TogglePin(BUZZ_GPIO_Port, BUZZ_Pin);
+  BLDC.begin();
+  //BLDC.set_pwm(100);
+  BLDC.enable();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -105,6 +133,20 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+    HAL_GPIO_TogglePin(BP_LED_GPIO_Port, BP_LED_Pin);
+    BLDC.set_pwm(100);
+    HAL_Delay(1000);
+    BLDC.set_pwm(300);
+    HAL_Delay(4000);
+    BLDC.set_pwm(100);
+    HAL_Delay(2000);
+    BLDC.set_pwm(0);
+    HAL_Delay(1000);
+    BLDC.set_pwm(-100);
+    HAL_Delay(4000);
+    BLDC.disable();
+    HAL_GPIO_TogglePin(BUZZ_GPIO_Port, BUZZ_Pin);
+    HAL_Delay(100000);
 
     /* USER CODE BEGIN 3 */
   }
