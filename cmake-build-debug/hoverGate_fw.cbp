@@ -288,7 +288,25 @@
 		<Unit filename="C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld">
 			<Option target="hoverGate_fw.elf"/>
 		</Unit>
-		<Unit filename="C:/Users/matej/Documents/projects/hoverGate_fw/Src/main.c">
+		<Unit filename="C:/Users/matej/Documents/projects/hoverGate_fw/Src/BLDC_driver.cpp">
+			<Option target="hoverGate_fw.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/matej/Documents/projects/hoverGate_fw/Src/BLDC_driver.h">
+			<Option target="hoverGate_fw.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/matej/Documents/projects/hoverGate_fw/Src/adc.c">
+			<Option target="hoverGate_fw.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/matej/Documents/projects/hoverGate_fw/Src/dma.c">
+			<Option target="hoverGate_fw.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/matej/Documents/projects/hoverGate_fw/Src/gpio.c">
+			<Option target="hoverGate_fw.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/matej/Documents/projects/hoverGate_fw/Src/main.cpp">
+			<Option target="hoverGate_fw.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/matej/Documents/projects/hoverGate_fw/Src/old_main.txt">
 			<Option target="hoverGate_fw.elf"/>
 		</Unit>
 		<Unit filename="C:/Users/matej/Documents/projects/hoverGate_fw/Src/stm32f1xx_hal_msp.c">
@@ -301,6 +319,12 @@
 			<Option target="hoverGate_fw.elf"/>
 		</Unit>
 		<Unit filename="C:/Users/matej/Documents/projects/hoverGate_fw/Src/system_stm32f1xx.c">
+			<Option target="hoverGate_fw.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/matej/Documents/projects/hoverGate_fw/Src/tim.c">
+			<Option target="hoverGate_fw.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/matej/Documents/projects/hoverGate_fw/Src/usart.c">
 			<Option target="hoverGate_fw.elf"/>
 		</Unit>
 		<Unit filename="C:/Users/matej/Documents/projects/hoverGate_fw/startup/startup_stm32f103xb.s">

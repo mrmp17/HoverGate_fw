@@ -567,32 +567,140 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.s:
 	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.s
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.s
 
-Src/main.obj: Src/main.c.obj
+Src/BLDC_driver.obj: Src/BLDC_driver.cpp.obj
+
+.PHONY : Src/BLDC_driver.obj
+
+# target to build an object file
+Src/BLDC_driver.cpp.obj:
+	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+.PHONY : Src/BLDC_driver.cpp.obj
+
+Src/BLDC_driver.i: Src/BLDC_driver.cpp.i
+
+.PHONY : Src/BLDC_driver.i
+
+# target to preprocess a source file
+Src/BLDC_driver.cpp.i:
+	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.i
+.PHONY : Src/BLDC_driver.cpp.i
+
+Src/BLDC_driver.s: Src/BLDC_driver.cpp.s
+
+.PHONY : Src/BLDC_driver.s
+
+# target to generate assembly for a file
+Src/BLDC_driver.cpp.s:
+	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.s
+.PHONY : Src/BLDC_driver.cpp.s
+
+Src/adc.obj: Src/adc.c.obj
+
+.PHONY : Src/adc.obj
+
+# target to build an object file
+Src/adc.c.obj:
+	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.obj
+.PHONY : Src/adc.c.obj
+
+Src/adc.i: Src/adc.c.i
+
+.PHONY : Src/adc.i
+
+# target to preprocess a source file
+Src/adc.c.i:
+	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.i
+.PHONY : Src/adc.c.i
+
+Src/adc.s: Src/adc.c.s
+
+.PHONY : Src/adc.s
+
+# target to generate assembly for a file
+Src/adc.c.s:
+	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.s
+.PHONY : Src/adc.c.s
+
+Src/dma.obj: Src/dma.c.obj
+
+.PHONY : Src/dma.obj
+
+# target to build an object file
+Src/dma.c.obj:
+	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Src/dma.c.obj
+.PHONY : Src/dma.c.obj
+
+Src/dma.i: Src/dma.c.i
+
+.PHONY : Src/dma.i
+
+# target to preprocess a source file
+Src/dma.c.i:
+	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Src/dma.c.i
+.PHONY : Src/dma.c.i
+
+Src/dma.s: Src/dma.c.s
+
+.PHONY : Src/dma.s
+
+# target to generate assembly for a file
+Src/dma.c.s:
+	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Src/dma.c.s
+.PHONY : Src/dma.c.s
+
+Src/gpio.obj: Src/gpio.c.obj
+
+.PHONY : Src/gpio.obj
+
+# target to build an object file
+Src/gpio.c.obj:
+	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Src/gpio.c.obj
+.PHONY : Src/gpio.c.obj
+
+Src/gpio.i: Src/gpio.c.i
+
+.PHONY : Src/gpio.i
+
+# target to preprocess a source file
+Src/gpio.c.i:
+	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Src/gpio.c.i
+.PHONY : Src/gpio.c.i
+
+Src/gpio.s: Src/gpio.c.s
+
+.PHONY : Src/gpio.s
+
+# target to generate assembly for a file
+Src/gpio.c.s:
+	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Src/gpio.c.s
+.PHONY : Src/gpio.c.s
+
+Src/main.obj: Src/main.cpp.obj
 
 .PHONY : Src/main.obj
 
 # target to build an object file
-Src/main.c.obj:
-	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Src/main.c.obj
-.PHONY : Src/main.c.obj
+Src/main.cpp.obj:
+	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
+.PHONY : Src/main.cpp.obj
 
-Src/main.i: Src/main.c.i
+Src/main.i: Src/main.cpp.i
 
 .PHONY : Src/main.i
 
 # target to preprocess a source file
-Src/main.c.i:
-	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Src/main.c.i
-.PHONY : Src/main.c.i
+Src/main.cpp.i:
+	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.i
+.PHONY : Src/main.cpp.i
 
-Src/main.s: Src/main.c.s
+Src/main.s: Src/main.cpp.s
 
 .PHONY : Src/main.s
 
 # target to generate assembly for a file
-Src/main.c.s:
-	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Src/main.c.s
-.PHONY : Src/main.c.s
+Src/main.cpp.s:
+	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.s
+.PHONY : Src/main.cpp.s
 
 Src/stm32f1xx_hal_msp.obj: Src/stm32f1xx_hal_msp.c.obj
 
@@ -702,6 +810,60 @@ Src/system_stm32f1xx.c.s:
 	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.s
 .PHONY : Src/system_stm32f1xx.c.s
 
+Src/tim.obj: Src/tim.c.obj
+
+.PHONY : Src/tim.obj
+
+# target to build an object file
+Src/tim.c.obj:
+	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
+.PHONY : Src/tim.c.obj
+
+Src/tim.i: Src/tim.c.i
+
+.PHONY : Src/tim.i
+
+# target to preprocess a source file
+Src/tim.c.i:
+	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.i
+.PHONY : Src/tim.c.i
+
+Src/tim.s: Src/tim.c.s
+
+.PHONY : Src/tim.s
+
+# target to generate assembly for a file
+Src/tim.c.s:
+	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.s
+.PHONY : Src/tim.c.s
+
+Src/usart.obj: Src/usart.c.obj
+
+.PHONY : Src/usart.obj
+
+# target to build an object file
+Src/usart.c.obj:
+	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Src/usart.c.obj
+.PHONY : Src/usart.c.obj
+
+Src/usart.i: Src/usart.c.i
+
+.PHONY : Src/usart.i
+
+# target to preprocess a source file
+Src/usart.c.i:
+	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Src/usart.c.i
+.PHONY : Src/usart.c.i
+
+Src/usart.s: Src/usart.c.s
+
+.PHONY : Src/usart.s
+
+# target to generate assembly for a file
+Src/usart.c.s:
+	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Src/usart.c.s
+.PHONY : Src/usart.c.s
+
 startup/startup_stm32f103xb.obj: startup/startup_stm32f103xb.s.obj
 
 .PHONY : startup/startup_stm32f103xb.obj
@@ -769,6 +931,18 @@ help:
 	@echo ... Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.obj
 	@echo ... Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.i
 	@echo ... Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.s
+	@echo ... Src/BLDC_driver.obj
+	@echo ... Src/BLDC_driver.i
+	@echo ... Src/BLDC_driver.s
+	@echo ... Src/adc.obj
+	@echo ... Src/adc.i
+	@echo ... Src/adc.s
+	@echo ... Src/dma.obj
+	@echo ... Src/dma.i
+	@echo ... Src/dma.s
+	@echo ... Src/gpio.obj
+	@echo ... Src/gpio.i
+	@echo ... Src/gpio.s
 	@echo ... Src/main.obj
 	@echo ... Src/main.i
 	@echo ... Src/main.s
@@ -784,6 +958,12 @@ help:
 	@echo ... Src/system_stm32f1xx.obj
 	@echo ... Src/system_stm32f1xx.i
 	@echo ... Src/system_stm32f1xx.s
+	@echo ... Src/tim.obj
+	@echo ... Src/tim.i
+	@echo ... Src/tim.s
+	@echo ... Src/usart.obj
+	@echo ... Src/usart.i
+	@echo ... Src/usart.s
 	@echo ... startup/startup_stm32f103xb.obj
 .PHONY : help
 

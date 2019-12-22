@@ -19,7 +19,7 @@
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
-#include "main.h"
+#include "old_main.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -35,6 +35,11 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define PHASE_Y 1
+#define PHASE_B 2
+#define PHASE_G 3
+
+#define ADC_BUFF_LEN 2
 
 /* USER CODE END PD */
 
@@ -52,9 +57,12 @@ TIM_HandleTypeDef htim1;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
-bool enableBLDC = false;
-bool dir = false;
-uint32_t pwm = 200;
+
+uint32_t ADC_buffer [ADC_BUFF_LEN] = {0};
+
+bool global_enableBLDC = false;
+bool global_dir = false;
+uint32_t global_pwm = 0;
 
 
 /* USER CODE END PV */
@@ -74,21 +82,21 @@ static void MX_TIM1_Init(void);
 /* USER CODE BEGIN 0 */
 void phaseSetPWM(uint8_t phase, uint32_t pwm_set){
     switch(phase){
-      case 1:
+      case PHASE_Y:
             HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
             HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_1);
             __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, pwm_set);
             HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
             HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_1);
             break;
-        case 2:
+        case PHASE_B:
             HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_2);
             HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_2);
             __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, pwm_set);
             HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
             HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
             break;
-        case 3:
+        case PHASE_G:
             HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_3);
             HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_3);
             __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3, pwm_set);
@@ -100,21 +108,21 @@ void phaseSetPWM(uint8_t phase, uint32_t pwm_set){
 }
 void phaseSetLOW(uint8_t phase){
     switch(phase){
-        case 1:
+        case PHASE_Y:
             HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
             HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_1);
             __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 0);
             HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
             HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_1);
             break;
-        case 2:
+        case PHASE_B:
             HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_2);
             HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_2);
             __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 0);
             HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
             HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
             break;
-        case 3:
+        case PHASE_G:
             HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_3);
             HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_3);
             __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3, 0);
@@ -127,17 +135,17 @@ void phaseSetLOW(uint8_t phase){
 }
 void phaseSetFLOAT(uint8_t phase){
     switch(phase){
-        case 1:
+        case PHASE_Y:
             HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
             HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_1);
             __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 0);
             break;
-        case 2:
+        case PHASE_B:
             HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_2);
             HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_2);
             __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 0);
             break;
-        case 3:
+        case PHASE_G:
             HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_3);
             HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_3);
             __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3, 0);
@@ -147,92 +155,113 @@ void phaseSetFLOAT(uint8_t phase){
 
 void setPhases(uint8_t pos, uint32_t pwm_val, bool direction, bool is_enabled){
     if(!is_enabled){
-        phaseSetFLOAT(1);
-        phaseSetFLOAT(2);
-        phaseSetFLOAT(3);
+        phaseSetFLOAT(PHASE_Y);
+        phaseSetFLOAT(PHASE_B);
+        phaseSetFLOAT(PHASE_G);
         return;
     }
     switch(pos){
         case 1:
             if(!direction){
-                phaseSetFLOAT(1);
-                phaseSetPWM(2, pwm_val);
-                phaseSetLOW(3);
+                phaseSetFLOAT(PHASE_Y);
+                phaseSetPWM(PHASE_B, pwm_val);
+                phaseSetLOW(PHASE_G);
             }
             else{
-                phaseSetFLOAT(1);
-                phaseSetPWM(3, pwm_val);
-                phaseSetLOW(2);
+                phaseSetFLOAT(PHASE_Y);
+                phaseSetPWM(PHASE_G, pwm_val);
+                phaseSetLOW(PHASE_B);
             }
             break;
         case 2:
             if(!direction){
-                phaseSetFLOAT(3);
-                phaseSetPWM(2, pwm_val);
-                phaseSetLOW(1);
+                phaseSetFLOAT(PHASE_G);
+                phaseSetPWM(PHASE_B, pwm_val);
+                phaseSetLOW(PHASE_Y);
             }
             else{
-                phaseSetFLOAT(3);
-                phaseSetPWM(1, pwm_val);
-                phaseSetLOW(2);
+                phaseSetFLOAT(PHASE_G);
+                phaseSetPWM(PHASE_Y, pwm_val);
+                phaseSetLOW(PHASE_B);
             }
             break;
         case 3:
             if(!direction){
-                phaseSetFLOAT(2);
-                phaseSetPWM(3, pwm_val);
-                phaseSetLOW(1);
+                phaseSetFLOAT(PHASE_B);
+                phaseSetPWM(PHASE_G, pwm_val);
+                phaseSetLOW(PHASE_Y);
             }
             else{
-                phaseSetFLOAT(2);
-                phaseSetPWM(1, pwm_val);
-                phaseSetLOW(3);
+                phaseSetFLOAT(PHASE_B);
+                phaseSetPWM(PHASE_Y, pwm_val);
+                phaseSetLOW(PHASE_G);
             }
             break;
         case 4:
             if(!direction){
-                phaseSetFLOAT(1);
-                phaseSetPWM(3, pwm_val);
-                phaseSetLOW(2);
+                phaseSetFLOAT(PHASE_Y);
+                phaseSetPWM(PHASE_G, pwm_val);
+                phaseSetLOW(PHASE_B);
             }
             else{
-                phaseSetFLOAT(1);
-                phaseSetPWM(2, pwm_val);
-                phaseSetLOW(3);
+                phaseSetFLOAT(PHASE_Y);
+                phaseSetPWM(PHASE_B, pwm_val);
+                phaseSetLOW(PHASE_G);
             }
             break;
         case 5:
             if(!direction){
-                phaseSetFLOAT(3);
-                phaseSetPWM(1, pwm_val);
-                phaseSetLOW(2);
+                phaseSetFLOAT(PHASE_G);
+                phaseSetPWM(PHASE_Y, pwm_val);
+                phaseSetLOW(PHASE_B);
             }
             else{
-                phaseSetFLOAT(3);
-                phaseSetPWM(2, pwm_val);
-                phaseSetLOW(1);
+                phaseSetFLOAT(PHASE_G);
+                phaseSetPWM(PHASE_B, pwm_val);
+                phaseSetLOW(PHASE_Y);
             }
             break;
         case 6:
             if(!direction){
-                phaseSetFLOAT(2);
-                phaseSetPWM(1, pwm_val);
-                phaseSetLOW(3);
+                phaseSetFLOAT(PHASE_B);
+                phaseSetPWM(PHASE_Y, pwm_val);
+                phaseSetLOW(PHASE_G);
             }
             else{
-                phaseSetFLOAT(2);
-                phaseSetPWM(3, pwm_val);
-                phaseSetLOW(1);
+                phaseSetFLOAT(PHASE_B);
+                phaseSetPWM(PHASE_G, pwm_val);
+                phaseSetLOW(PHASE_Y);
             }
             break;
         default:
-            phaseSetFLOAT(1);
-            phaseSetFLOAT(2);
-            phaseSetFLOAT(3);
+            phaseSetFLOAT(PHASE_Y);
+            phaseSetFLOAT(PHASE_B);
+            phaseSetFLOAT(PHASE_G);
             break;
     }
 
 
+
+}
+
+void BLDC_int_handler(){  //call this inside ADC DMA interrupt
+  bool HALL_states [3] = {0};
+  HALL_states[0] = HAL_GPIO_ReadPin(HALL_A_GPIO_Port, HALL_A_Pin) == GPIO_PIN_SET ? true : false;
+  HALL_states[1] = HAL_GPIO_ReadPin(HALL_B_GPIO_Port, HALL_B_Pin) == GPIO_PIN_SET ? true : false;
+  HALL_states[2] = HAL_GPIO_ReadPin(HALL_C_GPIO_Port, HALL_C_Pin) == GPIO_PIN_SET ? true : false;
+  uint8_t pwmLoc = 0;
+       if (HALL_states[0] == 0 && HALL_states[1] == 0 && HALL_states[2] == 0) pwmLoc = 0; //not valid
+  else if (HALL_states[0] == 0 && HALL_states[1] == 0 && HALL_states[2] == 1) pwmLoc = 1;
+  else if (HALL_states[0] == 0 && HALL_states[1] == 1 && HALL_states[2] == 0) pwmLoc = 5;
+  else if (HALL_states[0] == 0 && HALL_states[1] == 1 && HALL_states[2] == 1) pwmLoc = 6;
+  else if (HALL_states[0] == 1 && HALL_states[1] == 0 && HALL_states[2] == 0) pwmLoc = 3;
+  else if (HALL_states[0] == 1 && HALL_states[1] == 0 && HALL_states[2] == 1) pwmLoc = 2;
+  else if (HALL_states[0] == 1 && HALL_states[1] == 1 && HALL_states[2] == 0) pwmLoc = 4;
+  else if (HALL_states[0] == 1 && HALL_states[1] == 1 && HALL_states[2] == 1) pwmLoc = 0; //not valid
+  int n = 0;
+
+  setPhases(pwmLoc, global_pwm, global_dir, global_enableBLDC);
+  //setPhases(1, 100, false, true);
 
 }
 
@@ -272,6 +301,12 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
+
+
+  HAL_ADCEx_Calibration_Start(&hadc1);  //calibrate ADC
+  HAL_Delay(10);
+  HAL_ADC_Start_DMA(&hadc1, ADC_buffer, ADC_BUFF_LEN); //start continuous adc conversion
+
 
 
 
@@ -372,20 +407,27 @@ int main(void)
 
   //HAL_Delay(100000);
 
-  for(int i = 0 ; i<90 ; i++){
-    static int n = 1;
-    setPhases(n, 100, false, true);
-    if(n==6){
-      n = 1;
-    }
-    else{
-      n++;
-    }
-    HAL_Delay(80);
-  }
-  phaseSetFLOAT(1);
-  phaseSetFLOAT(2);
-  phaseSetFLOAT(3);
+//  for(int i = 0 ; i<90 ; i++){
+//    static int n = 1;
+//    setPhases(n, 100, true, true);
+//    if(n==6){
+//      n = 1;
+//    }
+//    else{
+//      n++;
+//    }
+//    HAL_Delay(80);
+//  }
+//  phaseSetFLOAT(1);
+//  phaseSetFLOAT(2);
+//  phaseSetFLOAT(3);
+
+    //driving bldc using HALLS
+//  global_pwm = 80;
+//  global_dir = false;
+//  global_enableBLDC = true;
+//  HAL_Delay(2000);
+//  global_enableBLDC = false;
 
   HAL_GPIO_TogglePin(BUZZ_GPIO_Port, BUZZ_Pin);
   HAL_GPIO_TogglePin(BP_LED_GPIO_Port, BP_LED_Pin);
@@ -400,8 +442,35 @@ int main(void)
   HAL_GPIO_TogglePin(BP_LED_GPIO_Port, BP_LED_Pin);
   HAL_Delay(400);
 
+
+
+
+  global_pwm = 400;
+  global_dir = false;
+  global_enableBLDC = true;
   while (1)
   {
+    BLDC_int_handler();
+    if(HAL_GetTick()>13000){
+      global_enableBLDC = false;
+      phaseSetFLOAT(1);
+      phaseSetFLOAT(2);
+      phaseSetFLOAT(3);
+      HAL_GPIO_TogglePin(BUZZ_GPIO_Port, BUZZ_Pin);
+      HAL_GPIO_TogglePin(BP_LED_GPIO_Port, BP_LED_Pin);
+      HAL_Delay(100);
+      HAL_GPIO_TogglePin(BUZZ_GPIO_Port, BUZZ_Pin);
+      HAL_GPIO_TogglePin(BP_LED_GPIO_Port, BP_LED_Pin);
+      HAL_Delay(400);
+      HAL_GPIO_TogglePin(BUZZ_GPIO_Port, BUZZ_Pin);
+      HAL_GPIO_TogglePin(BP_LED_GPIO_Port, BP_LED_Pin);
+      HAL_Delay(100);
+      HAL_GPIO_TogglePin(BUZZ_GPIO_Port, BUZZ_Pin);
+      HAL_GPIO_TogglePin(BP_LED_GPIO_Port, BP_LED_Pin);
+      HAL_Delay(400);
+      HAL_Delay(100000);
+    }
+    HAL_Delay(1);
 
 
 
@@ -459,7 +528,7 @@ void SystemClock_Config(void)
     Error_Handler();
   }
   PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_ADC;
-  PeriphClkInit.AdcClockSelection = RCC_ADCPCLK2_DIV8;
+  PeriphClkInit.AdcClockSelection = RCC_ADCPCLK2_DIV2;
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
     Error_Handler();
@@ -500,7 +569,7 @@ static void MX_ADC1_Init(void)
   */
   sConfig.Channel = ADC_CHANNEL_4;
   sConfig.Rank = ADC_REGULAR_RANK_1;
-  sConfig.SamplingTime = ADC_SAMPLETIME_71CYCLES_5;
+  sConfig.SamplingTime = ADC_SAMPLETIME_55CYCLES_5;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
   {
     Error_Handler();
