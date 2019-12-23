@@ -540,33 +540,6 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.s:
 	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.s
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.s
 
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.obj: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
-
-.PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.obj
-
-# target to build an object file
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj:
-	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
-.PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
-
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.i: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.i
-
-.PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.i
-
-# target to preprocess a source file
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.i:
-	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.i
-.PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.i
-
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.s: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.s
-
-.PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.s
-
-# target to generate assembly for a file
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.s:
-	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.s
-.PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.s
-
 Src/BLDC_driver.obj: Src/BLDC_driver.cpp.obj
 
 .PHONY : Src/BLDC_driver.obj
@@ -837,33 +810,6 @@ Src/tim.c.s:
 	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.s
 .PHONY : Src/tim.c.s
 
-Src/usart.obj: Src/usart.c.obj
-
-.PHONY : Src/usart.obj
-
-# target to build an object file
-Src/usart.c.obj:
-	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Src/usart.c.obj
-.PHONY : Src/usart.c.obj
-
-Src/usart.i: Src/usart.c.i
-
-.PHONY : Src/usart.i
-
-# target to preprocess a source file
-Src/usart.c.i:
-	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Src/usart.c.i
-.PHONY : Src/usart.c.i
-
-Src/usart.s: Src/usart.c.s
-
-.PHONY : Src/usart.s
-
-# target to generate assembly for a file
-Src/usart.c.s:
-	$(MAKE) -f CMakeFiles\hoverGate_fw.elf.dir\build.make CMakeFiles/hoverGate_fw.elf.dir/Src/usart.c.s
-.PHONY : Src/usart.c.s
-
 startup/startup_stm32f103xb.obj: startup/startup_stm32f103xb.s.obj
 
 .PHONY : startup/startup_stm32f103xb.obj
@@ -928,9 +874,6 @@ help:
 	@echo ... Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.obj
 	@echo ... Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.i
 	@echo ... Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.s
-	@echo ... Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.obj
-	@echo ... Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.i
-	@echo ... Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.s
 	@echo ... Src/BLDC_driver.obj
 	@echo ... Src/BLDC_driver.i
 	@echo ... Src/BLDC_driver.s
@@ -961,9 +904,6 @@ help:
 	@echo ... Src/tim.obj
 	@echo ... Src/tim.i
 	@echo ... Src/tim.s
-	@echo ... Src/usart.obj
-	@echo ... Src/usart.i
-	@echo ... Src/usart.s
 	@echo ... startup/startup_stm32f103xb.obj
 .PHONY : help
 

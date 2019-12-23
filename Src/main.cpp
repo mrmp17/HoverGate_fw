@@ -23,7 +23,6 @@
 #include "adc.h"
 #include "dma.h"
 #include "tim.h"
-#include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -39,7 +38,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define ADC_BUFF_LEN 2
+#define ADC_BUFF_LEN 3
 
 /* USER CODE END PD */
 
@@ -113,13 +112,12 @@ int main(void)
   MX_GPIO_Init();
   MX_DMA_Init();
   MX_ADC1_Init();
-  MX_USART2_UART_Init();
   MX_TIM1_Init();
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-  //HAL_ADCEx_Calibration_Start(&hadc1);  //calibrate ADC
-  //HAL_Delay(10);
-  //HAL_ADC_Start_DMA(&hadc1, ADC_buffer, ADC_BUFF_LEN); //start continuous adc conversion
+  HAL_ADCEx_Calibration_Start(&hadc1);  //calibrate ADC
+  HAL_Delay(10);
+  HAL_ADC_Start_DMA(&hadc1, ADC_buffer, ADC_BUFF_LEN); //start continuous adc conversion
   HAL_GPIO_WritePin(POWER_LATCH_GPIO_Port, POWER_LATCH_Pin, GPIO_PIN_SET);
   HAL_Delay(2000);
   HAL_GPIO_TogglePin(BUZZ_GPIO_Port, BUZZ_Pin);
@@ -133,20 +131,27 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-    HAL_GPIO_TogglePin(BP_LED_GPIO_Port, BP_LED_Pin);
-    BLDC.set_pwm(100);
-    HAL_Delay(1000);
-    BLDC.set_pwm(300);
-    HAL_Delay(4000);
-    BLDC.set_pwm(100);
-    HAL_Delay(2000);
-    BLDC.set_pwm(0);
-    HAL_Delay(1000);
-    BLDC.set_pwm(-100);
-    HAL_Delay(4000);
-    BLDC.disable();
-    HAL_GPIO_TogglePin(BUZZ_GPIO_Port, BUZZ_Pin);
-    HAL_Delay(100000);
+    double pot_val = ADC_buffer[2];
+    pot_val = (pot_val-2047)/6;
+    int16_t int_pot_val = (int16_t)pot_val;
+    BLDC.set_pwm(int_pot_val);
+    HAL_Delay(100);
+
+
+//    HAL_GPIO_TogglePin(BP_LED_GPIO_Port, BP_LED_Pin);
+//    BLDC.set_pwm(100);
+//    HAL_Delay(1000);
+//    BLDC.set_pwm(300);
+//    HAL_Delay(4000);
+//    BLDC.set_pwm(100);
+//    HAL_Delay(2000);
+//    BLDC.set_pwm(0);
+//    HAL_Delay(1000);
+//    BLDC.set_pwm(-100);
+//    HAL_Delay(4000);
+//    BLDC.disable();
+//    HAL_GPIO_TogglePin(BUZZ_GPIO_Port, BUZZ_Pin);
+//    HAL_Delay(100000);
 
     /* USER CODE BEGIN 3 */
   }

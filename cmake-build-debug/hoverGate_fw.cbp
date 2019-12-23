@@ -234,9 +234,6 @@
 		<Unit filename="C:/Users/matej/Documents/projects/hoverGate_fw/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h">
 			<Option target="hoverGate_fw.elf"/>
 		</Unit>
-		<Unit filename="C:/Users/matej/Documents/projects/hoverGate_fw/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h">
-			<Option target="hoverGate_fw.elf"/>
-		</Unit>
 		<Unit filename="C:/Users/matej/Documents/projects/hoverGate_fw/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c">
 			<Option target="hoverGate_fw.elf"/>
 		</Unit>
@@ -282,9 +279,6 @@
 		<Unit filename="C:/Users/matej/Documents/projects/hoverGate_fw/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c">
 			<Option target="hoverGate_fw.elf"/>
 		</Unit>
-		<Unit filename="C:/Users/matej/Documents/projects/hoverGate_fw/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c">
-			<Option target="hoverGate_fw.elf"/>
-		</Unit>
 		<Unit filename="C:/Users/matej/Documents/projects/hoverGate_fw/STM32F103C8Tx_FLASH.ld">
 			<Option target="hoverGate_fw.elf"/>
 		</Unit>
@@ -322,9 +316,6 @@
 			<Option target="hoverGate_fw.elf"/>
 		</Unit>
 		<Unit filename="C:/Users/matej/Documents/projects/hoverGate_fw/Src/tim.c">
-			<Option target="hoverGate_fw.elf"/>
-		</Unit>
-		<Unit filename="C:/Users/matej/Documents/projects/hoverGate_fw/Src/usart.c">
 			<Option target="hoverGate_fw.elf"/>
 		</Unit>
 		<Unit filename="C:/Users/matej/Documents/projects/hoverGate_fw/startup/startup_stm32f103xb.s">
