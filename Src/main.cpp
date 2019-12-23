@@ -124,18 +124,31 @@ int main(void)
   BLDC.begin();
   //BLDC.set_pwm(100);
   BLDC.enable();
+
+  //BLDC.set_pwm(100);
+  BLDC.ramp_pwm(0, 800, 1000);
+  HAL_Delay(4000);
+  BLDC.ramp_pwm(800, 0, 500);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* USER CODE END WHILE */
-    double pot_val = ADC_buffer[2];
-    pot_val = (pot_val-2047)/6;
-    int16_t int_pot_val = (int16_t)pot_val;
-    BLDC.set_pwm(int_pot_val);
-    HAL_Delay(100);
+    if(HAL_GPIO_ReadPin(POWER_SW_GPIO_Port, POWER_SW_Pin) == GPIO_PIN_SET){ //turn off latch if power switch pressed
+      BLDC.disable(); //disable BLDC
+      HAL_GPIO_WritePin(POWER_LATCH_GPIO_Port, POWER_LATCH_Pin, GPIO_PIN_RESET);
+      HAL_Delay(100000);  //do nothing - wait for power-off
+    }
+
+
+    //pot control code
+//    double pot_val = ADC_buffer[2];
+//    pot_val = (pot_val-2047)/4;
+//    int16_t int_pot_val = (int16_t)pot_val;
+//    BLDC.set_pwm(int_pot_val);
+//    uint32_t steps = BLDC.get_encoder();
+//    HAL_Delay(10);
 
 
 //    HAL_GPIO_TogglePin(BP_LED_GPIO_Port, BP_LED_Pin);
@@ -152,6 +165,8 @@ int main(void)
 //    BLDC.disable();
 //    HAL_GPIO_TogglePin(BUZZ_GPIO_Port, BUZZ_Pin);
 //    HAL_Delay(100000);
+    /* USER CODE END WHILE */
+
 
     /* USER CODE BEGIN 3 */
   }

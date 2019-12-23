@@ -1,11 +1,19 @@
 Archive member included to satisfy reference by file (symbol)
 
+c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libstdc++_nano.a(guard.o)
+                              CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj (__cxa_guard_acquire)
 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_addsubdf3.o)
                               CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj (__aeabi_i2d)
 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_muldivdf3.o)
                               CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj (__aeabi_dmul)
 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_fixunsdfsi.o)
                               CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj (__aeabi_d2uiz)
+c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_addsubsf3.o)
+                              CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj (__aeabi_fadd)
+c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_muldivsf3.o)
+                              CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj (__aeabi_fmul)
+c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_fixsfsi.o)
+                              CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj (__aeabi_f2iz)
 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(unwind-arm.o)
                               CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj (__aeabi_unwind_cpp_pr0)
 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(libunwind.o)
@@ -123,21 +131,13 @@ Discarded input sections
                 0x00000000      0x16c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
  .text.HAL_ADC_Stop_IT
                 0x00000000       0x68 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
- .text.HAL_ADC_Start_DMA
-                0x00000000      0x1bc CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
  .text.HAL_ADC_Stop_DMA
                 0x00000000       0x8a CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
  .text.HAL_ADC_GetValue
                 0x00000000       0x18 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
  .text.HAL_ADC_IRQHandler
                 0x00000000      0x186 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
- .text.HAL_ADC_ConvCpltCallback
-                0x00000000       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
- .text.HAL_ADC_ConvHalfCpltCallback
-                0x00000000       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
  .text.HAL_ADC_LevelOutOfWindowCallback
-                0x00000000       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
- .text.HAL_ADC_ErrorCallback
                 0x00000000       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
  .text.HAL_ADC_AnalogWDGConfig
                 0x00000000       0xac CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
@@ -145,19 +145,9 @@ Discarded input sections
                 0x00000000       0x16 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
  .text.HAL_ADC_GetError
                 0x00000000       0x16 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
- .text.ADC_Enable
-                0x00000000       0xa4 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
- .text.ADC_DMAConvCplt
-                0x00000000       0x7c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
- .text.ADC_DMAHalfConvCplt
-                0x00000000       0x1c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
- .text.ADC_DMAError
-                0x00000000       0x34 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
  .text          0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj
  .data          0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj
  .bss           0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj
- .text.HAL_ADCEx_Calibration_Start
-                0x00000000      0x138 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj
  .text.HAL_ADCEx_InjectedStart
                 0x00000000      0x10c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj
  .text.HAL_ADCEx_InjectedStop
@@ -182,17 +172,6 @@ Discarded input sections
                 0x00000000      0x32c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj
  .text.HAL_ADCEx_MultiModeConfigChannel
                 0x00000000       0x98 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj
- .debug_info    0x00000000      0x9f0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj
- .debug_abbrev  0x00000000      0x1f2 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj
- .debug_aranges
-                0x00000000       0x80 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj
- .debug_ranges  0x00000000       0x70 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj
- .debug_line    0x00000000      0x60b CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj
- .debug_str     0x00000000      0x91c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj
- .comment       0x00000000       0x80 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj
- .debug_frame   0x00000000      0x204 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj
- .ARM.attributes
-                0x00000000       0x33 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj
  .text          0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
  .data          0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
  .bss           0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
@@ -241,10 +220,10 @@ Discarded input sections
                 0x00000000       0xb8 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
  .text.HAL_DMA_Start
                 0x00000000       0x84 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
- .text.HAL_DMA_Start_IT
-                0x00000000       0xbe CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
  .text.HAL_DMA_Abort
                 0x00000000       0x74 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
+ .text.HAL_DMA_Abort_IT
+                0x00000000       0xec CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
  .text.HAL_DMA_PollForTransfer
                 0x00000000      0x30c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
  .text.HAL_DMA_RegisterCallback
@@ -255,8 +234,6 @@ Discarded input sections
                 0x00000000       0x18 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
  .text.HAL_DMA_GetError
                 0x00000000       0x16 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
- .text.DMA_SetConfig
-                0x00000000       0x5a CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
  .text          0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.obj
  .data          0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.obj
  .bss           0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.obj
@@ -470,6 +447,8 @@ Discarded input sections
                 0x00000000       0x18 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
  .text.HAL_RCC_DisableCSS
                 0x00000000       0x18 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
+ .text.HAL_RCC_GetPCLK1Freq
+                0x00000000       0x28 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
  .text.HAL_RCC_GetOscConfig
                 0x00000000      0x104 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
  .text.HAL_RCC_GetClockConfig
@@ -483,9 +462,6 @@ Discarded input sections
  .bss           0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj
  .text.HAL_RCCEx_GetPeriphCLKConfig
                 0x00000000       0x60 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj
- .rodata        0x00000000       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj
- .text.HAL_RCCEx_GetPeriphCLKFreq
-                0x00000000      0x178 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj
  .text          0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
  .data          0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
  .bss           0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
@@ -736,97 +712,6 @@ Discarded input sections
                 0x00000000       0x24 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
  .text.TIMEx_DMACommutationHalfCplt
                 0x00000000       0x24 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
- .text          0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .data          0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .bss           0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_HalfDuplex_Init
-                0x00000000       0xaa CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_LIN_Init
-                0x00000000       0xcc CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_MultiProcessor_Init
-                0x00000000       0xe0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_UART_DeInit
-                0x00000000       0x58 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_UART_MspInit
-                0x00000000       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_UART_MspDeInit
-                0x00000000       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_UART_Transmit
-                0x00000000      0x132 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_UART_Receive
-                0x00000000      0x14c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_UART_Transmit_IT
-                0x00000000       0x88 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_UART_Receive_IT
-                0x00000000       0xa8 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_UART_Transmit_DMA
-                0x00000000       0xd8 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_UART_Receive_DMA
-                0x00000000      0x100 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_UART_DMAPause
-                0x00000000       0xc6 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_UART_DMAResume
-                0x00000000       0xa0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_UART_DMAStop
-                0x00000000       0xb6 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_UART_Abort
-                0x00000000      0x104 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_UART_AbortTransmit
-                0x00000000       0x88 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_UART_AbortReceive
-                0x00000000       0x98 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_UART_Abort_IT
-                0x00000000      0x148 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_UART_AbortTransmit_IT
-                0x00000000       0xa0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_UART_AbortReceive_IT
-                0x00000000       0xb0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_UART_TxHalfCpltCallback
-                0x00000000       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_UART_RxHalfCpltCallback
-                0x00000000       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_UART_AbortCpltCallback
-                0x00000000       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_UART_AbortTransmitCpltCallback
-                0x00000000       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_UART_AbortReceiveCpltCallback
-                0x00000000       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_LIN_SendBreak
-                0x00000000       0x52 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_MultiProcessor_EnterMuteMode
-                0x00000000       0x52 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_MultiProcessor_ExitMuteMode
-                0x00000000       0x52 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_HalfDuplex_EnableTransmitter
-                0x00000000       0x66 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_HalfDuplex_EnableReceiver
-                0x00000000       0x66 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_UART_GetState
-                0x00000000       0x3a CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.HAL_UART_GetError
-                0x00000000       0x16 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.UART_DMATransmitCplt
-                0x00000000       0x52 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.UART_DMATxHalfCplt
-                0x00000000       0x1c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.UART_DMAReceiveCplt
-                0x00000000       0x68 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.UART_DMARxHalfCplt
-                0x00000000       0x1c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.UART_DMAError
-                0x00000000       0x94 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.UART_WaitOnFlagUntilTimeout
-                0x00000000       0x94 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.UART_EndTxTransfer
-                0x00000000       0x2a CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.UART_DMATxAbortCallback
-                0x00000000       0x5a CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.UART_DMARxAbortCallback
-                0x00000000       0x5a CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.UART_DMATxOnlyAbortCallback
-                0x00000000       0x2a CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.UART_DMARxOnlyAbortCallback
-                0x00000000       0x2a CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
  .text          0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
  .data          0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
  .bss           0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
@@ -844,6 +729,22 @@ Discarded input sections
                 0x00000000        0x8 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
  .ARM.extab.text._ZN11BLDC_driver7set_pwmEs
                 0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+ .text._ZN11BLDC_driver11get_encoderEv
+                0x00000000       0x16 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+ .ARM.extab.text._ZN11BLDC_driver11get_encoderEv
+                0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+ .ARM.exidx.text._ZN11BLDC_driver11get_encoderEv
+                0x00000000        0x8 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+ .text._ZN11BLDC_driver13reset_encoderEv
+                0x00000000       0x1a CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+ .ARM.extab.text._ZN11BLDC_driver13reset_encoderEv
+                0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+ .ARM.exidx.text._ZN11BLDC_driver13reset_encoderEv
+                0x00000000        0x8 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+ .ARM.extab.text._ZN11BLDC_driver8ramp_pwmEssm
+                0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+ .ARM.extab.text._ZN11BLDC_driver16auto_pwm_handlerEv
+                0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
  .text          0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.obj
  .data          0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.obj
  .bss           0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.obj
@@ -858,8 +759,6 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
  .data          0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
  .bss           0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
- .bss.ADC_buffer
-                0x00000000        0x8 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
  .ARM.extab.text.TIM3_IRQHandler
                 0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
  .ARM.extab.text.main
@@ -921,20 +820,26 @@ Discarded input sections
  .bss           0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
  .text.HAL_TIM_Base_MspDeInit
                 0x00000000       0x50 CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
- .text          0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/usart.c.obj
- .data          0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/usart.c.obj
- .bss           0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/usart.c.obj
- .text.HAL_UART_MspDeInit
-                0x00000000       0x40 CMakeFiles/hoverGate_fw.elf.dir/Src/usart.c.obj
  .text          0x00000000       0x14 CMakeFiles/hoverGate_fw.elf.dir/startup/startup_stm32f103xb.s.obj
  .data          0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/startup/startup_stm32f103xb.s.obj
  .bss           0x00000000        0x0 CMakeFiles/hoverGate_fw.elf.dir/startup/startup_stm32f103xb.s.obj
+ .text          0x00000000        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libstdc++_nano.a(guard.o)
+ .data          0x00000000        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libstdc++_nano.a(guard.o)
+ .bss           0x00000000        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libstdc++_nano.a(guard.o)
+ .text.__cxa_guard_abort
+                0x00000000        0x6 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libstdc++_nano.a(guard.o)
  .data          0x00000000        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_addsubdf3.o)
  .bss           0x00000000        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_addsubdf3.o)
  .data          0x00000000        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_muldivdf3.o)
  .bss           0x00000000        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_muldivdf3.o)
  .data          0x00000000        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_fixunsdfsi.o)
  .bss           0x00000000        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_fixunsdfsi.o)
+ .data          0x00000000        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_addsubsf3.o)
+ .bss           0x00000000        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_addsubsf3.o)
+ .data          0x00000000        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_muldivsf3.o)
+ .bss           0x00000000        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_muldivsf3.o)
+ .data          0x00000000        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_fixsfsi.o)
+ .bss           0x00000000        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_fixsfsi.o)
  .data          0x00000000        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(unwind-arm.o)
  .bss           0x00000000        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(unwind-arm.o)
  .ARM.extab     0x00000000        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(unwind-arm.o)
@@ -1094,7 +999,6 @@ LOAD CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_
 LOAD CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj
 LOAD CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
 LOAD CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
-LOAD CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
 LOAD CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
 LOAD CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.obj
 LOAD CMakeFiles/hoverGate_fw.elf.dir/Src/dma.c.obj
@@ -1105,7 +1009,6 @@ LOAD CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
 LOAD CMakeFiles/hoverGate_fw.elf.dir/Src/syscalls.c.obj
 LOAD CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
 LOAD CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
-LOAD CMakeFiles/hoverGate_fw.elf.dir/Src/usart.c.obj
 LOAD CMakeFiles/hoverGate_fw.elf.dir/startup/startup_stm32f103xb.s.obj
 LOAD c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libstdc++_nano.a
 LOAD c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libm.a
@@ -1137,7 +1040,7 @@ LOAD c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
                 0x08000000                g_pfnVectors
                 0x0800010c                . = ALIGN (0x4)
 
-.text           0x08000110     0x5820
+.text           0x08000110     0x5d6c
                 0x08000110                . = ALIGN (0x4)
  *(.text)
  .text          0x08000110       0x40 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
@@ -1165,583 +1068,620 @@ LOAD c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
  .text          0x080008ec       0x40 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_fixunsdfsi.o)
                 0x080008ec                __aeabi_d2uiz
                 0x080008ec                __fixunsdfsi
- .text          0x0800092c      0xa00 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(unwind-arm.o)
-                0x08000be8                _Unwind_GetCFA
-                0x08000bec                __gnu_Unwind_RaiseException
-                0x08000c4c                __gnu_Unwind_ForcedUnwind
-                0x08000c60                __gnu_Unwind_Resume
-                0x08000ca4                __gnu_Unwind_Resume_or_Rethrow
-                0x08000cb8                _Unwind_Complete
-                0x08000cbc                _Unwind_DeleteException
-                0x08000cc8                _Unwind_VRS_Get
-                0x08000d0c                _Unwind_VRS_Set
-                0x08000d54                __gnu_Unwind_Backtrace
-                0x0800109c                __aeabi_unwind_cpp_pr0
-                0x080010a0                __aeabi_unwind_cpp_pr1
-                0x080010a4                __aeabi_unwind_cpp_pr2
-                0x080010a8                _Unwind_VRS_Pop
- .text          0x0800132c      0x1ac c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(libunwind.o)
-                0x0800132c                __restore_core_regs
-                0x0800132c                restore_core_regs
-                0x08001344                __gnu_Unwind_Restore_VFP
-                0x0800134c                __gnu_Unwind_Save_VFP
-                0x08001354                __gnu_Unwind_Restore_VFP_D
-                0x0800135c                __gnu_Unwind_Save_VFP_D
-                0x08001364                __gnu_Unwind_Restore_VFP_D_16_to_31
-                0x0800136c                __gnu_Unwind_Save_VFP_D_16_to_31
-                0x08001374                __gnu_Unwind_Restore_WMMXD
-                0x080013b8                __gnu_Unwind_Save_WMMXD
-                0x080013fc                __gnu_Unwind_Restore_WMMXC
-                0x08001410                __gnu_Unwind_Save_WMMXC
-                0x08001424                ___Unwind_RaiseException
-                0x08001424                _Unwind_RaiseException
-                0x08001448                _Unwind_Resume
-                0x08001448                ___Unwind_Resume
-                0x0800146c                _Unwind_Resume_or_Rethrow
-                0x0800146c                ___Unwind_Resume_or_Rethrow
-                0x08001490                _Unwind_ForcedUnwind
-                0x08001490                ___Unwind_ForcedUnwind
-                0x080014b4                ___Unwind_Backtrace
-                0x080014b4                _Unwind_Backtrace
- .text          0x080014d8      0x378 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(pr-support.o)
-                0x08001530                __gnu_unwind_execute
-                0x080017f4                __gnu_unwind_frame
-                0x08001820                _Unwind_GetRegionStart
-                0x0800182c                _Unwind_GetLanguageSpecificData
-                0x08001840                _Unwind_GetDataRelBase
-                0x08001848                _Unwind_GetTextRelBase
+ .text          0x0800092c      0x21c c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_addsubsf3.o)
+                0x0800092c                __aeabi_frsub
+                0x08000934                __subsf3
+                0x08000934                __aeabi_fsub
+                0x08000938                __aeabi_fadd
+                0x08000938                __addsf3
+                0x08000a98                __aeabi_ui2f
+                0x08000a98                __floatunsisf
+                0x08000aa0                __aeabi_i2f
+                0x08000aa0                __floatsisf
+                0x08000abc                __aeabi_ul2f
+                0x08000abc                __floatundisf
+                0x08000acc                __aeabi_l2f
+                0x08000acc                __floatdisf
+ .text          0x08000b48      0x2a0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_muldivsf3.o)
+                0x08000b48                __mulsf3
+                0x08000b48                __aeabi_fmul
+                0x08000cb0                __aeabi_fdiv
+                0x08000cb0                __divsf3
+ .text          0x08000de8       0x4c c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_fixsfsi.o)
+                0x08000de8                __aeabi_f2iz
+                0x08000de8                __fixsfsi
+ .text          0x08000e34      0xa00 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(unwind-arm.o)
+                0x080010f0                _Unwind_GetCFA
+                0x080010f4                __gnu_Unwind_RaiseException
+                0x08001154                __gnu_Unwind_ForcedUnwind
+                0x08001168                __gnu_Unwind_Resume
+                0x080011ac                __gnu_Unwind_Resume_or_Rethrow
+                0x080011c0                _Unwind_Complete
+                0x080011c4                _Unwind_DeleteException
+                0x080011d0                _Unwind_VRS_Get
+                0x08001214                _Unwind_VRS_Set
+                0x0800125c                __gnu_Unwind_Backtrace
+                0x080015a4                __aeabi_unwind_cpp_pr0
+                0x080015a8                __aeabi_unwind_cpp_pr1
+                0x080015ac                __aeabi_unwind_cpp_pr2
+                0x080015b0                _Unwind_VRS_Pop
+ .text          0x08001834      0x1ac c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(libunwind.o)
+                0x08001834                __restore_core_regs
+                0x08001834                restore_core_regs
+                0x0800184c                __gnu_Unwind_Restore_VFP
+                0x08001854                __gnu_Unwind_Save_VFP
+                0x0800185c                __gnu_Unwind_Restore_VFP_D
+                0x08001864                __gnu_Unwind_Save_VFP_D
+                0x0800186c                __gnu_Unwind_Restore_VFP_D_16_to_31
+                0x08001874                __gnu_Unwind_Save_VFP_D_16_to_31
+                0x0800187c                __gnu_Unwind_Restore_WMMXD
+                0x080018c0                __gnu_Unwind_Save_WMMXD
+                0x08001904                __gnu_Unwind_Restore_WMMXC
+                0x08001918                __gnu_Unwind_Save_WMMXC
+                0x0800192c                ___Unwind_RaiseException
+                0x0800192c                _Unwind_RaiseException
+                0x08001950                _Unwind_Resume
+                0x08001950                ___Unwind_Resume
+                0x08001974                _Unwind_Resume_or_Rethrow
+                0x08001974                ___Unwind_Resume_or_Rethrow
+                0x08001998                _Unwind_ForcedUnwind
+                0x08001998                ___Unwind_ForcedUnwind
+                0x080019bc                ___Unwind_Backtrace
+                0x080019bc                _Unwind_Backtrace
+ .text          0x080019e0      0x378 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(pr-support.o)
+                0x08001a38                __gnu_unwind_execute
+                0x08001cfc                __gnu_unwind_frame
+                0x08001d28                _Unwind_GetRegionStart
+                0x08001d34                _Unwind_GetLanguageSpecificData
+                0x08001d48                _Unwind_GetDataRelBase
+                0x08001d50                _Unwind_GetTextRelBase
  *(.text*)
  .text.HAL_Init
-                0x08001850       0x2c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
-                0x08001850                HAL_Init
+                0x08001d58       0x2c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
+                0x08001d58                HAL_Init
  .text.HAL_InitTick
-                0x0800187c       0x60 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
-                0x0800187c                HAL_InitTick
+                0x08001d84       0x60 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
+                0x08001d84                HAL_InitTick
  .text.HAL_IncTick
-                0x080018dc       0x24 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
-                0x080018dc                HAL_IncTick
+                0x08001de4       0x24 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
+                0x08001de4                HAL_IncTick
  .text.HAL_GetTick
-                0x08001900       0x14 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
-                0x08001900                HAL_GetTick
+                0x08001e08       0x14 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
+                0x08001e08                HAL_GetTick
  .text.HAL_Delay
-                0x08001914       0x44 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
-                0x08001914                HAL_Delay
+                0x08001e1c       0x44 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
+                0x08001e1c                HAL_Delay
  .text.HAL_ADC_Init
-                0x08001958      0x1b0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
-                0x08001958                HAL_ADC_Init
+                0x08001e60      0x1b0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
+                0x08001e60                HAL_ADC_Init
+ .text.HAL_ADC_Start_DMA
+                0x08002010      0x1bc CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
+                0x08002010                HAL_ADC_Start_DMA
+ .text.HAL_ADC_ConvCpltCallback
+                0x080021cc       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
+                0x080021cc                HAL_ADC_ConvCpltCallback
+ .text.HAL_ADC_ConvHalfCpltCallback
+                0x080021de       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
+                0x080021de                HAL_ADC_ConvHalfCpltCallback
+ .text.HAL_ADC_ErrorCallback
+                0x080021f0       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
+                0x080021f0                HAL_ADC_ErrorCallback
+ *fill*         0x08002202        0x2 
  .text.HAL_ADC_ConfigChannel
-                0x08001b08      0x1f0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
-                0x08001b08                HAL_ADC_ConfigChannel
+                0x08002204      0x1f0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
+                0x08002204                HAL_ADC_ConfigChannel
+ .text.ADC_Enable
+                0x080023f4       0xa4 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
+                0x080023f4                ADC_Enable
  .text.ADC_ConversionStop_Disable
-                0x08001cf8       0x74 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
-                0x08001cf8                ADC_ConversionStop_Disable
+                0x08002498       0x74 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
+                0x08002498                ADC_ConversionStop_Disable
+ .text.ADC_DMAConvCplt
+                0x0800250c       0x7c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
+                0x0800250c                ADC_DMAConvCplt
+ .text.ADC_DMAHalfConvCplt
+                0x08002588       0x1c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
+                0x08002588                ADC_DMAHalfConvCplt
+ .text.ADC_DMAError
+                0x080025a4       0x34 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
+                0x080025a4                ADC_DMAError
+ .text.HAL_ADCEx_Calibration_Start
+                0x080025d8      0x138 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj
+                0x080025d8                HAL_ADCEx_Calibration_Start
  .text.__NVIC_SetPriorityGrouping
-                0x08001d6c       0x48 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
+                0x08002710       0x48 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
  .text.__NVIC_GetPriorityGrouping
-                0x08001db4       0x1c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
+                0x08002758       0x1c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
  .text.__NVIC_EnableIRQ
-                0x08001dd0       0x38 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
+                0x08002774       0x38 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
  .text.__NVIC_SetPriority
-                0x08001e08       0x54 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
+                0x080027ac       0x54 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
  .text.NVIC_EncodePriority
-                0x08001e5c       0x64 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
+                0x08002800       0x64 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
  .text.SysTick_Config
-                0x08001ec0       0x44 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
+                0x08002864       0x44 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
  .text.HAL_NVIC_SetPriorityGrouping
-                0x08001f04       0x16 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
-                0x08001f04                HAL_NVIC_SetPriorityGrouping
+                0x080028a8       0x16 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
+                0x080028a8                HAL_NVIC_SetPriorityGrouping
  .text.HAL_NVIC_SetPriority
-                0x08001f1a       0x38 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
-                0x08001f1a                HAL_NVIC_SetPriority
+                0x080028be       0x38 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
+                0x080028be                HAL_NVIC_SetPriority
  .text.HAL_NVIC_EnableIRQ
-                0x08001f52       0x1c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
-                0x08001f52                HAL_NVIC_EnableIRQ
+                0x080028f6       0x1c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
+                0x080028f6                HAL_NVIC_EnableIRQ
  .text.HAL_SYSTICK_Config
-                0x08001f6e       0x18 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
-                0x08001f6e                HAL_SYSTICK_Config
- *fill*         0x08001f86        0x2 
+                0x08002912       0x18 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
+                0x08002912                HAL_SYSTICK_Config
+ *fill*         0x0800292a        0x2 
  .text.HAL_DMA_Init
-                0x08001f88       0xb4 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
-                0x08001f88                HAL_DMA_Init
- .text.HAL_DMA_Abort_IT
-                0x0800203c       0xec CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
-                0x0800203c                HAL_DMA_Abort_IT
+                0x0800292c       0xb4 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
+                0x0800292c                HAL_DMA_Init
+ .text.HAL_DMA_Start_IT
+                0x080029e0       0xbe CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
+                0x080029e0                HAL_DMA_Start_IT
+ *fill*         0x08002a9e        0x2 
  .text.HAL_DMA_IRQHandler
-                0x08002128      0x20c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
-                0x08002128                HAL_DMA_IRQHandler
+                0x08002aa0      0x20c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
+                0x08002aa0                HAL_DMA_IRQHandler
+ .text.DMA_SetConfig
+                0x08002cac       0x5a CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
+ *fill*         0x08002d06        0x2 
  .text.HAL_GPIO_Init
-                0x08002334      0x2b4 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
-                0x08002334                HAL_GPIO_Init
+                0x08002d08      0x2b4 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
+                0x08002d08                HAL_GPIO_Init
  .text.HAL_GPIO_ReadPin
-                0x080025e8       0x2e CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
-                0x080025e8                HAL_GPIO_ReadPin
+                0x08002fbc       0x2e CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
+                0x08002fbc                HAL_GPIO_ReadPin
  .text.HAL_GPIO_WritePin
-                0x08002616       0x30 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
-                0x08002616                HAL_GPIO_WritePin
+                0x08002fea       0x30 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
+                0x08002fea                HAL_GPIO_WritePin
  .text.HAL_GPIO_TogglePin
-                0x08002646       0x30 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
-                0x08002646                HAL_GPIO_TogglePin
- *fill*         0x08002676        0x2 
+                0x0800301a       0x30 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
+                0x0800301a                HAL_GPIO_TogglePin
+ *fill*         0x0800304a        0x2 
  .text.HAL_RCC_OscConfig
-                0x08002678      0x500 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
-                0x08002678                HAL_RCC_OscConfig
+                0x0800304c      0x500 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
+                0x0800304c                HAL_RCC_OscConfig
  .text.HAL_RCC_ClockConfig
-                0x08002b78      0x1d4 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
-                0x08002b78                HAL_RCC_ClockConfig
+                0x0800354c      0x1d4 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
+                0x0800354c                HAL_RCC_ClockConfig
  .text.HAL_RCC_GetSysClockFreq
-                0x08002d4c       0xc4 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
-                0x08002d4c                HAL_RCC_GetSysClockFreq
+                0x08003720       0xc4 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
+                0x08003720                HAL_RCC_GetSysClockFreq
  .text.HAL_RCC_GetHCLKFreq
-                0x08002e10       0x14 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
-                0x08002e10                HAL_RCC_GetHCLKFreq
- .text.HAL_RCC_GetPCLK1Freq
-                0x08002e24       0x28 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
-                0x08002e24                HAL_RCC_GetPCLK1Freq
+                0x080037e4       0x14 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
+                0x080037e4                HAL_RCC_GetHCLKFreq
  .text.HAL_RCC_GetPCLK2Freq
-                0x08002e4c       0x28 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
-                0x08002e4c                HAL_RCC_GetPCLK2Freq
+                0x080037f8       0x28 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
+                0x080037f8                HAL_RCC_GetPCLK2Freq
  .text.RCC_Delay
-                0x08002e74       0x3c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
+                0x08003820       0x3c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
  .text.HAL_RCCEx_PeriphCLKConfig
-                0x08002eb0      0x16c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj
-                0x08002eb0                HAL_RCCEx_PeriphCLKConfig
+                0x0800385c      0x16c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj
+                0x0800385c                HAL_RCCEx_PeriphCLKConfig
+ .text.HAL_RCCEx_GetPeriphCLKFreq
+                0x080039c8      0x178 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj
+                0x080039c8                HAL_RCCEx_GetPeriphCLKFreq
  .text.HAL_TIM_Base_Init
-                0x0800301c       0x56 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
-                0x0800301c                HAL_TIM_Base_Init
+                0x08003b40       0x56 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+                0x08003b40                HAL_TIM_Base_Init
  .text.HAL_TIM_Base_Start_IT
-                0x08003072       0x46 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
-                0x08003072                HAL_TIM_Base_Start_IT
+                0x08003b96       0x46 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+                0x08003b96                HAL_TIM_Base_Start_IT
  .text.HAL_TIM_PWM_Init
-                0x080030b8       0x56 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
-                0x080030b8                HAL_TIM_PWM_Init
+                0x08003bdc       0x56 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+                0x08003bdc                HAL_TIM_PWM_Init
  .text.HAL_TIM_PWM_MspInit
-                0x0800310e       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
-                0x0800310e                HAL_TIM_PWM_MspInit
+                0x08003c32       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+                0x08003c32                HAL_TIM_PWM_MspInit
  .text.HAL_TIM_PWM_Start
-                0x08003120       0x64 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
-                0x08003120                HAL_TIM_PWM_Start
+                0x08003c44       0x64 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+                0x08003c44                HAL_TIM_PWM_Start
  .text.HAL_TIM_PWM_Stop
-                0x08003184       0x98 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
-                0x08003184                HAL_TIM_PWM_Stop
+                0x08003ca8       0x98 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+                0x08003ca8                HAL_TIM_PWM_Stop
  .text.HAL_TIM_IRQHandler
-                0x0800321c      0x210 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
-                0x0800321c                HAL_TIM_IRQHandler
+                0x08003d40      0x210 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+                0x08003d40                HAL_TIM_IRQHandler
  .text.HAL_TIM_PWM_ConfigChannel
-                0x0800342c      0x18c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
-                0x0800342c                HAL_TIM_PWM_ConfigChannel
+                0x08003f50      0x18c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+                0x08003f50                HAL_TIM_PWM_ConfigChannel
  .text.HAL_TIM_ConfigClockSource
-                0x080035b8      0x16e CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
-                0x080035b8                HAL_TIM_ConfigClockSource
+                0x080040dc      0x16e CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+                0x080040dc                HAL_TIM_ConfigClockSource
  .text.HAL_TIM_PeriodElapsedCallback
-                0x08003726       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
-                0x08003726                HAL_TIM_PeriodElapsedCallback
+                0x0800424a       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+                0x0800424a                HAL_TIM_PeriodElapsedCallback
  .text.HAL_TIM_OC_DelayElapsedCallback
-                0x08003738       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
-                0x08003738                HAL_TIM_OC_DelayElapsedCallback
+                0x0800425c       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+                0x0800425c                HAL_TIM_OC_DelayElapsedCallback
  .text.HAL_TIM_IC_CaptureCallback
-                0x0800374a       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
-                0x0800374a                HAL_TIM_IC_CaptureCallback
+                0x0800426e       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+                0x0800426e                HAL_TIM_IC_CaptureCallback
  .text.HAL_TIM_PWM_PulseFinishedCallback
-                0x0800375c       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
-                0x0800375c                HAL_TIM_PWM_PulseFinishedCallback
+                0x08004280       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+                0x08004280                HAL_TIM_PWM_PulseFinishedCallback
  .text.HAL_TIM_TriggerCallback
-                0x0800376e       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
-                0x0800376e                HAL_TIM_TriggerCallback
+                0x08004292       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+                0x08004292                HAL_TIM_TriggerCallback
  .text.TIM_Base_SetConfig
-                0x08003780       0xc4 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
-                0x08003780                TIM_Base_SetConfig
+                0x080042a4       0xc4 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+                0x080042a4                TIM_Base_SetConfig
  .text.TIM_OC1_SetConfig
-                0x08003844       0xcc CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+                0x08004368       0xcc CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
  .text.TIM_OC2_SetConfig
-                0x08003910       0xd4 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
-                0x08003910                TIM_OC2_SetConfig
+                0x08004434       0xd4 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+                0x08004434                TIM_OC2_SetConfig
  .text.TIM_OC3_SetConfig
-                0x080039e4       0xd4 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+                0x08004508       0xd4 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
  .text.TIM_OC4_SetConfig
-                0x08003ab8       0x9c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+                0x080045dc       0x9c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
  .text.TIM_TI1_ConfigInputStage
-                0x08003b54       0x5c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+                0x08004678       0x5c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
  .text.TIM_TI2_ConfigInputStage
-                0x08003bb0       0x5e CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+                0x080046d4       0x5e CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
  .text.TIM_ITRx_SetConfig
-                0x08003c0e       0x34 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+                0x08004732       0x34 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
  .text.TIM_ETR_SetConfig
-                0x08003c42       0x3e CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
-                0x08003c42                TIM_ETR_SetConfig
+                0x08004766       0x3e CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+                0x08004766                TIM_ETR_SetConfig
  .text.TIM_CCxChannelCmd
-                0x08003c80       0x48 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
-                0x08003c80                TIM_CCxChannelCmd
+                0x080047a4       0x48 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+                0x080047a4                TIM_CCxChannelCmd
  .text.HAL_TIMEx_PWMN_Start
-                0x08003cc8       0x54 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
-                0x08003cc8                HAL_TIMEx_PWMN_Start
+                0x080047ec       0x54 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
+                0x080047ec                HAL_TIMEx_PWMN_Start
  .text.HAL_TIMEx_PWMN_Stop
-                0x08003d1c       0x82 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
-                0x08003d1c                HAL_TIMEx_PWMN_Stop
+                0x08004840       0x82 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
+                0x08004840                HAL_TIMEx_PWMN_Stop
  .text.HAL_TIMEx_MasterConfigSynchronization
-                0x08003d9e       0x88 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
-                0x08003d9e                HAL_TIMEx_MasterConfigSynchronization
+                0x080048c2       0x88 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
+                0x080048c2                HAL_TIMEx_MasterConfigSynchronization
  .text.HAL_TIMEx_ConfigBreakDeadTime
-                0x08003e26       0xa2 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
-                0x08003e26                HAL_TIMEx_ConfigBreakDeadTime
+                0x0800494a       0xa2 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
+                0x0800494a                HAL_TIMEx_ConfigBreakDeadTime
  .text.HAL_TIMEx_CommutCallback
-                0x08003ec8       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
-                0x08003ec8                HAL_TIMEx_CommutCallback
+                0x080049ec       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
+                0x080049ec                HAL_TIMEx_CommutCallback
  .text.HAL_TIMEx_BreakCallback
-                0x08003eda       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
-                0x08003eda                HAL_TIMEx_BreakCallback
+                0x080049fe       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
+                0x080049fe                HAL_TIMEx_BreakCallback
  .text.TIM_CCxNChannelCmd
-                0x08003eec       0x48 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
- .text.HAL_UART_Init
-                0x08003f34       0x9a CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
-                0x08003f34                HAL_UART_Init
- *fill*         0x08003fce        0x2 
- .text.HAL_UART_IRQHandler
-                0x08003fd0      0x1f8 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
-                0x08003fd0                HAL_UART_IRQHandler
- .text.HAL_UART_TxCpltCallback
-                0x080041c8       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
-                0x080041c8                HAL_UART_TxCpltCallback
- .text.HAL_UART_RxCpltCallback
-                0x080041da       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
-                0x080041da                HAL_UART_RxCpltCallback
- .text.HAL_UART_ErrorCallback
-                0x080041ec       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
-                0x080041ec                HAL_UART_ErrorCallback
- .text.UART_EndRxTransfer
-                0x080041fe       0x3a CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.UART_DMAAbortOnError
-                0x08004238       0x28 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.UART_Transmit_IT
-                0x08004260       0xaa CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.UART_EndTransmit_IT
-                0x0800430a       0x30 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.UART_Receive_IT
-                0x0800433a      0x102 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .text.UART_SetConfig
-                0x0800443c      0x1b4 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
+                0x08004a10       0x48 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
  .text._ZN11BLDC_driverC2Ev
-                0x080045f0       0x3c CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
-                0x080045f0                BLDC_driver::BLDC_driver()
-                0x080045f0                BLDC_driver::BLDC_driver()
+                0x08004a58       0x4c CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                0x08004a58                BLDC_driver::BLDC_driver()
+                0x08004a58                BLDC_driver::BLDC_driver()
  .text._ZN11BLDC_driver15phase_set_floatEh
-                0x0800462c       0x88 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
-                0x0800462c                BLDC_driver::phase_set_float(unsigned char)
+                0x08004aa4       0x88 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                0x08004aa4                BLDC_driver::phase_set_float(unsigned char)
  .text._ZN11BLDC_driver13phase_set_lowEh
-                0x080046b4       0xa0 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
-                0x080046b4                BLDC_driver::phase_set_low(unsigned char)
+                0x08004b2c       0xa0 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                0x08004b2c                BLDC_driver::phase_set_low(unsigned char)
  .text._ZN11BLDC_driver13phase_set_pwmEht
-                0x08004754       0xa4 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
-                0x08004754                BLDC_driver::phase_set_pwm(unsigned char, unsigned short)
+                0x08004bcc       0xa4 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                0x08004bcc                BLDC_driver::phase_set_pwm(unsigned char, unsigned short)
  .text._ZN11BLDC_driver10set_phasesEhtbb
-                0x080047f8      0x238 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
-                0x080047f8                BLDC_driver::set_phases(unsigned char, unsigned short, bool, bool)
+                0x08004c70      0x238 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                0x08004c70                BLDC_driver::set_phases(unsigned char, unsigned short, bool, bool)
  .text._ZN11BLDC_driver6enableEv
-                0x08004a30       0x18 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
-                0x08004a30                BLDC_driver::enable()
+                0x08004ea8       0x18 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                0x08004ea8                BLDC_driver::enable()
  .text._ZN11BLDC_driver7disableEv
-                0x08004a48       0x1e CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
-                0x08004a48                BLDC_driver::disable()
- *fill*         0x08004a66        0x2 
+                0x08004ec0       0x24 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                0x08004ec0                BLDC_driver::disable()
  .text._ZN11BLDC_driver5beginEv
-                0x08004a68       0x34 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
-                0x08004a68                BLDC_driver::begin()
- *fill*         0x08004a9c        0x4 
+                0x08004ee4       0x34 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                0x08004ee4                BLDC_driver::begin()
  .text._ZN11BLDC_driver7set_pwmEs
-                0x08004aa0       0xcc CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
-                0x08004aa0                BLDC_driver::set_pwm(short)
+                0x08004f18       0xcc CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                0x08004f18                BLDC_driver::set_pwm(short)
+ .text._ZN11BLDC_driver8ramp_pwmEssm
+                0x08004fe4       0x34 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                0x08004fe4                BLDC_driver::ramp_pwm(short, short, unsigned long)
+ .text._ZN11BLDC_driver16auto_pwm_handlerEv
+                0x08005018       0xdc CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                0x08005018                BLDC_driver::auto_pwm_handler()
  .text._ZN11BLDC_driver17interrupt_handlerEv
-                0x08004b6c      0x194 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
-                0x08004b6c                BLDC_driver::interrupt_handler()
+                0x080050f4      0x22c CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                0x080050f4                BLDC_driver::interrupt_handler()
  .text.MX_ADC1_Init
-                0x08004d00       0x9c CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.obj
-                0x08004d00                MX_ADC1_Init
+                0x08005320       0xb8 CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.obj
+                0x08005320                MX_ADC1_Init
  .text.HAL_ADC_MspInit
-                0x08004d9c       0xd0 CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.obj
-                0x08004d9c                HAL_ADC_MspInit
+                0x080053d8       0xd0 CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.obj
+                0x080053d8                HAL_ADC_MspInit
  .text.MX_DMA_Init
-                0x08004e6c       0x3c CMakeFiles/hoverGate_fw.elf.dir/Src/dma.c.obj
-                0x08004e6c                MX_DMA_Init
+                0x080054a8       0x3c CMakeFiles/hoverGate_fw.elf.dir/Src/dma.c.obj
+                0x080054a8                MX_DMA_Init
  .text.MX_GPIO_Init
-                0x08004ea8      0x168 CMakeFiles/hoverGate_fw.elf.dir/Src/gpio.c.obj
-                0x08004ea8                MX_GPIO_Init
+                0x080054e4      0x168 CMakeFiles/hoverGate_fw.elf.dir/Src/gpio.c.obj
+                0x080054e4                MX_GPIO_Init
  .text.TIM3_IRQHandler
-                0x08005010       0x1c CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
-                0x08005010                TIM3_IRQHandler
- .text.main     0x0800502c       0xd4 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
-                0x0800502c                main
+                0x0800564c       0x1c CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
+                0x0800564c                TIM3_IRQHandler
+ .text.main     0x08005668       0xd0 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
+                0x08005668                main
  .text._Z18SystemClock_Configv
-                0x08005100       0xcc CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
-                0x08005100                SystemClock_Config()
+                0x08005738       0xcc CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
+                0x08005738                SystemClock_Config()
  .text.Error_Handler
-                0x080051cc        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
-                0x080051cc                Error_Handler
+                0x08005804        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
+                0x08005804                Error_Handler
  .text._Z41__static_initialization_and_destruction_0ii
-                0x080051d8       0x2c CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
+                0x08005810       0x2c CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
  .text._GLOBAL__sub_I_ADC_buffer
-                0x08005204       0x10 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
+                0x0800583c       0x10 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
  .text.HAL_MspInit
-                0x08005214       0x64 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_hal_msp.c.obj
-                0x08005214                HAL_MspInit
+                0x0800584c       0x64 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_hal_msp.c.obj
+                0x0800584c                HAL_MspInit
  .text.NMI_Handler
-                0x08005278        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
-                0x08005278                NMI_Handler
+                0x080058b0        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
+                0x080058b0                NMI_Handler
  .text.HardFault_Handler
-                0x08005284        0x6 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
-                0x08005284                HardFault_Handler
+                0x080058bc        0x6 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
+                0x080058bc                HardFault_Handler
  .text.MemManage_Handler
-                0x0800528a        0x6 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
-                0x0800528a                MemManage_Handler
+                0x080058c2        0x6 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
+                0x080058c2                MemManage_Handler
  .text.BusFault_Handler
-                0x08005290        0x6 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
-                0x08005290                BusFault_Handler
+                0x080058c8        0x6 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
+                0x080058c8                BusFault_Handler
  .text.UsageFault_Handler
-                0x08005296        0x6 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
-                0x08005296                UsageFault_Handler
+                0x080058ce        0x6 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
+                0x080058ce                UsageFault_Handler
  .text.SVC_Handler
-                0x0800529c        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
-                0x0800529c                SVC_Handler
+                0x080058d4        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
+                0x080058d4                SVC_Handler
  .text.DebugMon_Handler
-                0x080052a8        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
-                0x080052a8                DebugMon_Handler
+                0x080058e0        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
+                0x080058e0                DebugMon_Handler
  .text.PendSV_Handler
-                0x080052b4        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
-                0x080052b4                PendSV_Handler
+                0x080058ec        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
+                0x080058ec                PendSV_Handler
  .text.SysTick_Handler
-                0x080052c0        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
-                0x080052c0                SysTick_Handler
+                0x080058f8        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
+                0x080058f8                SysTick_Handler
  .text.DMA1_Channel1_IRQHandler
-                0x080052cc       0x14 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
-                0x080052cc                DMA1_Channel1_IRQHandler
- .text.USART2_IRQHandler
-                0x080052e0       0x14 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
-                0x080052e0                USART2_IRQHandler
- .text._getpid  0x080052f4        0xe CMakeFiles/hoverGate_fw.elf.dir/Src/syscalls.c.obj
-                0x080052f4                _getpid
- .text._kill    0x08005302       0x20 CMakeFiles/hoverGate_fw.elf.dir/Src/syscalls.c.obj
-                0x08005302                _kill
- .text._exit    0x08005322       0x14 CMakeFiles/hoverGate_fw.elf.dir/Src/syscalls.c.obj
-                0x08005322                _exit
- *fill*         0x08005336        0x2 
+                0x08005904       0x14 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
+                0x08005904                DMA1_Channel1_IRQHandler
+ .text._getpid  0x08005918        0xe CMakeFiles/hoverGate_fw.elf.dir/Src/syscalls.c.obj
+                0x08005918                _getpid
+ .text._kill    0x08005926       0x20 CMakeFiles/hoverGate_fw.elf.dir/Src/syscalls.c.obj
+                0x08005926                _kill
+ .text._exit    0x08005946       0x14 CMakeFiles/hoverGate_fw.elf.dir/Src/syscalls.c.obj
+                0x08005946                _exit
+ *fill*         0x0800595a        0x2 
  .text.SystemInit
-                0x08005338       0x68 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
-                0x08005338                SystemInit
+                0x0800595c       0x68 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
+                0x0800595c                SystemInit
  .text.MX_TIM1_Init
-                0x080053a0      0x178 CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
-                0x080053a0                MX_TIM1_Init
+                0x080059c4      0x178 CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
+                0x080059c4                MX_TIM1_Init
  .text.MX_TIM3_Init
-                0x08005518       0x9c CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
-                0x08005518                MX_TIM3_Init
+                0x08005b3c       0x9c CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
+                0x08005b3c                MX_TIM3_Init
  .text.HAL_TIM_Base_MspInit
-                0x080055b4       0x74 CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
-                0x080055b4                HAL_TIM_Base_MspInit
+                0x08005bd8       0x74 CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
+                0x08005bd8                HAL_TIM_Base_MspInit
  .text.HAL_TIM_MspPostInit
-                0x08005628       0x9c CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
-                0x08005628                HAL_TIM_MspPostInit
- .text.MX_USART2_UART_Init
-                0x080056c4       0x54 CMakeFiles/hoverGate_fw.elf.dir/Src/usart.c.obj
-                0x080056c4                MX_USART2_UART_Init
- .text.HAL_UART_MspInit
-                0x08005718       0xa4 CMakeFiles/hoverGate_fw.elf.dir/Src/usart.c.obj
-                0x08005718                HAL_UART_MspInit
+                0x08005c4c       0x9c CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
+                0x08005c4c                HAL_TIM_MspPostInit
  .text.Reset_Handler
-                0x080057bc       0x48 CMakeFiles/hoverGate_fw.elf.dir/startup/startup_stm32f103xb.s.obj
-                0x080057bc                Reset_Handler
+                0x08005ce8       0x48 CMakeFiles/hoverGate_fw.elf.dir/startup/startup_stm32f103xb.s.obj
+                0x08005ce8                Reset_Handler
  .text.Default_Handler
-                0x08005804        0x2 CMakeFiles/hoverGate_fw.elf.dir/startup/startup_stm32f103xb.s.obj
-                0x08005804                RTC_Alarm_IRQHandler
-                0x08005804                EXTI2_IRQHandler
-                0x08005804                TIM1_CC_IRQHandler
-                0x08005804                PVD_IRQHandler
-                0x08005804                EXTI3_IRQHandler
-                0x08005804                EXTI0_IRQHandler
-                0x08005804                I2C2_EV_IRQHandler
-                0x08005804                ADC1_2_IRQHandler
-                0x08005804                SPI1_IRQHandler
-                0x08005804                TAMPER_IRQHandler
-                0x08005804                DMA1_Channel4_IRQHandler
-                0x08005804                USART3_IRQHandler
-                0x08005804                RTC_IRQHandler
-                0x08005804                DMA1_Channel7_IRQHandler
-                0x08005804                CAN1_RX1_IRQHandler
-                0x08005804                TIM4_IRQHandler
-                0x08005804                I2C1_EV_IRQHandler
-                0x08005804                DMA1_Channel6_IRQHandler
-                0x08005804                RCC_IRQHandler
-                0x08005804                TIM1_TRG_COM_IRQHandler
-                0x08005804                Default_Handler
-                0x08005804                EXTI15_10_IRQHandler
-                0x08005804                EXTI9_5_IRQHandler
-                0x08005804                SPI2_IRQHandler
-                0x08005804                DMA1_Channel5_IRQHandler
-                0x08005804                EXTI4_IRQHandler
-                0x08005804                USB_LP_CAN1_RX0_IRQHandler
-                0x08005804                USB_HP_CAN1_TX_IRQHandler
-                0x08005804                DMA1_Channel3_IRQHandler
-                0x08005804                TIM1_UP_IRQHandler
-                0x08005804                WWDG_IRQHandler
-                0x08005804                TIM2_IRQHandler
-                0x08005804                TIM1_BRK_IRQHandler
-                0x08005804                EXTI1_IRQHandler
-                0x08005804                I2C2_ER_IRQHandler
-                0x08005804                DMA1_Channel2_IRQHandler
-                0x08005804                CAN1_SCE_IRQHandler
-                0x08005804                FLASH_IRQHandler
-                0x08005804                USART1_IRQHandler
-                0x08005804                I2C1_ER_IRQHandler
-                0x08005804                USBWakeUp_IRQHandler
- .text.abort    0x08005806        0xe c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-abort.o)
-                0x08005806                abort
- .text.__errno  0x08005814        0xc c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-errno.o)
-                0x08005814                __errno
+                0x08005d30        0x2 CMakeFiles/hoverGate_fw.elf.dir/startup/startup_stm32f103xb.s.obj
+                0x08005d30                RTC_Alarm_IRQHandler
+                0x08005d30                EXTI2_IRQHandler
+                0x08005d30                TIM1_CC_IRQHandler
+                0x08005d30                PVD_IRQHandler
+                0x08005d30                EXTI3_IRQHandler
+                0x08005d30                EXTI0_IRQHandler
+                0x08005d30                I2C2_EV_IRQHandler
+                0x08005d30                ADC1_2_IRQHandler
+                0x08005d30                SPI1_IRQHandler
+                0x08005d30                TAMPER_IRQHandler
+                0x08005d30                DMA1_Channel4_IRQHandler
+                0x08005d30                USART3_IRQHandler
+                0x08005d30                RTC_IRQHandler
+                0x08005d30                DMA1_Channel7_IRQHandler
+                0x08005d30                CAN1_RX1_IRQHandler
+                0x08005d30                TIM4_IRQHandler
+                0x08005d30                I2C1_EV_IRQHandler
+                0x08005d30                DMA1_Channel6_IRQHandler
+                0x08005d30                RCC_IRQHandler
+                0x08005d30                TIM1_TRG_COM_IRQHandler
+                0x08005d30                Default_Handler
+                0x08005d30                EXTI15_10_IRQHandler
+                0x08005d30                EXTI9_5_IRQHandler
+                0x08005d30                SPI2_IRQHandler
+                0x08005d30                DMA1_Channel5_IRQHandler
+                0x08005d30                EXTI4_IRQHandler
+                0x08005d30                USB_LP_CAN1_RX0_IRQHandler
+                0x08005d30                USB_HP_CAN1_TX_IRQHandler
+                0x08005d30                DMA1_Channel3_IRQHandler
+                0x08005d30                TIM1_UP_IRQHandler
+                0x08005d30                WWDG_IRQHandler
+                0x08005d30                TIM2_IRQHandler
+                0x08005d30                TIM1_BRK_IRQHandler
+                0x08005d30                EXTI1_IRQHandler
+                0x08005d30                USART2_IRQHandler
+                0x08005d30                I2C2_ER_IRQHandler
+                0x08005d30                DMA1_Channel2_IRQHandler
+                0x08005d30                CAN1_SCE_IRQHandler
+                0x08005d30                FLASH_IRQHandler
+                0x08005d30                USART1_IRQHandler
+                0x08005d30                I2C1_ER_IRQHandler
+                0x08005d30                USBWakeUp_IRQHandler
+ .text.__cxa_guard_acquire
+                0x08005d32       0x18 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libstdc++_nano.a(guard.o)
+                0x08005d32                __cxa_guard_acquire
+ .text.__cxa_guard_release
+                0x08005d4a        0x6 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libstdc++_nano.a(guard.o)
+                0x08005d4a                __cxa_guard_release
+ .text.abort    0x08005d50        0xe c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-abort.o)
+                0x08005d50                abort
+ *fill*         0x08005d5e        0x2 
+ .text.__errno  0x08005d60        0xc c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-errno.o)
+                0x08005d60                __errno
  .text.__libc_init_array
-                0x08005820       0x48 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-init.o)
-                0x08005820                __libc_init_array
- .text.memcpy   0x08005868       0x16 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-memcpy-stub.o)
-                0x08005868                memcpy
- .text.memset   0x0800587e       0x10 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-memset.o)
-                0x0800587e                memset
+                0x08005d6c       0x48 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-init.o)
+                0x08005d6c                __libc_init_array
+ .text.memcpy   0x08005db4       0x16 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-memcpy-stub.o)
+                0x08005db4                memcpy
+ .text.memset   0x08005dca       0x10 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-memset.o)
+                0x08005dca                memset
  .text._raise_r
-                0x0800588e       0x50 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-signal.o)
-                0x0800588e                _raise_r
- *fill*         0x080058de        0x2 
- .text.raise    0x080058e0       0x10 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-signal.o)
-                0x080058e0                raise
- .text._kill_r  0x080058f0       0x24 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-signalr.o)
-                0x080058f0                _kill_r
+                0x08005dda       0x50 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-signal.o)
+                0x08005dda                _raise_r
+ *fill*         0x08005e2a        0x2 
+ .text.raise    0x08005e2c       0x10 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-signal.o)
+                0x08005e2c                raise
+ .text._kill_r  0x08005e3c       0x24 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-signalr.o)
+                0x08005e3c                _kill_r
  .text._getpid_r
-                0x08005914        0x4 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-signalr.o)
-                0x08005914                _getpid_r
+                0x08005e60        0x4 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-signalr.o)
+                0x08005e60                _getpid_r
  *(.glue_7)
- .glue_7        0x08005918        0x0 linker stubs
+ .glue_7        0x08005e64        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x08005918        0x0 linker stubs
+ .glue_7t       0x08005e64        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x08005918        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+ .eh_frame      0x08005e64        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
  *(.init)
- .init          0x08005918        0x4 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o
-                0x08005918                _init
- .init          0x0800591c        0x8 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
+ .init          0x08005e64        0x4 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o
+                0x08005e64                _init
+ .init          0x08005e68        0x8 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
  *(.fini)
- .fini          0x08005924        0x4 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o
-                0x08005924                _fini
- .fini          0x08005928        0x8 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
-                0x08005930                . = ALIGN (0x4)
-                0x08005930                _etext = .
+ .fini          0x08005e70        0x4 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o
+                0x08005e70                _fini
+ .fini          0x08005e74        0x8 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
+                0x08005e7c                . = ALIGN (0x4)
+                0x08005e7c                _etext = .
 
-.vfp11_veneer   0x08005930        0x0
- .vfp11_veneer  0x08005930        0x0 linker stubs
+.vfp11_veneer   0x08005e7c        0x0
+ .vfp11_veneer  0x08005e7c        0x0 linker stubs
 
-.v4_bx          0x08005930        0x0
- .v4_bx         0x08005930        0x0 linker stubs
+.v4_bx          0x08005e7c        0x0
+ .v4_bx         0x08005e7c        0x0 linker stubs
 
-.iplt           0x08005930        0x0
- .iplt          0x08005930        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+.iplt           0x08005e7c        0x0
+ .iplt          0x08005e7c        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
 
-.rodata         0x08005930       0x30
-                0x08005930                . = ALIGN (0x4)
+.rodata         0x08005e7c       0x44
+                0x08005e7c                . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x08005930       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
- *fill*         0x08005942        0x2 
- .rodata        0x08005944        0x4 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+ .rodata        0x08005e7c       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
+ *fill*         0x08005e8e        0x2 
+ .rodata        0x08005e90       0x12 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj
+ *fill*         0x08005ea2        0x2 
+ .rodata        0x08005ea4        0x4 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
  *(.rodata*)
  .rodata.AHBPrescTable
-                0x08005948       0x10 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
-                0x08005948                AHBPrescTable
+                0x08005ea8       0x10 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
+                0x08005ea8                AHBPrescTable
  .rodata.APBPrescTable
-                0x08005958        0x8 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
-                0x08005958                APBPrescTable
-                0x08005960                . = ALIGN (0x4)
+                0x08005eb8        0x8 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
+                0x08005eb8                APBPrescTable
+                0x08005ec0                . = ALIGN (0x4)
 
-.ARM.extab      0x08005960       0x6c
+.ARM.extab      0x08005ec0       0x6c
  *(.ARM.extab* .gnu.linkonce.armextab.*)
  .ARM.extab.text._ZN11BLDC_driver15phase_set_floatEh
-                0x08005960        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                0x08005ec0        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
  .ARM.extab.text._ZN11BLDC_driver13phase_set_lowEh
-                0x0800596c        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                0x08005ecc        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
  .ARM.extab.text._ZN11BLDC_driver13phase_set_pwmEht
-                0x08005978        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                0x08005ed8        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
  .ARM.extab.text._ZN11BLDC_driver10set_phasesEhtbb
-                0x08005984        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                0x08005ee4        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
  .ARM.extab.text._ZN11BLDC_driver5beginEv
-                0x08005990        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                0x08005ef0        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
  .ARM.extab.text._ZN11BLDC_driver17interrupt_handlerEv
-                0x0800599c        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                0x08005efc        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
  .ARM.extab.text._Z18SystemClock_Configv
-                0x080059a8        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
- .ARM.extab     0x080059b4       0x18 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(pr-support.o)
+                0x08005f08        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
+ .ARM.extab     0x08005f14       0x18 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(pr-support.o)
 
-.ARM            0x080059cc      0x118
-                0x080059cc                __exidx_start = .
+.ARM            0x08005f2c      0x118
+                0x08005f2c                __exidx_start = .
  *(.ARM.exidx*)
  .ARM.exidx.text._ZN11BLDC_driverC2Ev
-                0x08005a84        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                0x08005fe4        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
                                   0x8 (size before relaxing)
  .ARM.exidx.text._ZN11BLDC_driver15phase_set_floatEh
-                0x08005a84        0x8 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                0x08005fe4        0x8 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
  .ARM.exidx.text._ZN11BLDC_driver13phase_set_lowEh
-                0x08005a8c        0x8 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                0x08005fec        0x8 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
  .ARM.exidx.text._ZN11BLDC_driver13phase_set_pwmEht
-                0x08005a94        0x8 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                0x08005ff4        0x8 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
  .ARM.exidx.text._ZN11BLDC_driver10set_phasesEhtbb
-                0x08005a9c        0x8 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                0x08005ffc        0x8 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
  .ARM.exidx.text._ZN11BLDC_driver6enableEv
-                0x08005aa4        0x8 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                0x08006004        0x8 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
  .ARM.exidx.text._ZN11BLDC_driver7disableEv
-                0x08005aac        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                0x0800600c        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
                                   0x8 (size before relaxing)
  .ARM.exidx.text._ZN11BLDC_driver5beginEv
-                0x08005aac        0x8 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                0x0800600c        0x8 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
  .ARM.exidx.text._ZN11BLDC_driver7set_pwmEs
-                0x08005ab4        0x8 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                0x08006014        0x8 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+ .ARM.exidx.text._ZN11BLDC_driver8ramp_pwmEssm
+                0x0800601c        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text._ZN11BLDC_driver16auto_pwm_handlerEv
+                0x0800601c        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                                  0x8 (size before relaxing)
  .ARM.exidx.text._ZN11BLDC_driver17interrupt_handlerEv
-                0x08005abc       0x10 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                0x0800601c       0x10 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
                                   0x8 (size before relaxing)
  .ARM.exidx.text.TIM3_IRQHandler
-                0x08005acc        0x8 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
+                0x0800602c        0x8 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
  .ARM.exidx.text.main
-                0x08005ad4        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
+                0x08006034        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
                                   0x8 (size before relaxing)
  .ARM.exidx.text._Z18SystemClock_Configv
-                0x08005ad4        0x8 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
+                0x08006034        0x8 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
  .ARM.exidx.text.Error_Handler
-                0x08005adc        0x8 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
+                0x0800603c        0x8 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
  .ARM.exidx.text._Z41__static_initialization_and_destruction_0ii
-                0x08005ae4        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
+                0x08006044        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
                                   0x8 (size before relaxing)
  .ARM.exidx.text._GLOBAL__sub_I_ADC_buffer
-                0x08005ae4        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
+                0x08006044        0x0 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
                                   0x8 (size before relaxing)
- .ARM.exidx     0x080059cc       0x80 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(unwind-arm.o)
+ .ARM.exidx     0x08005f2c       0x80 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(unwind-arm.o)
                                  0xd8 (size before relaxing)
- .ARM.exidx     0x08005a4c       0x38 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(pr-support.o)
+ .ARM.exidx     0x08005fac       0x38 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(pr-support.o)
                                  0x48 (size before relaxing)
-                0x08005ae4                __exidx_end = .
+                0x08006044                __exidx_end = .
 
-.rel.dyn        0x08005ae4        0x0
- .rel.iplt      0x08005ae4        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+.rel.dyn        0x08006044        0x0
+ .rel.iplt      0x08006044        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
 
-.preinit_array  0x08005ae4        0x0
-                0x08005ae4                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x08006044        0x0
+                0x08006044                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x08005ae4                PROVIDE (__preinit_array_end = .)
+                0x08006044                PROVIDE (__preinit_array_end = .)
 
-.init_array     0x08005ae4        0x8
-                0x08005ae4                PROVIDE (__init_array_start = .)
+.init_array     0x08006044        0x8
+                0x08006044                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x08005ae4        0x4 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
- .init_array    0x08005ae8        0x4 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
-                0x08005aec                PROVIDE (__init_array_end = .)
+ .init_array    0x08006044        0x4 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+ .init_array    0x08006048        0x4 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
+                0x0800604c                PROVIDE (__init_array_end = .)
 
-.fini_array     0x08005aec        0x4
+.fini_array     0x0800604c        0x4
                 [!provide]                PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x08005aec        0x4 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+ .fini_array    0x0800604c        0x4 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
                 [!provide]                PROVIDE (__fini_array_end = .)
-                0x08005af0                _sidata = LOADADDR (.data)
+                0x08006050                _sidata = LOADADDR (.data)
 
-.data           0x20000000       0x70 load address 0x08005af0
+.data           0x20000000       0x70 load address 0x08006050
                 0x20000000                . = ALIGN (0x4)
                 0x20000000                _sdata = .
  *(.data)
@@ -1764,11 +1704,11 @@ LOAD c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
                 0x20000070                . = ALIGN (0x4)
                 0x20000070                _edata = .
 
-.igot.plt       0x20000070        0x0 load address 0x08005b60
+.igot.plt       0x20000070        0x0 load address 0x080060c0
  .igot.plt      0x20000070        0x0 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
                 0x20000070                . = ALIGN (0x4)
 
-.bss            0x20000070      0x164 load address 0x08005b60
+.bss            0x20000070      0x150 load address 0x080060c0
                 0x20000070                _sbss = .
                 0x20000070                __bss_start__ = _sbss
  *(.bss)
@@ -1776,38 +1716,47 @@ LOAD c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
  *(.bss*)
  .bss.uwTick    0x2000008c        0x4 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
                 0x2000008c                uwTick
- .bss.hadc1     0x20000090       0x30 CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.obj
-                0x20000090                hadc1
+ .bss._ZZN11BLDC_driver16auto_pwm_handlerEvE16prev_auto_pwm_en
+                0x20000090        0x1 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+ *fill*         0x20000091        0x3 
+ .bss._ZZN11BLDC_driver16auto_pwm_handlerEvE11stepCounter
+                0x20000094        0x4 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+ .bss._ZZN11BLDC_driver17interrupt_handlerEvE10prevPwmLoc
+                0x20000098        0x1 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+ *fill*         0x20000099        0x3 
+ .bss._ZGVZN11BLDC_driver17interrupt_handlerEvE10prevPwmLoc
+                0x2000009c        0x4 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+ .bss.hadc1     0x200000a0       0x30 CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.obj
+                0x200000a0                hadc1
  .bss.hdma_adc1
-                0x200000c0       0x44 CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.obj
-                0x200000c0                hdma_adc1
- .bss.BLDC      0x20000104        0xa CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
-                0x20000104                BLDC
- *fill*         0x2000010e        0x2 
- .bss.htim1     0x20000110       0x40 CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
-                0x20000110                htim1
- .bss.htim3     0x20000150       0x40 CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
-                0x20000150                htim3
- .bss.huart2    0x20000190       0x40 CMakeFiles/hoverGate_fw.elf.dir/Src/usart.c.obj
-                0x20000190                huart2
+                0x200000d0       0x44 CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.obj
+                0x200000d0                hdma_adc1
+ .bss.ADC_buffer
+                0x20000114        0xc CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
+                0x20000114                ADC_buffer
+ .bss.BLDC      0x20000120       0x1c CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
+                0x20000120                BLDC
+ .bss.htim1     0x2000013c       0x40 CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
+                0x2000013c                htim1
+ .bss.htim3     0x2000017c       0x40 CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
+                0x2000017c                htim3
  *(COMMON)
- COMMON         0x200001d0        0x4 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-reent.o)
-                0x200001d0                errno
-                0x200001d4                . = ALIGN (0x4)
-                0x200001d4                _ebss = .
-                0x200001d4                __bss_end__ = _ebss
+ COMMON         0x200001bc        0x4 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-reent.o)
+                0x200001bc                errno
+                0x200001c0                . = ALIGN (0x4)
+                0x200001c0                _ebss = .
+                0x200001c0                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x200001d4      0x604 load address 0x08005b60
-                0x200001d8                . = ALIGN (0x8)
- *fill*         0x200001d4        0x4 
-                0x200001d8                PROVIDE (end = .)
+                0x200001c0      0x600 load address 0x080060c0
+                0x200001c0                . = ALIGN (0x8)
+                0x200001c0                PROVIDE (end = .)
                 [!provide]                PROVIDE (_end = .)
-                0x200003d8                . = (. + _Min_Heap_Size)
- *fill*         0x200001d8      0x200 
-                0x200007d8                . = (. + _Min_Stack_Size)
- *fill*         0x200003d8      0x400 
-                0x200007d8                . = ALIGN (0x8)
+                0x200003c0                . = (. + _Min_Heap_Size)
+ *fill*         0x200001c0      0x200 
+                0x200007c0                . = (. + _Min_Stack_Size)
+ *fill*         0x200003c0      0x400 
+                0x200007c0                . = ALIGN (0x8)
 
 /DISCARD/
  libc.a(*)
@@ -1826,21 +1775,21 @@ LOAD c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
  .ARM.attributes
                 0x0000007d       0x33 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
  .ARM.attributes
-                0x000000b0       0x33 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
+                0x000000b0       0x33 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj
  .ARM.attributes
-                0x000000e3       0x33 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
+                0x000000e3       0x33 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
  .ARM.attributes
-                0x00000116       0x33 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
+                0x00000116       0x33 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
  .ARM.attributes
-                0x00000149       0x33 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
+                0x00000149       0x33 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
  .ARM.attributes
-                0x0000017c       0x33 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj
+                0x0000017c       0x33 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
  .ARM.attributes
-                0x000001af       0x33 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+                0x000001af       0x33 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj
  .ARM.attributes
-                0x000001e2       0x33 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
+                0x000001e2       0x33 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
  .ARM.attributes
-                0x00000215       0x33 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
+                0x00000215       0x33 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
  .ARM.attributes
                 0x00000248       0x33 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
  .ARM.attributes
@@ -1860,207 +1809,206 @@ LOAD c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
  .ARM.attributes
                 0x000003e0       0x33 CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
  .ARM.attributes
-                0x00000413       0x33 CMakeFiles/hoverGate_fw.elf.dir/Src/usart.c.obj
+                0x00000413       0x21 CMakeFiles/hoverGate_fw.elf.dir/startup/startup_stm32f103xb.s.obj
  .ARM.attributes
-                0x00000446       0x21 CMakeFiles/hoverGate_fw.elf.dir/startup/startup_stm32f103xb.s.obj
+                0x00000434       0x2d c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libstdc++_nano.a(guard.o)
  .ARM.attributes
-                0x00000467       0x1d c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_addsubdf3.o)
+                0x00000461       0x1d c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_addsubdf3.o)
  .ARM.attributes
-                0x00000484       0x1d c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_muldivdf3.o)
+                0x0000047e       0x1d c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_muldivdf3.o)
  .ARM.attributes
-                0x000004a1       0x1d c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_fixunsdfsi.o)
+                0x0000049b       0x1d c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_fixunsdfsi.o)
  .ARM.attributes
-                0x000004be       0x2d c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-init.o)
+                0x000004b8       0x1d c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_addsubsf3.o)
  .ARM.attributes
-                0x000004eb       0x2d c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-memset.o)
+                0x000004d5       0x1d c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_muldivsf3.o)
  .ARM.attributes
-                0x00000518       0x1d c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
+                0x000004f2       0x1d c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_fixsfsi.o)
+ .ARM.attributes
+                0x0000050f       0x2d c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-init.o)
+ .ARM.attributes
+                0x0000053c       0x2d c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-memset.o)
+ .ARM.attributes
+                0x00000569       0x1d c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
 OUTPUT(hoverGate_fw.elf elf32-littlearm)
 
-.debug_info     0x00000000     0xce4e
+.debug_info     0x00000000     0xbc9e
  .debug_info    0x00000000      0x6f3 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
  .debug_info    0x000006f3      0xc56 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
- .debug_info    0x00001349      0xb3b CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
- .debug_info    0x00001e84      0x79b CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
- .debug_info    0x0000261f      0x676 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
- .debug_info    0x00002c95      0x7f9 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
- .debug_info    0x0000348e      0x42e CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj
- .debug_info    0x000038bc     0x244b CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
- .debug_info    0x00005d07     0x10f9 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
- .debug_info    0x00006e00     0x11d8 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .debug_info    0x00007fd8      0xb51 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
- .debug_info    0x00008b29      0x7f4 CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.obj
- .debug_info    0x0000931d      0x362 CMakeFiles/hoverGate_fw.elf.dir/Src/dma.c.obj
- .debug_info    0x0000967f      0x3eb CMakeFiles/hoverGate_fw.elf.dir/Src/gpio.c.obj
- .debug_info    0x00009a6a      0xfa6 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
- .debug_info    0x0000aa10      0x2c0 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_hal_msp.c.obj
- .debug_info    0x0000acd0      0x8c0 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
- .debug_info    0x0000b590      0x428 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
- .debug_info    0x0000b9b8      0xb91 CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
- .debug_info    0x0000c549      0x8e3 CMakeFiles/hoverGate_fw.elf.dir/Src/usart.c.obj
- .debug_info    0x0000ce2c       0x22 CMakeFiles/hoverGate_fw.elf.dir/startup/startup_stm32f103xb.s.obj
+ .debug_info    0x00001349      0x9f0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj
+ .debug_info    0x00001d39      0xb3b CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
+ .debug_info    0x00002874      0x79b CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
+ .debug_info    0x0000300f      0x676 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
+ .debug_info    0x00003685      0x7f9 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
+ .debug_info    0x00003e7e      0x42e CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj
+ .debug_info    0x000042ac     0x244b CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+ .debug_info    0x000066f7     0x10f9 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
+ .debug_info    0x000077f0      0xdc6 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+ .debug_info    0x000085b6      0x7f4 CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.obj
+ .debug_info    0x00008daa      0x362 CMakeFiles/hoverGate_fw.elf.dir/Src/dma.c.obj
+ .debug_info    0x0000910c      0x3eb CMakeFiles/hoverGate_fw.elf.dir/Src/gpio.c.obj
+ .debug_info    0x000094f7      0xe74 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
+ .debug_info    0x0000a36b      0x2c0 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_hal_msp.c.obj
+ .debug_info    0x0000a62b      0x698 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
+ .debug_info    0x0000acc3      0x428 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
+ .debug_info    0x0000b0eb      0xb91 CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
+ .debug_info    0x0000bc7c       0x22 CMakeFiles/hoverGate_fw.elf.dir/startup/startup_stm32f103xb.s.obj
 
-.debug_abbrev   0x00000000     0x2413
+.debug_abbrev   0x00000000     0x2226
  .debug_abbrev  0x00000000      0x1d5 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
  .debug_abbrev  0x000001d5      0x1d2 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
- .debug_abbrev  0x000003a7      0x2d2 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
- .debug_abbrev  0x00000679      0x1fb CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
- .debug_abbrev  0x00000874      0x1bd CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
- .debug_abbrev  0x00000a31      0x240 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
- .debug_abbrev  0x00000c71      0x172 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj
- .debug_abbrev  0x00000de3      0x22d CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
- .debug_abbrev  0x00001010      0x21b CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
- .debug_abbrev  0x0000122b      0x23f CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .debug_abbrev  0x0000146a      0x25e CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
- .debug_abbrev  0x000016c8      0x1a7 CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.obj
- .debug_abbrev  0x0000186f      0x104 CMakeFiles/hoverGate_fw.elf.dir/Src/dma.c.obj
- .debug_abbrev  0x00001973      0x131 CMakeFiles/hoverGate_fw.elf.dir/Src/gpio.c.obj
- .debug_abbrev  0x00001aa4      0x280 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
- .debug_abbrev  0x00001d24      0x106 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_hal_msp.c.obj
- .debug_abbrev  0x00001e2a      0x157 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
- .debug_abbrev  0x00001f81      0x131 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
- .debug_abbrev  0x000020b2      0x1b0 CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
- .debug_abbrev  0x00002262      0x19f CMakeFiles/hoverGate_fw.elf.dir/Src/usart.c.obj
- .debug_abbrev  0x00002401       0x12 CMakeFiles/hoverGate_fw.elf.dir/startup/startup_stm32f103xb.s.obj
+ .debug_abbrev  0x000003a7      0x1f2 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj
+ .debug_abbrev  0x00000599      0x2d2 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
+ .debug_abbrev  0x0000086b      0x1fb CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
+ .debug_abbrev  0x00000a66      0x1bd CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
+ .debug_abbrev  0x00000c23      0x240 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
+ .debug_abbrev  0x00000e63      0x172 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj
+ .debug_abbrev  0x00000fd5      0x22d CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+ .debug_abbrev  0x00001202      0x21b CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
+ .debug_abbrev  0x0000141d      0x26e CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+ .debug_abbrev  0x0000168b      0x1a7 CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.obj
+ .debug_abbrev  0x00001832      0x104 CMakeFiles/hoverGate_fw.elf.dir/Src/dma.c.obj
+ .debug_abbrev  0x00001936      0x131 CMakeFiles/hoverGate_fw.elf.dir/Src/gpio.c.obj
+ .debug_abbrev  0x00001a67      0x26f CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
+ .debug_abbrev  0x00001cd6      0x106 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_hal_msp.c.obj
+ .debug_abbrev  0x00001ddc      0x157 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
+ .debug_abbrev  0x00001f33      0x131 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
+ .debug_abbrev  0x00002064      0x1b0 CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
+ .debug_abbrev  0x00002214       0x12 CMakeFiles/hoverGate_fw.elf.dir/startup/startup_stm32f103xb.s.obj
 
-.debug_aranges  0x00000000      0xda8
+.debug_aranges  0x00000000      0xc40
  .debug_aranges
                 0x00000000       0xe0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
  .debug_aranges
                 0x000000e0       0xf0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
  .debug_aranges
-                0x000001d0      0x100 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
+                0x000001d0       0x80 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj
  .debug_aranges
-                0x000002d0       0x80 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
+                0x00000250      0x100 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
  .debug_aranges
-                0x00000350       0x58 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
+                0x00000350       0x80 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
  .debug_aranges
-                0x000003a8       0x90 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
+                0x000003d0       0x58 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
  .debug_aranges
-                0x00000438       0x30 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj
+                0x00000428       0x90 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
  .debug_aranges
-                0x00000468      0x3a8 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+                0x000004b8       0x30 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj
  .debug_aranges
-                0x00000810      0x150 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
+                0x000004e8      0x3a8 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
  .debug_aranges
-                0x00000960      0x1d0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
+                0x00000890      0x150 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
  .debug_aranges
-                0x00000b30       0x70 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                0x000009e0       0x90 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
  .debug_aranges
-                0x00000ba0       0x30 CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.obj
+                0x00000a70       0x30 CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.obj
  .debug_aranges
-                0x00000bd0       0x20 CMakeFiles/hoverGate_fw.elf.dir/Src/dma.c.obj
+                0x00000aa0       0x20 CMakeFiles/hoverGate_fw.elf.dir/Src/dma.c.obj
  .debug_aranges
-                0x00000bf0       0x20 CMakeFiles/hoverGate_fw.elf.dir/Src/gpio.c.obj
+                0x00000ac0       0x20 CMakeFiles/hoverGate_fw.elf.dir/Src/gpio.c.obj
  .debug_aranges
-                0x00000c10       0x48 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
+                0x00000ae0       0x48 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
  .debug_aranges
-                0x00000c58       0x20 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_hal_msp.c.obj
+                0x00000b28       0x20 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_hal_msp.c.obj
  .debug_aranges
-                0x00000c78       0x70 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
+                0x00000b48       0x68 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
  .debug_aranges
-                0x00000ce8       0x28 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
+                0x00000bb0       0x28 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
  .debug_aranges
-                0x00000d10       0x40 CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
+                0x00000bd8       0x40 CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
  .debug_aranges
-                0x00000d50       0x30 CMakeFiles/hoverGate_fw.elf.dir/Src/usart.c.obj
- .debug_aranges
-                0x00000d80       0x28 CMakeFiles/hoverGate_fw.elf.dir/startup/startup_stm32f103xb.s.obj
+                0x00000c18       0x28 CMakeFiles/hoverGate_fw.elf.dir/startup/startup_stm32f103xb.s.obj
 
-.debug_ranges   0x00000000      0xc60
+.debug_ranges   0x00000000      0xb08
  .debug_ranges  0x00000000       0xd0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
  .debug_ranges  0x000000d0       0xe0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
- .debug_ranges  0x000001b0       0xf0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
- .debug_ranges  0x000002a0       0x70 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
- .debug_ranges  0x00000310       0x48 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
- .debug_ranges  0x00000358       0x80 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
- .debug_ranges  0x000003d8       0x20 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj
- .debug_ranges  0x000003f8      0x398 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
- .debug_ranges  0x00000790      0x140 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
- .debug_ranges  0x000008d0      0x1c0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .debug_ranges  0x00000a90       0x60 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
- .debug_ranges  0x00000af0       0x20 CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.obj
- .debug_ranges  0x00000b10       0x10 CMakeFiles/hoverGate_fw.elf.dir/Src/dma.c.obj
- .debug_ranges  0x00000b20       0x10 CMakeFiles/hoverGate_fw.elf.dir/Src/gpio.c.obj
- .debug_ranges  0x00000b30       0x38 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
- .debug_ranges  0x00000b68       0x10 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_hal_msp.c.obj
- .debug_ranges  0x00000b78       0x60 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
- .debug_ranges  0x00000bd8       0x18 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
- .debug_ranges  0x00000bf0       0x30 CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
- .debug_ranges  0x00000c20       0x20 CMakeFiles/hoverGate_fw.elf.dir/Src/usart.c.obj
- .debug_ranges  0x00000c40       0x20 CMakeFiles/hoverGate_fw.elf.dir/startup/startup_stm32f103xb.s.obj
+ .debug_ranges  0x000001b0       0x70 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj
+ .debug_ranges  0x00000220       0xf0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
+ .debug_ranges  0x00000310       0x70 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
+ .debug_ranges  0x00000380       0x48 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
+ .debug_ranges  0x000003c8       0x80 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
+ .debug_ranges  0x00000448       0x20 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj
+ .debug_ranges  0x00000468      0x398 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+ .debug_ranges  0x00000800      0x140 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
+ .debug_ranges  0x00000940       0x80 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+ .debug_ranges  0x000009c0       0x20 CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.obj
+ .debug_ranges  0x000009e0       0x10 CMakeFiles/hoverGate_fw.elf.dir/Src/dma.c.obj
+ .debug_ranges  0x000009f0       0x10 CMakeFiles/hoverGate_fw.elf.dir/Src/gpio.c.obj
+ .debug_ranges  0x00000a00       0x38 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
+ .debug_ranges  0x00000a38       0x10 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_hal_msp.c.obj
+ .debug_ranges  0x00000a48       0x58 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
+ .debug_ranges  0x00000aa0       0x18 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
+ .debug_ranges  0x00000ab8       0x30 CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
+ .debug_ranges  0x00000ae8       0x20 CMakeFiles/hoverGate_fw.elf.dir/startup/startup_stm32f103xb.s.obj
 
-.debug_line     0x00000000     0x69ba
+.debug_line     0x00000000     0x618a
  .debug_line    0x00000000      0x41e CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
  .debug_line    0x0000041e      0x7ad CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
- .debug_line    0x00000bcb      0x4ef CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
- .debug_line    0x000010ba      0x6ab CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
- .debug_line    0x00001765      0x436 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
- .debug_line    0x00001b9b      0x538 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
- .debug_line    0x000020d3      0x327 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj
- .debug_line    0x000023fa     0x1321 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
- .debug_line    0x0000371b      0x888 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
- .debug_line    0x00003fa3      0xb67 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .debug_line    0x00004b0a      0x4a5 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
- .debug_line    0x00004faf      0x301 CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.obj
- .debug_line    0x000052b0      0x211 CMakeFiles/hoverGate_fw.elf.dir/Src/dma.c.obj
- .debug_line    0x000054c1      0x24a CMakeFiles/hoverGate_fw.elf.dir/Src/gpio.c.obj
- .debug_line    0x0000570b      0x416 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
- .debug_line    0x00005b21      0x220 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_hal_msp.c.obj
- .debug_line    0x00005d41      0x332 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
- .debug_line    0x00006073      0x269 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
- .debug_line    0x000062dc      0x34c CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
- .debug_line    0x00006628      0x2e9 CMakeFiles/hoverGate_fw.elf.dir/Src/usart.c.obj
- .debug_line    0x00006911       0xa9 CMakeFiles/hoverGate_fw.elf.dir/startup/startup_stm32f103xb.s.obj
+ .debug_line    0x00000bcb      0x60b CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj
+ .debug_line    0x000011d6      0x4ef CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
+ .debug_line    0x000016c5      0x6ab CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
+ .debug_line    0x00001d70      0x436 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
+ .debug_line    0x000021a6      0x538 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
+ .debug_line    0x000026de      0x327 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj
+ .debug_line    0x00002a05     0x1321 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+ .debug_line    0x00003d26      0x888 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
+ .debug_line    0x000045ae      0x546 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+ .debug_line    0x00004af4      0x305 CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.obj
+ .debug_line    0x00004df9      0x211 CMakeFiles/hoverGate_fw.elf.dir/Src/dma.c.obj
+ .debug_line    0x0000500a      0x24a CMakeFiles/hoverGate_fw.elf.dir/Src/gpio.c.obj
+ .debug_line    0x00005254      0x3b0 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
+ .debug_line    0x00005604      0x220 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_hal_msp.c.obj
+ .debug_line    0x00005824      0x308 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
+ .debug_line    0x00005b2c      0x269 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
+ .debug_line    0x00005d95      0x34c CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
+ .debug_line    0x000060e1       0xa9 CMakeFiles/hoverGate_fw.elf.dir/startup/startup_stm32f103xb.s.obj
 
-.debug_str      0x00000000     0x410f
+.debug_str      0x00000000     0x3dbf
  .debug_str     0x00000000      0x7e2 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
                                 0x86c (size before relaxing)
- .debug_str     0x000007e2      0x5c8 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
+ .debug_str     0x000007e2      0x598 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
                                 0x96c (size before relaxing)
- .debug_str     0x00000daa      0x42d CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
+ .debug_str     0x00000d7a      0x2e0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj
+                                0x91c (size before relaxing)
+ .debug_str     0x0000105a      0x42d CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
                                 0x9d3 (size before relaxing)
- .debug_str     0x000011d7      0x26b CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
+ .debug_str     0x00001487      0x26b CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
                                 0x715 (size before relaxing)
- .debug_str     0x00001442      0x1db CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
+ .debug_str     0x000016f2      0x1db CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
                                 0x524 (size before relaxing)
- .debug_str     0x0000161d      0x303 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
+ .debug_str     0x000018cd      0x303 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
                                 0x6df (size before relaxing)
- .debug_str     0x00001920      0x13e CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj
+ .debug_str     0x00001bd0      0x13e CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj
                                 0x4c4 (size before relaxing)
- .debug_str     0x00001a5e      0xf85 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+ .debug_str     0x00001d0e      0xf85 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
                                0x1502 (size before relaxing)
- .debug_str     0x000029e3      0x5a5 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
+ .debug_str     0x00002c93      0x5a5 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
                                 0xd02 (size before relaxing)
- .debug_str     0x00002f88      0x6d4 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
-                                0xc26 (size before relaxing)
- .debug_str     0x0000365c      0x4c9 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
-                                0xa9a (size before relaxing)
- .debug_str     0x00003b25       0x70 CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.obj
+ .debug_str     0x00003238      0x680 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+                                0xc99 (size before relaxing)
+ .debug_str     0x000038b8       0x70 CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.obj
                                 0x6f9 (size before relaxing)
- .debug_str     0x00003b95       0x45 CMakeFiles/hoverGate_fw.elf.dir/Src/dma.c.obj
+ .debug_str     0x00003928       0x45 CMakeFiles/hoverGate_fw.elf.dir/Src/dma.c.obj
                                 0x5d7 (size before relaxing)
- .debug_str     0x00003bda       0x47 CMakeFiles/hoverGate_fw.elf.dir/Src/gpio.c.obj
+ .debug_str     0x0000396d       0x47 CMakeFiles/hoverGate_fw.elf.dir/Src/gpio.c.obj
                                 0x3aa (size before relaxing)
- .debug_str     0x00003c21      0x1f2 CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
-                               0x10c4 (size before relaxing)
- .debug_str     0x00003e13       0x47 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_hal_msp.c.obj
+ .debug_str     0x000039b4      0x17b CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
+                               0x1011 (size before relaxing)
+ .debug_str     0x00003b2f       0x47 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_hal_msp.c.obj
                                 0x33e (size before relaxing)
- .debug_str     0x00003e5a       0xfd CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
-                                0x901 (size before relaxing)
- .debug_str     0x00003f57       0x79 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
+ .debug_str     0x00003b76       0xeb CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
+                                0x724 (size before relaxing)
+ .debug_str     0x00003c61       0x79 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
                                 0x393 (size before relaxing)
- .debug_str     0x00003fd0       0x8a CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
+ .debug_str     0x00003cda       0x8a CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
                                 0xc24 (size before relaxing)
- .debug_str     0x0000405a       0x5a CMakeFiles/hoverGate_fw.elf.dir/Src/usart.c.obj
-                                0xa1b (size before relaxing)
- .debug_str     0x000040b4       0x5b CMakeFiles/hoverGate_fw.elf.dir/startup/startup_stm32f103xb.s.obj
+ .debug_str     0x00003d64       0x5b CMakeFiles/hoverGate_fw.elf.dir/startup/startup_stm32f103xb.s.obj
                                  0x9c (size before relaxing)
 
 .comment        0x00000000       0x7f
  .comment       0x00000000       0x7f CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
                                  0x80 (size before relaxing)
  .comment       0x0000007f       0x80 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
+ .comment       0x0000007f       0x80 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj
  .comment       0x0000007f       0x80 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
  .comment       0x0000007f       0x80 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
  .comment       0x0000007f       0x80 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
@@ -2068,7 +2016,6 @@ OUTPUT(hoverGate_fw.elf elf32-littlearm)
  .comment       0x0000007f       0x80 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj
  .comment       0x0000007f       0x80 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
  .comment       0x0000007f       0x80 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
- .comment       0x0000007f       0x80 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
  .comment       0x0000007f       0x80 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
  .comment       0x0000007f       0x80 CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.obj
  .comment       0x0000007f       0x80 CMakeFiles/hoverGate_fw.elf.dir/Src/dma.c.obj
@@ -2078,31 +2025,33 @@ OUTPUT(hoverGate_fw.elf elf32-littlearm)
  .comment       0x0000007f       0x80 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
  .comment       0x0000007f       0x80 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
  .comment       0x0000007f       0x80 CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
- .comment       0x0000007f       0x80 CMakeFiles/hoverGate_fw.elf.dir/Src/usart.c.obj
 
-.debug_frame    0x00000000     0x3818
+.debug_frame    0x00000000     0x32e4
  .debug_frame   0x00000000      0x334 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
  .debug_frame   0x00000334      0x40c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
- .debug_frame   0x00000740      0x428 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
- .debug_frame   0x00000b68      0x208 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
- .debug_frame   0x00000d70      0x14c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
- .debug_frame   0x00000ebc      0x21c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
- .debug_frame   0x000010d8       0x84 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj
- .debug_frame   0x0000115c     0x10e8 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
- .debug_frame   0x00002244      0x5c0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
- .debug_frame   0x00002804      0x834 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
- .debug_frame   0x00003038      0x1b8 CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
- .debug_frame   0x000031f0       0x7c CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.obj
- .debug_frame   0x0000326c       0x34 CMakeFiles/hoverGate_fw.elf.dir/Src/dma.c.obj
- .debug_frame   0x000032a0       0x34 CMakeFiles/hoverGate_fw.elf.dir/Src/gpio.c.obj
- .debug_frame   0x000032d4       0xcc CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
- .debug_frame   0x000033a0       0x38 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_hal_msp.c.obj
- .debug_frame   0x000033d8      0x144 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
- .debug_frame   0x0000351c       0x58 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
- .debug_frame   0x00003574       0xc4 CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
- .debug_frame   0x00003638       0x74 CMakeFiles/hoverGate_fw.elf.dir/Src/usart.c.obj
- .debug_frame   0x000036ac       0xac c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_addsubdf3.o)
- .debug_frame   0x00003758       0x50 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_muldivdf3.o)
- .debug_frame   0x000037a8       0x24 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_fixunsdfsi.o)
- .debug_frame   0x000037cc       0x2c c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-init.o)
- .debug_frame   0x000037f8       0x20 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-memset.o)
+ .debug_frame   0x00000740      0x204 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj
+ .debug_frame   0x00000944      0x428 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
+ .debug_frame   0x00000d6c      0x208 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
+ .debug_frame   0x00000f74      0x14c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
+ .debug_frame   0x000010c0      0x21c CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
+ .debug_frame   0x000012dc       0x84 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj
+ .debug_frame   0x00001360     0x10e8 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+ .debug_frame   0x00002448      0x5c0 CMakeFiles/hoverGate_fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
+ .debug_frame   0x00002a08      0x25c CMakeFiles/hoverGate_fw.elf.dir/Src/BLDC_driver.cpp.obj
+ .debug_frame   0x00002c64       0x7c CMakeFiles/hoverGate_fw.elf.dir/Src/adc.c.obj
+ .debug_frame   0x00002ce0       0x34 CMakeFiles/hoverGate_fw.elf.dir/Src/dma.c.obj
+ .debug_frame   0x00002d14       0x34 CMakeFiles/hoverGate_fw.elf.dir/Src/gpio.c.obj
+ .debug_frame   0x00002d48       0xcc CMakeFiles/hoverGate_fw.elf.dir/Src/main.cpp.obj
+ .debug_frame   0x00002e14       0x38 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_hal_msp.c.obj
+ .debug_frame   0x00002e4c      0x128 CMakeFiles/hoverGate_fw.elf.dir/Src/stm32f1xx_it.c.obj
+ .debug_frame   0x00002f74       0x58 CMakeFiles/hoverGate_fw.elf.dir/Src/system_stm32f1xx.c.obj
+ .debug_frame   0x00002fcc       0xc4 CMakeFiles/hoverGate_fw.elf.dir/Src/tim.c.obj
+ .debug_frame   0x00003090       0x40 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libstdc++_nano.a(guard.o)
+ .debug_frame   0x000030d0       0xac c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_addsubdf3.o)
+ .debug_frame   0x0000317c       0x50 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_muldivdf3.o)
+ .debug_frame   0x000031cc       0x24 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_fixunsdfsi.o)
+ .debug_frame   0x000031f0       0x4c c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_addsubsf3.o)
+ .debug_frame   0x0000323c       0x38 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_muldivsf3.o)
+ .debug_frame   0x00003274       0x24 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m\libgcc.a(_arm_fixsfsi.o)
+ .debug_frame   0x00003298       0x2c c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-init.o)
+ .debug_frame   0x000032c4       0x20 c:/arm_gcc/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-memset.o)

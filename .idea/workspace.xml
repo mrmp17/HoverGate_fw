@@ -2,8 +2,8 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="hoverGate_fw" targetName="hoverGate_fw.elf" />
       <config projectName="hoverGate_fw" targetName="UPLOAD" />
+      <config projectName="hoverGate_fw" targetName="hoverGate_fw.elf" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -14,20 +14,13 @@
   <component name="ChangeListManager">
     <list default="true" id="7f1149c8-a152-4efe-bef3-3cee35c64369" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mxproject" beforeDir="false" afterPath="$PROJECT_DIR$/.mxproject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inc/main.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/main.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inc/stm32f1xx_hal_conf.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/stm32f1xx_hal_conf.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inc/stm32f1xx_it.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/stm32f1xx_it.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inc/usart.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/adc.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/adc.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/BLDC_driver.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/BLDC_driver.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/BLDC_driver.h" beforeDir="false" afterPath="$PROJECT_DIR$/Src/BLDC_driver.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/stm32f1xx_it.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/stm32f1xx_it.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/usart.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/hoverGate_fw.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/hoverGate_fw.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hoverGate_fw.ioc" beforeDir="false" afterPath="$PROJECT_DIR$/hoverGate_fw.ioc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/hoverGate_fw.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/hoverGate_fw.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/hoverGate_fw.elf" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/hoverGate_fw.elf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/hoverGate_fw.hex" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/hoverGate_fw.hex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/hoverGate_fw.map" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/hoverGate_fw.map" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,71 +34,91 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Src/old_main.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4505">
-              <caret line="265" column="1" selection-start-line="265" selection-start-column="1" selection-end-line="265" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Src/main.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="134" column="30" selection-start-line="134" selection-start-column="30" selection-end-line="134" selection-end-column="30" />
-              <folding>
-                <element signature="e#854#871#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Src/stm32f1xx_it.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="210" column="33" selection-start-line="210" selection-start-column="33" selection-end-line="210" selection-end-column="33" />
-              <folding>
-                <element signature="e#854#871#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Inc/main.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="54" selection-start-line="54" selection-end-line="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Inc/tim.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="49" selection-start-line="49" selection-end-line="49" />
-              <folding>
-                <element signature="e#1485#1486#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Src/BLDC_driver.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3145">
-              <caret line="185" column="25" selection-start-line="185" selection-start-column="25" selection-end-line="185" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.7766032">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Src/old_main.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="4505">
+                  <caret line="265" column="1" selection-start-line="265" selection-start-column="1" selection-end-line="265" selection-end-column="1" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Src/main.cpp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="221">
+                  <caret line="133" column="21" lean-forward="true" selection-start-line="133" selection-start-column="21" selection-end-line="133" selection-end-column="21" />
+                  <folding>
+                    <element signature="e#854#871#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Src/stm32f1xx_it.c">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="101">
+                  <caret line="205" selection-start-line="205" selection-end-line="205" />
+                  <folding>
+                    <element signature="e#854#871#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Inc/main.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="748">
+                  <caret line="54" selection-start-line="54" selection-end-line="54" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Inc/tim.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="748">
+                  <caret line="49" selection-start-line="49" selection-end-line="49" />
+                  <folding>
+                    <element signature="e#1485#1486#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Src/BLDC_driver.cpp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="71">
+                  <caret line="232" selection-start-line="232" selection-end-line="232" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Src/BLDC_driver.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="23">
+                  <caret line="26" selection-start-line="26" selection-end-line="28" />
+                  <folding>
+                    <element signature="e#114#133#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -130,9 +143,9 @@
         <option value="$PROJECT_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c" />
         <option value="$PROJECT_DIR$/Inc/stm32f1xx_it.h" />
         <option value="$PROJECT_DIR$/Inc/main.h" />
+        <option value="$PROJECT_DIR$/Src/stm32f1xx_it.c" />
         <option value="$PROJECT_DIR$/Src/BLDC_driver.h" />
         <option value="$PROJECT_DIR$/Src/BLDC_driver.cpp" />
-        <option value="$PROJECT_DIR$/Src/stm32f1xx_it.c" />
         <option value="$PROJECT_DIR$/Src/main.cpp" />
       </list>
     </option>
@@ -142,7 +155,7 @@
     <option name="x" value="-13" />
     <option name="y" value="-13" />
     <option name="width" value="2585" />
-    <option name="height" value="1395" />
+    <option name="height" value="1465" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -228,7 +241,8 @@
       <workItem from="1575726287815" duration="1571000" />
       <workItem from="1576929982468" duration="9657000" />
       <workItem from="1577009716159" duration="22759000" />
-      <workItem from="1577096943199" duration="2258000" />
+      <workItem from="1577096943199" duration="2281000" />
+      <workItem from="1577113141206" duration="10064000" />
     </task>
     <task id="LOCAL-00001" summary="added dead-time note">
       <created>1576692301565</created>
@@ -286,11 +300,18 @@
       <option name="project" value="LOCAL" />
       <updated>1577051056972</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Working PWM control with pot on TX pin">
+      <created>1577101823881</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1577101823881</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60097000" />
+    <option name="totallyTimeSpent" value="70184000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -305,19 +326,19 @@
     <frame x="-7" y="-7" width="1477" height="797" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31430584" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.21000704" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2777778" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.28040853" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.17117117" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.53003" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32882884" />
       <window_info anchor="bottom" id="Serial Monitor" order="7" weight="0.32882884" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.22972973" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.5945946" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="12" />
@@ -337,7 +358,28 @@
     <MESSAGE value="deterministic spinning test working!" />
     <MESSAGE value="c -&gt; cpp, added BLDC class" />
     <MESSAGE value="Working BLDC dirver class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working BLDC dirver class" />
+    <MESSAGE value="Working PWM control with pot on TX pin" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working PWM control with pot on TX pin" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Src/BLDC_driver.cpp</url>
+          <line>231</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="breakpointLogExpression">
+      <expression>
+        <expression-string>steps</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c">
@@ -449,16 +491,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Src/BLDC_driver.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="28" column="13" lean-forward="true" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-          <folding>
-            <element signature="e#114#133#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Src/old_main.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4505">
@@ -468,14 +500,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Inc/main.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
+        <state relative-caret-position="748">
           <caret line="54" selection-start-line="54" selection-end-line="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Inc/tim.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
+        <state relative-caret-position="748">
           <caret line="49" selection-start-line="49" selection-end-line="49" />
           <folding>
             <element signature="e#1485#1486#0" expanded="true" />
@@ -483,27 +515,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Src/BLDC_driver.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3145">
-          <caret line="185" column="25" selection-start-line="185" selection-start-column="25" selection-end-line="185" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Src/stm32f1xx_it.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="210" column="33" selection-start-line="210" selection-start-column="33" selection-end-line="210" selection-end-column="33" />
+        <state relative-caret-position="101">
+          <caret line="205" selection-start-line="205" selection-end-line="205" />
           <folding>
             <element signature="e#854#871#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Src/BLDC_driver.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="26" selection-start-line="26" selection-end-line="28" />
+          <folding>
+            <element signature="e#114#133#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Src/BLDC_driver.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="232" selection-start-line="232" selection-end-line="232" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Src/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="134" column="30" selection-start-line="134" selection-start-column="30" selection-end-line="134" selection-end-column="30" />
+        <state relative-caret-position="221">
+          <caret line="133" column="21" lean-forward="true" selection-start-line="133" selection-start-column="21" selection-end-line="133" selection-end-column="21" />
           <folding>
             <element signature="e#854#871#0" expanded="true" />
           </folding>

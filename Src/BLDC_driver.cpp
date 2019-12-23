@@ -184,6 +184,7 @@ void BLDC_driver::enable() {
 void BLDC_driver::disable() {
   BLDC_enabled = false;
   BLDC_pwm_set_value = 0;
+  auto_pwm_active = false;
 }
 
 bool BLDC_driver::is_enabled() {
@@ -211,8 +212,44 @@ void BLDC_driver::set_pwm(int16_t pwm) {
   }
 }
 
+uint32_t BLDC_driver::get_encoder(){
+  return encoder_steps;
+}
+
+void BLDC_driver::reset_encoder(){
+  encoder_steps = encoder_start_val;
+}
+
+void BLDC_driver::ramp_pwm(int16_t pwm_from, int16_t pwm_to, uint32_t time_ms) {
+  auto_pwm_start = pwm_from;
+  auto_pwm_end = pwm_to;
+  auto_pwm_time = time_ms;
+  auto_pwm_active = true;
+}
+
+void BLDC_driver::auto_pwm_handler() {
+  static bool prev_auto_pwm_en = false;
+  static uint32_t stepCounter = 0;
+  if(auto_pwm_active){
+    if(!prev_auto_pwm_en){  //reset counter if just started ramping
+      stepCounter = 0;
+    }
+    int16_t pwmToSet = auto_pwm_start + ((auto_pwm_end - auto_pwm_start)*(stepCounter/(float)(auto_pwm_time*INT_PER_MS)));  //calculate pwm
+    set_pwm(pwmToSet);  //set PWM
+    if(stepCounter >= auto_pwm_time*INT_PER_MS){
+      auto_pwm_active = false;
+    }
+    stepCounter++;
+    prev_auto_pwm_en = auto_pwm_active;
+  }
+
+}
+
+
+
 //run this at 10kHz
 void BLDC_driver::interrupt_handler() {
+  auto_pwm_handler();
   bool HALL_states [3] = {0};
   HALL_states[0] = HAL_GPIO_ReadPin(HALL_A_GPIO_Port, HALL_A_Pin) == GPIO_PIN_SET ? true : false;
   HALL_states[1] = HAL_GPIO_ReadPin(HALL_B_GPIO_Port, HALL_B_Pin) == GPIO_PIN_SET ? true : false;
@@ -228,5 +265,10 @@ void BLDC_driver::interrupt_handler() {
   else if (HALL_states[0] == 1 && HALL_states[1] == 1 && HALL_states[2] == 1) pwmLoc = 0; //not valid
 
   set_phases(pwmLoc, BLDC_pwm_set_value, BLDC_direction, BLDC_enabled); //set all phases to correct states
+
+  static uint8_t prevPwmLoc = pwmLoc; //save pwmLoc here at first run, otherwise manipulated after encoder calculation
+  if(pwmLoc > prevPwmLoc || (pwmLoc == 1 && prevPwmLoc == 6)) encoder_steps++;
+  else if(pwmLoc < prevPwmLoc || (pwmLoc == 6 && prevPwmLoc == 1)) encoder_steps--;
+  prevPwmLoc = pwmLoc;
 
 }
