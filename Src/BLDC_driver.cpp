@@ -184,7 +184,7 @@ void BLDC_driver::enable() {
 void BLDC_driver::disable() {
   BLDC_enabled = false;
   BLDC_pwm_set_value = 0;
-  auto_pwm_active = false;
+  ramp_active = false;
 }
 
 bool BLDC_driver::is_enabled() {
@@ -199,6 +199,10 @@ void BLDC_driver::begin() {
 }
 
 void BLDC_driver::set_pwm(int16_t pwm) {
+  if(pwm == BLDC_user_pwm) {
+    return;
+  }
+  BLDC_user_pwm = pwm;
   if(pwm > 1000) pwm = 1000;
   if(pwm < -1000) pwm = -1000;
   if(pwm < 0){
@@ -212,6 +216,10 @@ void BLDC_driver::set_pwm(int16_t pwm) {
   }
 }
 
+int16_t BLDC_driver::get_pwm() {
+  return BLDC_user_pwm;
+}
+
 uint32_t BLDC_driver::get_encoder(){
   return encoder_steps;
 }
@@ -220,27 +228,29 @@ void BLDC_driver::reset_encoder(){
   encoder_steps = encoder_start_val;
 }
 
-void BLDC_driver::ramp_pwm(int16_t pwm_from, int16_t pwm_to, uint32_t time_ms) {
-  auto_pwm_start = pwm_from;
-  auto_pwm_end = pwm_to;
-  auto_pwm_time = time_ms;
-  auto_pwm_active = true;
+void BLDC_driver::ramp_pwm(int16_t pwm_to, uint32_t time_ms) {
+  ramp_active = false;
+  ramp_end_cnt = time_ms * INT_PER_MS;
+  ramp_k = (double)(pwm_to - get_pwm()) / ramp_end_cnt;
+  ramp_n = get_pwm();
+  ramp_cnt = 0;
+  ramp_active = true;
+}
+
+bool BLDC_driver::is_ramp_active() {
+  return ramp_active;
 }
 
 void BLDC_driver::auto_pwm_handler() {
-  static bool prev_auto_pwm_en = false;
-  static uint32_t stepCounter = 0;
-  if(auto_pwm_active){
-    if(!prev_auto_pwm_en){  //reset counter if just started ramping
-      stepCounter = 0;
+  if(ramp_active) {
+    if(ramp_cnt > ramp_end_cnt) {
+      ramp_active = false;
+      return;
     }
-    int16_t pwmToSet = auto_pwm_start + ((auto_pwm_end - auto_pwm_start)*(stepCounter/(float)(auto_pwm_time*INT_PER_MS)));  //calculate pwm
-    set_pwm(pwmToSet);  //set PWM
-    if(stepCounter >= auto_pwm_time*INT_PER_MS){
-      auto_pwm_active = false;
-    }
-    stepCounter++;
-    prev_auto_pwm_en = auto_pwm_active;
+
+    int16_t pwm = round(ramp_k * ramp_cnt + ramp_n);
+    set_pwm(pwm);
+    ramp_cnt++;
   }
 
 }

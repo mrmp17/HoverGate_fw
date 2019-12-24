@@ -7,6 +7,7 @@
 
 
 #include <stdint.h>
+#include <math.h>
 #include "tim.h"
 
 #define PHASE_Y 1
@@ -29,10 +30,11 @@ public:
     bool is_enabled();
     void disable();
     void set_pwm(int16_t pwm);  //+- 1000 //TODO: map to 0-2k timer values
+    int16_t get_pwm();
     uint32_t get_encoder();
     void reset_encoder();
     float getCurrent();
-    void ramp_pwm(int16_t pwm_from, int16_t pwm_to, uint32_t time_ms);
+    void ramp_pwm(int16_t pwm_to, uint32_t time_ms);
     bool is_ramp_active();
 
     void interrupt_handler(); //call this at 10kHz
@@ -50,13 +52,16 @@ private:
     bool BLDC_enabled = false;
     bool BLDC_direction = false;
     uint16_t BLDC_pwm_set_value = 0; //this should be 0-2k - direct pwm value
+    int16_t BLDC_user_pwm = 0;  //this is value from set_pwm call (-1000 to 1000)
     uint8_t phase_states [4] = {0,PHASE_FLOAT,PHASE_FLOAT,PHASE_FLOAT}; //use PHASE_X defines to get state from array
     uint32_t encoder_start_val = 2000000000;
     uint32_t encoder_steps = encoder_start_val;
-    bool auto_pwm_active = false;
-    int16_t auto_pwm_start;
-    int16_t auto_pwm_end;
-    uint32_t auto_pwm_time; //ms
+
+    double ramp_k = 0.0;
+    double ramp_n = 0.0;
+    uint32_t ramp_cnt = 0;
+    bool ramp_active = false;
+    uint32_t ramp_end_cnt = 0;
 
 
 };

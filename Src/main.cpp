@@ -125,10 +125,13 @@ int main(void)
   //BLDC.set_pwm(100);
   BLDC.enable();
 
+
   //BLDC.set_pwm(100);
-  BLDC.ramp_pwm(0, 800, 1000);
-  HAL_Delay(4000);
-  BLDC.ramp_pwm(800, 0, 500);
+  BLDC.ramp_pwm(300, 2000);
+  HAL_Delay(3000);
+  BLDC.ramp_pwm(400, 1000);
+  HAL_Delay(2000);
+  BLDC.ramp_pwm(0, 1000);
   /* USER CODE END 2 */
 
   /* Infinite loop */
