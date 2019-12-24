@@ -68,6 +68,8 @@ void TIM3_IRQHandler(void);
 #define HALL_B_GPIO_Port GPIOD
 #define TEST_POT_Pin GPIO_PIN_2
 #define TEST_POT_GPIO_Port GPIOA
+#define POT_SUPPLY_Pin GPIO_PIN_3
+#define POT_SUPPLY_GPIO_Port GPIOA
 #define V_BAT_Pin GPIO_PIN_4
 #define V_BAT_GPIO_Port GPIOA
 #define I_BAT_Pin GPIO_PIN_6

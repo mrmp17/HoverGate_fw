@@ -127,11 +127,11 @@ int main(void)
 
 
   //BLDC.set_pwm(100);
-  BLDC.ramp_pwm(300, 2000);
-  HAL_Delay(3000);
-  BLDC.ramp_pwm(400, 1000);
-  HAL_Delay(2000);
-  BLDC.ramp_pwm(0, 1000);
+//  BLDC.ramp_pwm(300, 2000);
+//  HAL_Delay(3000);
+//  BLDC.ramp_pwm(400, 1000);
+//  HAL_Delay(2000);
+//  BLDC.ramp_pwm(0, 1000);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -146,12 +146,12 @@ int main(void)
 
 
     //pot control code
-//    double pot_val = ADC_buffer[2];
-//    pot_val = (pot_val-2047)/4;
-//    int16_t int_pot_val = (int16_t)pot_val;
-//    BLDC.set_pwm(int_pot_val);
-//    uint32_t steps = BLDC.get_encoder();
-//    HAL_Delay(10);
+    double pot_val = ADC_buffer[2];
+    pot_val = (pot_val-2047)/2.5;
+    int16_t int_pot_val = (int16_t)pot_val;
+    BLDC.ramp_pwm(int_pot_val, 300);  //slower acceleration
+    //BLDC.set_pwm(int_pot_val);  //direct control, fast acceleration
+    HAL_Delay(10);
 
 
 //    HAL_GPIO_TogglePin(BP_LED_GPIO_Port, BP_LED_Pin);
