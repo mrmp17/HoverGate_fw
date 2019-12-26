@@ -24,10 +24,12 @@
 #include "dma.h"
 #include "tim.h"
 #include "gpio.h"
+#include "usart.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "BLDC_driver.h"
+#include "Serial.h"
 
 /* USER CODE END Includes */
 
@@ -114,6 +116,7 @@ int main(void)
   MX_ADC1_Init();
   MX_TIM1_Init();
   MX_TIM3_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   HAL_ADCEx_Calibration_Start(&hadc1);  //calibrate ADC
   HAL_Delay(10);
@@ -121,24 +124,20 @@ int main(void)
   HAL_GPIO_WritePin(POWER_LATCH_GPIO_Port, POWER_LATCH_Pin, GPIO_PIN_SET);
   HAL_Delay(2000);
   HAL_GPIO_TogglePin(BUZZ_GPIO_Port, BUZZ_Pin);
-  BLDC.begin();
+  BLDC.begin(); //begin BLDC driver
+  serial_01.begin();  //begin serial comms
   //BLDC.set_pwm(100);
-  BLDC.enable();
+  BLDC.enable();  //enable BLDC (pwm preset to 0)
 
 
-  //BLDC.set_pwm(100);
-//  BLDC.ramp_pwm(300, 2000);
-//  HAL_Delay(3000);
-//  BLDC.ramp_pwm(400, 1000);
-//  HAL_Delay(2000);
-//  BLDC.ramp_pwm(0, 1000);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    if(HAL_GPIO_ReadPin(POWER_SW_GPIO_Port, POWER_SW_Pin) == GPIO_PIN_SET){ //turn off latch if power switch pressed
+    static bool ignorePowerBtn = true;  //change to false for operation
+    if(HAL_GPIO_ReadPin(POWER_SW_GPIO_Port, POWER_SW_Pin) == GPIO_PIN_SET && !ignorePowerBtn){ //turn off latch if power switch pressed
       BLDC.disable(); //disable BLDC
       HAL_GPIO_WritePin(POWER_LATCH_GPIO_Port, POWER_LATCH_Pin, GPIO_PIN_RESET);
       HAL_Delay(100000);  //do nothing - wait for power-off
@@ -151,23 +150,17 @@ int main(void)
     int16_t int_pot_val = (int16_t)pot_val;
     BLDC.ramp_pwm(int_pot_val, 300);  //slower acceleration
     //BLDC.set_pwm(int_pot_val);  //direct control, fast acceleration
+
+
+    //serial echo for testing
+    if(serial_01.available()){
+      uint8_t incoming = serial_01.read();
+      serial_01.write(incoming);
+    }
+    HAL_GPIO_TogglePin(BP_LED_GPIO_Port, BP_LED_Pin);
+
     HAL_Delay(10);
 
-
-//    HAL_GPIO_TogglePin(BP_LED_GPIO_Port, BP_LED_Pin);
-//    BLDC.set_pwm(100);
-//    HAL_Delay(1000);
-//    BLDC.set_pwm(300);
-//    HAL_Delay(4000);
-//    BLDC.set_pwm(100);
-//    HAL_Delay(2000);
-//    BLDC.set_pwm(0);
-//    HAL_Delay(1000);
-//    BLDC.set_pwm(-100);
-//    HAL_Delay(4000);
-//    BLDC.disable();
-//    HAL_GPIO_TogglePin(BUZZ_GPIO_Port, BUZZ_Pin);
-//    HAL_Delay(100000);
     /* USER CODE END WHILE */
 
 
@@ -212,7 +205,7 @@ void SystemClock_Config(void)
     Error_Handler();
   }
   PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_ADC;
-  PeriphClkInit.AdcClockSelection = RCC_ADCPCLK2_DIV2;
+  PeriphClkInit.AdcClockSelection = RCC_ADCPCLK2_DIV4;
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
     Error_Handler();
