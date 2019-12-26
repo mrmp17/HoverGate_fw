@@ -124,24 +124,24 @@ void Serial::ILHandler (){  //interrupt handler. place in UARTx_IRQHandler(). ha
 //    test = __HAL_UART_GET_FLAG(uartHandle, UART_FLAG_ORE);
 //    test = __HAL_UART_GET_FLAG(uartHandle, UART_FLAG_PE);
 
-//    if(__HAL_UART_GET_IT(uartHandle, UART_IT_ERR) || __HAL_UART_GET_FLAG(uartHandle, UART_FLAG_NE) || __HAL_UART_GET_FLAG(uartHandle, UART_FLAG_FE) || __HAL_UART_GET_FLAG(uartHandle, UART_FLAG_ORE)){ //error
-//        errorCount++;
-//        __HAL_UART_CLEAR_FLAG(uartHandle, UART_FLAG_FE);
-//        __HAL_UART_CLEAR_FLAG(uartHandle, UART_FLAG_NE);
-//        __HAL_UART_CLEAR_FLAG(uartHandle, UART_FLAG_ORE);
-//        __HAL_UART_CLEAR_FLAG(uartHandle, UART_FLAG_PE);    //clear error just in case TODO: check if needed (parity error interrupt not enabled)
-//
-//        __HAL_UART_CLEAR_IT(uartHandle, UART_IT_ERR);   //clear error interrupt
-//
-//
-//        __HAL_UART_CLEAR_FLAG(uartHandle, UART_FLAG_IDLE); //clear flag to prevent multiple interrupts
-//        uint16_t lenToCpy = DMA_BUFF_LEN - __HAL_DMA_GET_COUNTER(dmaHandle);
-//        HAL_UART_AbortReceive(uartHandle);  //halt end restart DMA transfer after error
-//        cpyToBuffer(lenToCpy);
-//        HAL_UART_Receive_DMA(uartHandle, DMABuffer, DMA_BUFF_LEN); //reinitiate DMA transfer
-//
-//
-//    }
+    if(__HAL_UART_GET_IT_SOURCE(uartHandle, UART_IT_ERR) || __HAL_UART_GET_FLAG(uartHandle, UART_FLAG_NE) || __HAL_UART_GET_FLAG(uartHandle, UART_FLAG_FE) || __HAL_UART_GET_FLAG(uartHandle, UART_FLAG_ORE)){ //error
+        errorCount++;
+        __HAL_UART_CLEAR_FLAG(uartHandle, UART_FLAG_FE);
+        __HAL_UART_CLEAR_FLAG(uartHandle, UART_FLAG_NE);
+        __HAL_UART_CLEAR_FLAG(uartHandle, UART_FLAG_ORE);
+        __HAL_UART_CLEAR_FLAG(uartHandle, UART_FLAG_PE);    //clear error just in case TODO: check if needed (parity error interrupt not enabled)
+
+        //__HAL_UART_CLEAR_IT(uartHandle, UART_IT_ERR);   //clear error interrupt //doesnt work on STM32F1 - prob not needed
+
+
+        __HAL_UART_CLEAR_FLAG(uartHandle, UART_FLAG_IDLE); //clear flag to prevent multiple interrupts
+        uint16_t lenToCpy = DMA_BUFF_LEN - __HAL_DMA_GET_COUNTER(dmaHandle);
+        HAL_UART_AbortReceive(uartHandle);  //halt end restart DMA transfer after error
+        cpyToBuffer(lenToCpy);
+        HAL_UART_Receive_DMA(uartHandle, DMABuffer, DMA_BUFF_LEN); //reinitiate DMA transfer
+
+
+    }
 
     //TODO: change this to else if
     if(__HAL_UART_GET_FLAG(uartHandle, UART_FLAG_IDLE)){   //idle line detected (end of transmission)
@@ -156,15 +156,15 @@ void Serial::ILHandler (){  //interrupt handler. place in UARTx_IRQHandler(). ha
 /**
   * @brief This function handles USART1 global interrupt.
   */
-void USART1_IRQHandler(void)  //transfered from _it.c file
+void USART1_IRQHandler(void)
 {
   /* USER CODE BEGIN USART1_IRQn 0 */
-
+//
   /* USER CODE END USART1_IRQn 0 */
   HAL_UART_IRQHandler(&huart1);
   /* USER CODE BEGIN USART1_IRQn 1 */
   serial_01.ILHandler();
-
+//
   /* USER CODE END USART1_IRQn 1 */
 }
 

@@ -29,7 +29,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "BLDC_driver.h"
-//#include "Serial.h"
+#include "Serial.h"
 
 /* USER CODE END Includes */
 
@@ -125,7 +125,7 @@ int main(void)
   HAL_Delay(2000);
   HAL_GPIO_TogglePin(BUZZ_GPIO_Port, BUZZ_Pin);
   BLDC.begin();
-  //serial_01.begin();
+  serial_01.begin();
   //BLDC.set_pwm(100);
   BLDC.enable();
 
@@ -155,8 +155,10 @@ int main(void)
     int16_t int_pot_val = (int16_t)pot_val;
     BLDC.ramp_pwm(int_pot_val, 300);  //slower acceleration
     //BLDC.set_pwm(int_pot_val);  //direct control, fast acceleration
-    static uint8_t string [] = "hejDMA!";
-    HAL_UART_Transmit_DMA(&huart1, string, sizeof(string));
+    if(serial_01.available()){
+      uint8_t incoming = serial_01.read();
+      serial_01.write(incoming);
+    }
     HAL_GPIO_TogglePin(BP_LED_GPIO_Port, BP_LED_Pin);
 
     HAL_Delay(100);

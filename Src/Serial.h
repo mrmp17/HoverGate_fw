@@ -15,13 +15,11 @@ extern DMA_HandleTypeDef hdma_usart1_rx;
 extern UART_HandleTypeDef huart1;
 
 
-#define DMA_BUFF_LEN 32
-#define SERIAL_BUFF_LEN 64
+#define DMA_BUFF_LEN 128
+#define SERIAL_BUFF_LEN 256
 
 extern  "C" {
-void LPUART1_IRQHandler(void);
-void UART4_IRQHandler(void);
-void USART2_IRQHandler(void);
+void USART1_IRQHandler(void);
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart);
 }
 
