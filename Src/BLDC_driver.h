@@ -9,6 +9,7 @@
 #include <stdint.h>
 #include <math.h>
 #include "tim.h"
+#include "driver.h"
 
 #define PHASE_Y 1
 #define PHASE_B 2
@@ -22,20 +23,20 @@
 
 extern TIM_HandleTypeDef htim1;
 
-class BLDC_driver {
+class BLDC_driver : public Driver {
 public:
     BLDC_driver();
-    void begin();
-    void enable();
-    bool is_enabled();
-    void disable();
-    void set_pwm(int16_t pwm);  //+- 1000 //TODO: map to 0-2k timer values
-    int16_t get_pwm();
-    uint32_t get_encoder();
-    void reset_encoder();
-    float getCurrent();
-    void ramp_pwm(int16_t pwm_to, uint32_t time_ms);
-    bool is_ramp_active();
+    void begin() override;
+    void enable() override;
+    bool is_enabled() override;
+    void disable() override;
+    void set_pwm(int16_t pwm) override;  //+- 1000 //TODO: map to 0-2k timer values
+    int16_t get_pwm() override;
+    int32_t get_encoder() override;
+    void reset_encoder() override;
+    float get_current() override {return 0;};
+    void ramp_pwm(int16_t pwm_to, uint32_t time_ms) override;
+    bool is_ramp_active() override;
 
     void interrupt_handler(); //call this at 10kHz
     void auto_pwm_handler();  //call this inside interrupt_handler
@@ -54,8 +55,7 @@ private:
     uint16_t BLDC_pwm_set_value = 0; //this should be 0-2k - direct pwm value
     int16_t BLDC_user_pwm = 0;  //this is value from set_pwm call (-1000 to 1000)
     uint8_t phase_states [4] = {0,PHASE_FLOAT,PHASE_FLOAT,PHASE_FLOAT}; //use PHASE_X defines to get state from array
-    uint32_t encoder_start_val = 2000000000;
-    uint32_t encoder_steps = encoder_start_val;
+    int32_t encoder_steps = 0;
 
     double ramp_k = 0.0;
     double ramp_n = 0.0;

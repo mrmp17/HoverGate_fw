@@ -5,7 +5,7 @@
 #ifndef HOVERGATE_FW_GATE_H
 #define HOVERGATE_FW_GATE_H
 
-#include "BLDC_driver.h"
+#include "driver.h"
 #include "pid.h"
 
 
@@ -26,11 +26,11 @@ public:
     GateState get_state();
     void loop();
     void set_pid(double kp, double ki, double dt);
-    void set_driver(BLDC_driver *driver);
+    void set_driver(Driver *driver);
 
 private:
     GateState _state = GateState::closed;
-    BLDC_driver *_driver;
+    Driver *_driver;
     Pid *_pid;
     bool _initialized = false;
 };

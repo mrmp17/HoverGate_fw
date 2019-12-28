@@ -220,12 +220,12 @@ int16_t BLDC_driver::get_pwm() {
   return BLDC_user_pwm;
 }
 
-uint32_t BLDC_driver::get_encoder(){
+int32_t BLDC_driver::get_encoder(){
   return encoder_steps;
 }
 
 void BLDC_driver::reset_encoder(){
-  encoder_steps = encoder_start_val;
+  encoder_steps = 0;
 }
 
 void BLDC_driver::ramp_pwm(int16_t pwm_to, uint32_t time_ms) {

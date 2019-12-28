@@ -59,6 +59,6 @@ void Gate::set_pid(double kp, double ki, double dt) {
     _pid->set_parameters(kp, ki, 0.0, dt);
 }
 
-void Gate::set_driver(BLDC_driver *driver) {
+void Gate::set_driver(Driver *driver) {
     _driver = driver;
 }
