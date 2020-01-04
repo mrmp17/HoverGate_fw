@@ -277,8 +277,9 @@ void BLDC_driver::interrupt_handler() {
   set_phases(pwmLoc, BLDC_pwm_set_value, BLDC_direction, BLDC_enabled); //set all phases to correct states
 
   static uint8_t prevPwmLoc = pwmLoc; //save pwmLoc here at first run, otherwise manipulated after encoder calculation
-  if(pwmLoc > prevPwmLoc || (pwmLoc == 1 && prevPwmLoc == 6)) encoder_steps++;
+  if((pwmLoc > prevPwmLoc || (pwmLoc == 1 && prevPwmLoc == 6)) && !(pwmLoc == 6 && prevPwmLoc == 1)) encoder_steps++;
   else if(pwmLoc < prevPwmLoc || (pwmLoc == 6 && prevPwmLoc == 1)) encoder_steps--;
   prevPwmLoc = pwmLoc;
+  _loc = pwmLoc;
 
 }

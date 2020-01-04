@@ -30,7 +30,10 @@
 /* USER CODE BEGIN Includes */
 #include "BLDC_driver.h"
 #include "Serial.h"
-
+#include "gate.h"
+#include <stdio.h>
+#include <stdarg.h>
+#include "debug.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -65,6 +68,7 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 BLDC_driver BLDC;
+Gate gate;
 
 //this interrupt handler is transfered from _it file!
 /**
@@ -123,12 +127,15 @@ int main(void)
   HAL_ADC_Start_DMA(&hadc1, ADC_buffer, ADC_BUFF_LEN); //start continuous adc conversion
   HAL_GPIO_WritePin(POWER_LATCH_GPIO_Port, POWER_LATCH_Pin, GPIO_PIN_SET);
   HAL_Delay(2000);
-  HAL_GPIO_TogglePin(BUZZ_GPIO_Port, BUZZ_Pin);
-  BLDC.begin(); //begin BLDC driver
+//  HAL_GPIO_TogglePin(BUZZ_GPIO_Port, BUZZ_Pin);
+//  BLDC.begin(); //begin BLDC driver
   serial_01.begin();  //begin serial comms
   //BLDC.set_pwm(100);
-  BLDC.enable();  //enable BLDC (pwm preset to 0)
+//  BLDC.enable();  //enable BLDC (pwm preset to 0)
 
+  gate.set_driver(&BLDC);
+  gate.begin();
+  debug_print("BEGIN\n");
 
   /* USER CODE END 2 */
 
@@ -136,7 +143,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    static bool ignorePowerBtn = true;  //change to false for operation
+    static bool ignorePowerBtn = false;  //change to false for operation
     if(HAL_GPIO_ReadPin(POWER_SW_GPIO_Port, POWER_SW_Pin) == GPIO_PIN_SET && !ignorePowerBtn){ //turn off latch if power switch pressed
       BLDC.disable(); //disable BLDC
       HAL_GPIO_WritePin(POWER_LATCH_GPIO_Port, POWER_LATCH_Pin, GPIO_PIN_RESET);
@@ -145,18 +152,33 @@ int main(void)
 
 
     //pot control code
-    double pot_val = ADC_buffer[2];
-    pot_val = (pot_val-2047)/2.5;
-    int16_t int_pot_val = (int16_t)pot_val;
-    BLDC.ramp_pwm(int_pot_val, 300);  //slower acceleration
-    //BLDC.set_pwm(int_pot_val);  //direct control, fast acceleration
+//    double pot_val = ADC_buffer[2];
+//    pot_val = (pot_val-2047)/2.5;
+//    int16_t int_pot_val = (int16_t)pot_val;
+//    BLDC.ramp_pwm(int_pot_val, 300);  //slower acceleration
+//    //BLDC.set_pwm(int_pot_val);  //direct control, fast acceleration
+
+      gate.loop();
+//      debug_print("Loc: %d, Encoder: %d\n", BLDC._loc, BLDC.get_encoder());
+
+      double pot_val = ADC_buffer[2];
+      static bool pot_triggered = false;
+      if(pot_val > 1000 && !pot_triggered) {
+          pot_triggered = true;
+          gate.toggle();
+      }
+      else if(pot_val < 900) {
+          pot_triggered = false;
+      }
+
+//      ticks = BLDC.get_encoder();
 
 
     //serial echo for testing
-    if(serial_01.available()){
-      uint8_t incoming = serial_01.read();
-      serial_01.write(incoming);
-    }
+//    if(serial_01.available()){
+//      uint8_t incoming = serial_01.read();
+//      serial_01.write(incoming);
+//    }
     HAL_GPIO_TogglePin(BP_LED_GPIO_Port, BP_LED_Pin);
 
     HAL_Delay(10);

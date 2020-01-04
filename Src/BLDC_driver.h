@@ -42,6 +42,7 @@ public:
     void auto_pwm_handler();  //call this inside interrupt_handler
 
     //uint8_t forceStep = 1;
+    uint8_t _loc = 0;
 
 
 private:

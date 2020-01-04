@@ -66,6 +66,14 @@ void Pid::stop() {
 }
 
 /**
+ * Reset pid state.
+ */
+void Pid::reset() {
+    integral = 0.0;
+    prev_error = 0.0;
+}
+
+/**
  * Compute pid controller.
  * @param in Input value - current value
  * @param setpoint Reference value - controller target

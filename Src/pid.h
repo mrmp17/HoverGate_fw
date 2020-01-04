@@ -10,6 +10,7 @@ class Pid {
     void set_parameters(double kp, double ki, double kd, double dt);
     void start();
     void stop();
+    void reset();
     double compute(double in, double setpoint);
   private:
     bool started;
