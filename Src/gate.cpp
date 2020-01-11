@@ -91,6 +91,10 @@ Gate::GateState Gate::get_state() {
     return state;
 }
 
+float Gate::get_angle() {
+    return angle;
+}
+
 void Gate::loop() {
     if(!initialized) return;
 
