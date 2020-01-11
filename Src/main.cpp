@@ -63,6 +63,10 @@ uint32_t ADC_buffer [ADC_BUFF_LEN] = {0};
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
+float get_battery_voltage();
+#ifndef GATE_SHORT
+void solenoid_ctrl(bool state);
+#endif
 
 /* USER CODE END PFP */
 
@@ -124,6 +128,17 @@ SimpleSerial simple_serial([]() -> bool { return serial_01.available(); },
                            []() -> uint8_t { return serial_01.read(); },
                            [](uint8_t *buf, uint16_t len) -> int16_t { return serial_01.write(buf, len); });
 Gate gate(params);
+
+
+float get_battery_voltage(){
+  return (ADC_buffer[1]/4095)*3.3*30; //TODO: compare with measured voltage
+}
+
+#ifndef GATE_SHORT
+void solenoid_ctrl(bool state){
+
+}
+#endif
 
 //this interrupt handler is transfered from _it file!
 /**
