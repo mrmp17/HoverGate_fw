@@ -45,7 +45,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define ADC_BUFF_LEN 3
-#define GATE_SHORT // comment if compiling for long gate wing
+//#define GATE_SHORT // comment if compiling for long gate wing
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -65,7 +65,9 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 float get_battery_voltage();
 #ifndef GATE_SHORT
-void solenoid_ctrl(bool state);
+void solenoid_set_hold();
+void solenoid_set_retract();
+void solenoid_set_off();
 #endif
 
 /* USER CODE END PFP */
@@ -113,7 +115,8 @@ gate_params params {
     .move_uncert_after = 20.0, // degrees after target when velocity still set
     .max_angle_follow_error = 10.0, // max error when gate stopped is detected
 };
-#define SOLENOID_PWM_ON 5000
+#define SOLENOID_PWM_RETRACT 50
+#define SOLENOID_PWM_HOLD 3
 #endif
 
 enum class serial_ids {
@@ -136,15 +139,21 @@ float get_battery_voltage(){
 }
 
 #ifndef GATE_SHORT
-void solenoid_ctrl(bool state){
-  if(state){
-    __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, SOLENOID_PWM_ON);  //turn solenoid PWM on
-  }
-  else{
-    __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 0);  //turn solenoid PWM off
-  }
+
+void solenoid_set_off(){
+  HAL_GPIO_WritePin(LATCH_OFF_GPIO_Port, LATCH_OFF_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(LATCH_HOLD_GPIO_Port, LATCH_HOLD_Pin, GPIO_PIN_RESET);
+}
+void solenoid_set_retract(){
+  HAL_GPIO_WritePin(LATCH_OFF_GPIO_Port, LATCH_OFF_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(LATCH_HOLD_GPIO_Port, LATCH_HOLD_Pin, GPIO_PIN_SET);
+}
+void solenoid_set_hold(){
+  HAL_GPIO_WritePin(LATCH_OFF_GPIO_Port, LATCH_OFF_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(LATCH_HOLD_GPIO_Port, LATCH_HOLD_Pin, GPIO_PIN_RESET);
 }
 #endif
+
 
 //this interrupt handler is transfered from _it file!
 /**
@@ -196,7 +205,6 @@ int main(void)
     MX_ADC1_Init();
     MX_TIM1_Init();
     MX_TIM3_Init();
-    MX_TIM2_Init(); //solenoid PWM timer
     MX_USART1_UART_Init();
     /* USER CODE BEGIN 2 */
     HAL_ADCEx_Calibration_Start(&hadc1);  //calibrate ADC
@@ -204,7 +212,6 @@ int main(void)
     HAL_ADC_Start_DMA(&hadc1, ADC_buffer, ADC_BUFF_LEN); //start continuous adc conversion
     HAL_GPIO_WritePin(POWER_LATCH_GPIO_Port, POWER_LATCH_Pin, GPIO_PIN_SET);
 
-    HAL_TIM_Base_Start_IT(&htim3);  //start solenoid timer. default pwm 0
     HAL_Delay(2000);
 
     serial_01.begin();  //begin serial comms
