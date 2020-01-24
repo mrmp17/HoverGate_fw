@@ -65,9 +65,11 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 float get_battery_voltage();
 #ifndef GATE_SHORT
-void solenoid_set_hold();
-void solenoid_set_retract();
-void solenoid_set_off();
+void latch_handler();  //call this periodically
+void latch_retract();
+void latch_off();
+uint8_t latch_cmd_state = 0; //0-OFF, 1-retracted
+uint32_t latch_full_current_time = 800; //ms
 #endif
 
 /* USER CODE END PFP */
@@ -115,8 +117,6 @@ gate_params params {
     .move_uncert_after = 20.0, // degrees after target when velocity still set
     .max_angle_follow_error = 10.0, // max error when gate stopped is detected
 };
-#define SOLENOID_PWM_RETRACT 50
-#define SOLENOID_PWM_HOLD 3
 #endif
 
 enum class serial_ids {
@@ -139,18 +139,44 @@ float get_battery_voltage(){
 }
 
 #ifndef GATE_SHORT
+void latch_handler(){
+  static uint32_t time = 0;
+  static uint8_t loopCtrl = 0;
+  switch(loopCtrl){
+    case 0:
+      //latch current zero
+      HAL_GPIO_WritePin(LATCH_OFF_GPIO_Port, LATCH_OFF_Pin, GPIO_PIN_RESET);
+      HAL_GPIO_WritePin(LATCH_HOLD_GPIO_Port, LATCH_HOLD_Pin, GPIO_PIN_RESET);
+      if(latch_cmd_state == 1) loopCtrl = 1;
+      break;
+    case 1:
+      //set latch current to full
+      HAL_GPIO_WritePin(LATCH_OFF_GPIO_Port, LATCH_OFF_Pin, GPIO_PIN_SET);
+      HAL_GPIO_WritePin(LATCH_HOLD_GPIO_Port, LATCH_HOLD_Pin, GPIO_PIN_SET);
+      time = HAL_GetTick();
+      if(latch_cmd_state == 0) loopCtrl = 0;
+      loopCtrl = 2;
+      break;
+    case 2:
+      if(HAL_GetTick() - time >= latch_full_current_time){
+        //set current to hold setting
+        HAL_GPIO_WritePin(LATCH_OFF_GPIO_Port, LATCH_OFF_Pin, GPIO_PIN_SET);
+        HAL_GPIO_WritePin(LATCH_HOLD_GPIO_Port, LATCH_HOLD_Pin, GPIO_PIN_RESET);
+        loopCtrl = 3;
+      }
+      if(latch_cmd_state == 0) loopCtrl = 0;
+      break;
+    case 3:
+      if(latch_cmd_state == 0) loopCtrl = 0;
+      break;
+  }
 
-void solenoid_set_off(){
-  HAL_GPIO_WritePin(LATCH_OFF_GPIO_Port, LATCH_OFF_Pin, GPIO_PIN_RESET);
-  HAL_GPIO_WritePin(LATCH_HOLD_GPIO_Port, LATCH_HOLD_Pin, GPIO_PIN_RESET);
 }
-void solenoid_set_retract(){
-  HAL_GPIO_WritePin(LATCH_OFF_GPIO_Port, LATCH_OFF_Pin, GPIO_PIN_SET);
-  HAL_GPIO_WritePin(LATCH_HOLD_GPIO_Port, LATCH_HOLD_Pin, GPIO_PIN_SET);
+void latch_retract(){
+  latch_cmd_state = 1;
 }
-void solenoid_set_hold(){
-  HAL_GPIO_WritePin(LATCH_OFF_GPIO_Port, LATCH_OFF_Pin, GPIO_PIN_SET);
-  HAL_GPIO_WritePin(LATCH_HOLD_GPIO_Port, LATCH_HOLD_Pin, GPIO_PIN_RESET);
+void latch_off(){
+  latch_cmd_state = 0;
 }
 #endif
 
@@ -227,6 +253,10 @@ int main(void)
     while (true) {
         static uint32_t loop_start_time;
         loop_start_time = HAL_GetTick();
+
+
+        latch_handler();  //handler for solenoid latch
+
 
         // power button
         static bool ignorePowerBtn = false;  //change to false for operation
