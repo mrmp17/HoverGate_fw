@@ -77,14 +77,14 @@ void solenoid_ctrl(bool state);
 gate_params params {
         .loop_dt = 10, // milliseconds between loops
         .enc_ticks_per_deg = 2.725, // encoder ticks per degree of gate angle
-        .angle_open = -80.0, // angle when gate open
+        .angle_open = -93.0, // angle when gate open
         .angle_closed = 0.0, // angle when gate closed
         .target_velocity = 15.0, // target opening/closing speed in deg/s
         .target_velocity_slow = 7.5, // final movement reduced velocity
         .driver_open_dir = -1, // driver pwm sign for open direction. 1 or -1.
-        .max_pwm = 150, // max driver pwm
-        .pid_kp = 15,
-        .pid_ki = 4,
+        .max_pwm = 175, // max driver pwm
+        .pid_kp = 20,
+        .pid_ki = 8,
         .pid_slow_kp = 10,
         .pid_slow_ki = 2,
         .vel_update_tick_num = 5,
@@ -118,9 +118,9 @@ gate_params params {
 
 enum class serial_ids {
     action_command = 10,
-    state_msg  =20,
+    state_msg = 20,
 };
-const uint16_t serial_state_send_interval = 100; // ms
+const uint16_t serial_state_send_interval = 250; // ms
 
 const uint16_t loop_time = 10; // ms
 
@@ -259,16 +259,19 @@ int main(void)
         }
 
         // serial communication send
+        // payload structure: | 0: gate state | 1-4: gate angle float | 5: error code |
         static uint32_t last_state_send_time = 0;
-        if(HAL_GetTick() - last_state_send_time >serial_state_send_interval) {
-            uint8_t payload[5] = {0};
+        if(HAL_GetTick() - last_state_send_time > serial_state_send_interval) {
+            uint8_t payload[6] = {0};
             payload[0] = static_cast<uint8_t>(gate.get_state());
             uint8_t bts[4];
             SimpleSerial::float2Bytes(gate.get_angle(), bts);
+
             for (int i = 0; i < 4; ++i) {
                 payload[1+i] = bts[i];
-            }
-            simple_serial.send(static_cast<uint8_t>(serial_ids::state_msg), 4, payload);
+            ;
+            payload[5] = gate.get_error_code():
+            simple_serial.send(static_cast<uint8_t>(serial_ids::state_msg), 6, payload);
             last_state_send_time = HAL_GetTick();
         }
 

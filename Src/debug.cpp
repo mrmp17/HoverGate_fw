@@ -8,6 +8,7 @@
  * use like printf to print debug messages. Printing floats does not work. Send MAX 127 characters!!!L
  */
 void debug_print(const char *format, ...){
+    return;
     char formatedString[128] = {0};
     va_list arglist;
     va_start(arglist, format);

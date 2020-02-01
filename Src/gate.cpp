@@ -92,7 +92,7 @@ Gate::GateState Gate::get_state() {
 }
 
 float Gate::get_angle() {
-    return angle;
+    return (float)angle;
 }
 
 void Gate::loop() {
@@ -105,7 +105,7 @@ void Gate::loop() {
 
     // angle
     time += loop_dt;
-    int32_t ticks =  driver->get_encoder();
+    int32_t ticks = driver->get_encoder();
     angle = ticks / enc_ticks_per_deg + angle_offset;
 
     // velocity
@@ -131,9 +131,14 @@ void Gate::loop() {
                 case 2:
                     state = GateState::open;
                     break;
-//                case 3:
-//                case 4:
-//                    _state = GateState::error;
+                case 3:
+                    state = GateState::error;
+                    error_code = 1;
+                    break;
+                case 4:
+                    state = GateState::error;
+                    error_code = 2;
+                    break;
             }
         } break;
         case GateState::open: {
@@ -145,9 +150,14 @@ void Gate::loop() {
                     state = GateState::closed;
                     disable_motor_();
                     break;
-//                case 3:
-//                case 4:
-//                    _state = GateState::error;
+                case 3:
+                    state = GateState::error;
+                    error_code = 1;
+                    break;
+                case 4:
+                    state = GateState::error;
+                    error_code = 2;
+                    break;
             }
         } break;
         case GateState::error: {
@@ -155,6 +165,7 @@ void Gate::loop() {
         } break;
     }
 
+    // Move switch
     static uint8_t ctrl = 0;
     static double setpoint = 0.0;
     switch(ctrl) {
@@ -214,8 +225,12 @@ void Gate::set_pid_(double kp, double ki) {
     pid->set_parameters(kp, ki, 0.0, 1./loop_dt);
 }
 
-void Gate::set_driver(Driver *driver) {
-    driver = driver;
+void Gate::set_driver(Driver *new_driver) {
+    driver = new_driver;
+}
+
+uint8_t Gate::get_error_code() {
+    return error_code;
 }
 
 
@@ -232,38 +247,39 @@ void Gate::reset() {
     driver->reset_encoder();
     disable_motor_();
     state = GateState::closed;
+    error_code = 0;
 }
 
 void Gate::move_(double target) {
-    double angle = angle;
-    uint32_t time = time;
+    double  start_angle = angle;
+    uint32_t start_time = time;
 
     double t1, t2, dist_1, dist_2;
-    if(target >= angle) {
+    if(target >= start_angle) {
         t1 = target - move_uncert_before;
         t2 = target + move_uncert_after;
-        dist_1 = t1 - angle;
+        dist_1 = t1 - start_angle;
         dist_2 = t2 - t1;
     }
     else {
         t1 = target + move_uncert_before;
         t2 = target - move_uncert_after;
-        dist_1 = t1 - angle;
+        dist_1 = t1 - start_angle;
         dist_2 = t2 - t1;
     }
 
     uint32_t time_1 = abs(dist_1) / target_velocity * 1000;
     double k1 = dist_1 / time_1;
-    double n1 = angle - k1 * time;
+    double n1 = start_angle - k1 * start_time;
 
     uint32_t time_2 = abs(dist_2) / target_velocity_slow * 1000;
     double k2 = dist_2 / time_2;
-    double n2 = t1 - k2 * (time + time_1);
+    double n2 = t1 - k2 * (start_time + time_1);
 
-    move new_move = {time,
+    move new_move = {start_time,
                      target,
-                     time + time_1,
-                     time + time_1 + time_2,
+                     start_time + time_1,
+                     start_time + time_1 + time_2,
                      k1,
                      n1,
                      k2,

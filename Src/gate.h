@@ -51,6 +51,7 @@ public:
     float get_angle();
     void loop();
     void set_driver(Driver *driver);
+    uint8_t get_error_code();
     void reset();
 
 private:
@@ -82,6 +83,14 @@ private:
     move active_move = {};
     int32_t last_vel_tick = 0;
     uint32_t last_tick_change_time = 0;
+
+    /*
+     * Error codes:
+     * 0 - no error
+     * 1 - gate stopped before expected position
+     * 2 - gate did not stop at expected position
+     */
+    uint8_t error_code = 0;
 
 
     // private functions
