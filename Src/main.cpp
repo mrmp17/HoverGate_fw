@@ -45,7 +45,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define ADC_BUFF_LEN 3
-#define GATE_SHORT // comment if compiling for long gate wing
+//#define GATE_SHORT // comment if compiling for long gate wing
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -65,7 +65,11 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 float get_battery_voltage();
 #ifndef GATE_SHORT
-void solenoid_ctrl(bool state);
+void latch_handler();  //call this periodically
+void latch_retract();
+void latch_off();
+uint8_t latch_cmd_state = 0; //0-OFF, 1-retracted
+uint32_t latch_full_current_time = 800; //ms
 #endif
 
 /* USER CODE END PFP */
@@ -113,7 +117,6 @@ gate_params params {
     .move_uncert_after = 20.0, // degrees after target when velocity still set
     .max_angle_follow_error = 10.0, // max error when gate stopped is detected
 };
-#define SOLENOID_PWM_ON 5000
 #endif
 
 enum class serial_ids {
@@ -136,15 +139,47 @@ float get_battery_voltage(){
 }
 
 #ifndef GATE_SHORT
-void solenoid_ctrl(bool state){
-  if(state){
-    __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, SOLENOID_PWM_ON);  //turn solenoid PWM on
+void latch_handler(){
+  static uint32_t time = 0;
+  static uint8_t loopCtrl = 0;
+  switch(loopCtrl){
+    case 0:
+      //latch current zero
+      HAL_GPIO_WritePin(LATCH_OFF_GPIO_Port, LATCH_OFF_Pin, GPIO_PIN_RESET);
+      HAL_GPIO_WritePin(LATCH_HOLD_GPIO_Port, LATCH_HOLD_Pin, GPIO_PIN_RESET);
+      if(latch_cmd_state == 1) loopCtrl = 1;
+      break;
+    case 1:
+      //set latch current to full
+      HAL_GPIO_WritePin(LATCH_OFF_GPIO_Port, LATCH_OFF_Pin, GPIO_PIN_SET);
+      HAL_GPIO_WritePin(LATCH_HOLD_GPIO_Port, LATCH_HOLD_Pin, GPIO_PIN_SET);
+      time = HAL_GetTick();
+      if(latch_cmd_state == 0) loopCtrl = 0;
+      loopCtrl = 2;
+      break;
+    case 2:
+      if(HAL_GetTick() - time >= latch_full_current_time){
+        //set current to hold setting
+        HAL_GPIO_WritePin(LATCH_OFF_GPIO_Port, LATCH_OFF_Pin, GPIO_PIN_SET);
+        HAL_GPIO_WritePin(LATCH_HOLD_GPIO_Port, LATCH_HOLD_Pin, GPIO_PIN_RESET);
+        loopCtrl = 3;
+      }
+      if(latch_cmd_state == 0) loopCtrl = 0;
+      break;
+    case 3:
+      if(latch_cmd_state == 0) loopCtrl = 0;
+      break;
   }
-  else{
-    __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 0);  //turn solenoid PWM off
-  }
+
+}
+void latch_retract(){
+  latch_cmd_state = 1;
+}
+void latch_off(){
+  latch_cmd_state = 0;
 }
 #endif
+
 
 //this interrupt handler is transfered from _it file!
 /**
@@ -196,7 +231,6 @@ int main(void)
     MX_ADC1_Init();
     MX_TIM1_Init();
     MX_TIM3_Init();
-    MX_TIM2_Init(); //solenoid PWM timer
     MX_USART1_UART_Init();
     /* USER CODE BEGIN 2 */
     HAL_ADCEx_Calibration_Start(&hadc1);  //calibrate ADC
@@ -204,7 +238,6 @@ int main(void)
     HAL_ADC_Start_DMA(&hadc1, ADC_buffer, ADC_BUFF_LEN); //start continuous adc conversion
     HAL_GPIO_WritePin(POWER_LATCH_GPIO_Port, POWER_LATCH_Pin, GPIO_PIN_SET);
 
-    HAL_TIM_Base_Start_IT(&htim3);  //start solenoid timer. default pwm 0
     HAL_Delay(2000);
 
     serial_01.begin();  //begin serial comms
@@ -220,6 +253,10 @@ int main(void)
     while (true) {
         static uint32_t loop_start_time;
         loop_start_time = HAL_GetTick();
+
+
+        latch_handler();  //handler for solenoid latch
+
 
         // power button
         static bool ignorePowerBtn = false;  //change to false for operation
