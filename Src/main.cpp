@@ -247,19 +247,22 @@ int main(void)
         }
 
         // serial communication send
-        // payload structure: | 0: gate state | 1-4: gate angle float | 5: error code |
+        // payload structure: | 0: gate state | 1: error code | 2-5: gate angle float | 6-10: batt volt |
         static uint32_t last_state_send_time = 0;
         if(HAL_GetTick() - last_state_send_time > serial_state_send_interval) {
-            uint8_t payload[6] = {0};
+            uint8_t payload[10] = {0};
             payload[0] = static_cast<uint8_t>(gate.get_state());
+            payload[1] = gate.get_error_code();
             uint8_t bts[4];
             SimpleSerial::float2Bytes(gate.get_angle(), bts);
-
             for (int i = 0; i < 4; ++i) {
-                payload[1 + i] = bts[i];
+                payload[2 + i] = bts[i];
             }
-            payload[5] = gate.get_error_code();
-            simple_serial.send(static_cast<uint8_t>(serial_ids::state_msg), 6, payload);
+            SimpleSerial::float2Bytes(get_battery_voltage(), bts);
+            for (int i = 0; i < 4; ++i) {
+                payload[6 + i] = bts[i];
+            }
+            simple_serial.send(static_cast<uint8_t>(serial_ids::state_msg), 10, payload);
             last_state_send_time = HAL_GetTick();
         }
 
