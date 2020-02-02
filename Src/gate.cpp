@@ -173,6 +173,7 @@ void Gate::loop() {
             if(active_move.status == 1) {
                 set_pid_(pid_kp, pid_ki);
                 enable_motor_();
+                if (latch != nullptr) latch->extend();
                 ctrl = 1;
             }
             break;
@@ -187,6 +188,7 @@ void Gate::loop() {
                 active_move.status = 3;
                 set_pwm_(0);
                 disable_motor_();
+                if (latch != nullptr) latch->extend();
                 debug_print("GATE stopped before expected\n");
                 ctrl = 0;
                 break;
@@ -198,6 +200,7 @@ void Gate::loop() {
                 active_move.status = 4;
                 set_pwm_(0);
                 disable_motor_();
+                if (latch != nullptr) latch->extend();
                 debug_print("GATE did not stop\n");
                 ctrl = 0;
                 break;
@@ -206,6 +209,7 @@ void Gate::loop() {
                 // stopped in expected zone
                 active_move.status = 2;
                 angle_offset = active_move.target - angle;
+                if (latch != nullptr) latch->extend();
                 debug_print("GATE stopped in expected zone\n");
                 ctrl = 0;
                 break;
@@ -219,6 +223,8 @@ void Gate::loop() {
         set_pwm_((int16_t) pwm);
     }
 
+    if (latch != nullptr) latch->handler();
+
 }
 
 void Gate::set_pid_(double kp, double ki) {
@@ -227,6 +233,10 @@ void Gate::set_pid_(double kp, double ki) {
 
 void Gate::set_driver(Driver *new_driver) {
     driver = new_driver;
+}
+
+void Gate::set_latch(Latch *new_latch) {
+    latch = new_latch;
 }
 
 uint8_t Gate::get_error_code() {
@@ -246,6 +256,7 @@ void Gate::reset() {
     velocity = 0.0;
     driver->reset_encoder();
     disable_motor_();
+    if (latch != nullptr) latch->extend();
     state = GateState::closed;
     error_code = 0;
 }

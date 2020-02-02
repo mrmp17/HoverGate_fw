@@ -35,6 +35,7 @@
 #include <stdarg.h>
 #include "debug.h"
 #include "SimpleSerial.h"
+#include "latch.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -64,13 +65,6 @@ uint32_t ADC_buffer [ADC_BUFF_LEN] = {0};
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 float get_battery_voltage();
-#ifndef GATE_SHORT
-void latch_handler();  //call this periodically
-void latch_retract();
-void latch_off();
-uint8_t latch_cmd_state = 0; //0-OFF, 1-retracted
-uint32_t latch_full_current_time = 800; //ms
-#endif
 
 /* USER CODE END PFP */
 
@@ -128,6 +122,7 @@ const uint16_t serial_state_send_interval = 250; // ms
 const uint16_t loop_time = 10; // ms
 
 BLDC_driver BLDC;
+Latch latch;
 SimpleSerial simple_serial([]() -> bool { return serial_01.available(); },
                            []() -> uint8_t { return serial_01.read(); },
                            [](uint8_t *buf, uint16_t len) -> int16_t { return serial_01.write(buf, len); });
@@ -138,47 +133,6 @@ float get_battery_voltage(){
   return (ADC_buffer[1]/4095)*3.3*30; //TODO: compare with measured voltage
 }
 
-#ifndef GATE_SHORT
-void latch_handler(){
-  static uint32_t time = 0;
-  static uint8_t loopCtrl = 0;
-  switch(loopCtrl){
-    case 0:
-      //latch current zero
-      HAL_GPIO_WritePin(LATCH_OFF_GPIO_Port, LATCH_OFF_Pin, GPIO_PIN_RESET);
-      HAL_GPIO_WritePin(LATCH_HOLD_GPIO_Port, LATCH_HOLD_Pin, GPIO_PIN_RESET);
-      if(latch_cmd_state == 1) loopCtrl = 1;
-      break;
-    case 1:
-      //set latch current to full
-      HAL_GPIO_WritePin(LATCH_OFF_GPIO_Port, LATCH_OFF_Pin, GPIO_PIN_SET);
-      HAL_GPIO_WritePin(LATCH_HOLD_GPIO_Port, LATCH_HOLD_Pin, GPIO_PIN_SET);
-      time = HAL_GetTick();
-      if(latch_cmd_state == 0) loopCtrl = 0;
-      loopCtrl = 2;
-      break;
-    case 2:
-      if(HAL_GetTick() - time >= latch_full_current_time){
-        //set current to hold setting
-        HAL_GPIO_WritePin(LATCH_OFF_GPIO_Port, LATCH_OFF_Pin, GPIO_PIN_SET);
-        HAL_GPIO_WritePin(LATCH_HOLD_GPIO_Port, LATCH_HOLD_Pin, GPIO_PIN_RESET);
-        loopCtrl = 3;
-      }
-      if(latch_cmd_state == 0) loopCtrl = 0;
-      break;
-    case 3:
-      if(latch_cmd_state == 0) loopCtrl = 0;
-      break;
-  }
-
-}
-void latch_retract(){
-  latch_cmd_state = 1;
-}
-void latch_off(){
-  latch_cmd_state = 0;
-}
-#endif
 
 
 //this interrupt handler is transfered from _it file!
@@ -243,6 +197,7 @@ int main(void)
     serial_01.begin();  //begin serial comms
 
     gate.set_driver(&BLDC);
+    gate.set_latch(&latch);
     gate.begin();
     debug_print("BEGIN\n");
 
@@ -253,10 +208,6 @@ int main(void)
     while (true) {
         static uint32_t loop_start_time;
         loop_start_time = HAL_GetTick();
-
-
-        latch_handler();  //handler for solenoid latch
-
 
         // power button
         static bool ignorePowerBtn = false;  //change to false for operation
@@ -305,9 +256,9 @@ int main(void)
             SimpleSerial::float2Bytes(gate.get_angle(), bts);
 
             for (int i = 0; i < 4; ++i) {
-                payload[1+i] = bts[i];
-            ;
-            payload[5] = gate.get_error_code():
+                payload[1 + i] = bts[i];
+            }
+            payload[5] = gate.get_error_code();
             simple_serial.send(static_cast<uint8_t>(serial_ids::state_msg), 6, payload);
             last_state_send_time = HAL_GetTick();
         }

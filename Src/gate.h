@@ -9,6 +9,7 @@
 #include "pid.h"
 #include "math.h"
 #include "debug.h"
+#include "latch.h"
 
 
 struct gate_params {
@@ -51,6 +52,7 @@ public:
     float get_angle();
     void loop();
     void set_driver(Driver *driver);
+    void set_latch(Latch *latch);
     uint8_t get_error_code();
     void reset();
 
@@ -75,6 +77,7 @@ private:
     GateState prev_state = GateState::closed;
     Driver *driver = nullptr;
     Pid *pid;
+    Latch *latch = nullptr;
     bool initialized = false;
     bool motor_enabled = false;
     double angle = 0.0;
