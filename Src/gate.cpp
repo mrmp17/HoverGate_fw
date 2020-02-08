@@ -87,6 +87,13 @@ void Gate::toggle() {
     }
 }
 
+void Gate::stop() {
+    state = GateState::error;
+    error_code = 3;
+    set_pwm_(0);
+    disable_motor_();
+}
+
 Gate::GateState Gate::get_state() {
     return state;
 }
@@ -121,6 +128,7 @@ void Gate::loop() {
         last_tick_change_time = time;
     }
 
+    static double setpoint = 0.0;
 
     switch (state) {
         case GateState::closed: {
@@ -130,6 +138,7 @@ void Gate::loop() {
             switch(active_move.status) {
                 case 2:
                     state = GateState::open;
+                    setpoint = angle_open - 5.0;
                     break;
                 case 3:
                     state = GateState::error;
@@ -167,10 +176,10 @@ void Gate::loop() {
 
     // Move switch
     static uint8_t ctrl = 0;
-    static double setpoint = 0.0;
     switch(ctrl) {
         case 0:
             if(active_move.status == 1) {
+                pid->reset();
                 set_pid_(pid_kp, pid_ki);
                 enable_motor_();
                 if (latch != nullptr) latch->extend();
@@ -178,6 +187,7 @@ void Gate::loop() {
             }
             break;
         case 1: // first stage
+            setpoint = time * active_move.stage_1_k + active_move.stage_1_n;
             if(time > active_move.stage_1_end) {
                 set_pid_(pid_slow_kp, pid_slow_ki);
                 ctrl = 2;
@@ -193,9 +203,9 @@ void Gate::loop() {
                 ctrl = 0;
                 break;
             }
-            setpoint = time * active_move.stage_1_k + active_move.stage_1_n;
             break;
         case 2: // second stage
+            setpoint = time * active_move.stage_2_k + active_move.stage_2_n;
             if(time > active_move.stage_2_end) {
                 active_move.status = 4;
                 set_pwm_(0);
@@ -208,13 +218,13 @@ void Gate::loop() {
             else if(abs(angle - setpoint) > max_angle_follow_error) {
                 // stopped in expected zone
                 active_move.status = 2;
-                angle_offset = active_move.target - angle;
+                angle_offset += active_move.target - angle;
                 if (latch != nullptr) latch->extend();
+                setpoint = active_move.target;
                 debug_print("GATE stopped in expected zone\n");
                 ctrl = 0;
                 break;
             }
-            setpoint = time * active_move.stage_2_k + active_move.stage_2_n;
             break;
     }
 

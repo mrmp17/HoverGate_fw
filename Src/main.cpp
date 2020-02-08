@@ -95,20 +95,20 @@ gate_params params {
 gate_params params {
     .loop_dt = 10, // milliseconds between loops
     .enc_ticks_per_deg = 2.725, // encoder ticks per degree of gate angle
-    .angle_open = -80.0, // angle when gate open
+    .angle_open = -90.0, // angle when gate open
     .angle_closed = 0.0, // angle when gate closed
     .target_velocity = 15.0, // target opening/closing speed in deg/s
     .target_velocity_slow = 7.5, // final movement reduced velocity
     .driver_open_dir = -1, // driver pwm sign for open direction. 1 or -1.
     .max_pwm = 150, // max driver pwm
-    .pid_kp = 15,
-    .pid_ki = 4,
+    .pid_kp = 30,
+    .pid_ki = 2,
     .pid_slow_kp = 10,
-    .pid_slow_ki = 2,
+    .pid_slow_ki = 0,
     .vel_update_tick_num = 5,
     .zero_vel_timeout = 2000,
-    .move_uncert_before = 20.0, // degrees before target when velocity is reduced
-    .move_uncert_after = 20.0, // degrees after target when velocity still set
+    .move_uncert_before = 10.0, // degrees before target when velocity is reduced
+    .move_uncert_after = 30.0, // degrees after target when velocity still set
     .max_angle_follow_error = 10.0, // max error when gate stopped is detected
 };
 #endif
@@ -130,7 +130,7 @@ Gate gate(params);
 
 
 float get_battery_voltage(){
-  return (ADC_buffer[1]/4095)*3.3*30; //TODO: compare with measured voltage
+  return ((float)ADC_buffer[0]/4095.)*3.3*30; //TODO: compare with measured voltage
 }
 
 
@@ -236,6 +236,9 @@ int main(void)
                             break;
                         case 2:
                             gate.reset();
+                            break;
+                        case 3:
+                            gate.stop();
                             break;
                         default:
                             break;

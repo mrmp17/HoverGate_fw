@@ -48,6 +48,7 @@ public:
     void open();
     void close();
     void toggle();
+    void stop();
     GateState get_state();
     float get_angle();
     void loop();
@@ -92,6 +93,7 @@ private:
      * 0 - no error
      * 1 - gate stopped before expected position
      * 2 - gate did not stop at expected position
+     * 3 - stopped manually
      */
     uint8_t error_code = 0;
 
