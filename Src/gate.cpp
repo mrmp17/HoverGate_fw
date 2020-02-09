@@ -26,6 +26,7 @@ Gate::Gate(gate_params params) {
     move_uncert_before = params.move_uncert_before;
     move_uncert_after = params.move_uncert_after;
     max_angle_follow_error = params.max_angle_follow_error;
+    hold_open_offset = params.hold_open_offset;
 
     pid = new Pid();
 
@@ -138,7 +139,7 @@ void Gate::loop() {
             switch(active_move.status) {
                 case 2:
                     state = GateState::open;
-                    setpoint = angle_open - 5.0;
+                    setpoint = angle_open + hold_open_offset;
                     break;
                 case 3:
                     state = GateState::error;
@@ -182,7 +183,7 @@ void Gate::loop() {
                 pid->reset();
                 set_pid_(pid_kp, pid_ki);
                 enable_motor_();
-                if (latch != nullptr) latch->extend();
+                if (latch != nullptr) latch->retract();
                 ctrl = 1;
             }
             break;

@@ -30,6 +30,7 @@ struct gate_params {
     double move_uncert_before; // degrees before target when velocity is reduced
     double move_uncert_after; // degrees after target when velocity still set
     double max_angle_follow_error; // max error when gate stopped is detected
+    double hold_open_offset; // open preload offset
 };
 
 class Gate {
@@ -131,6 +132,7 @@ private:
     double move_uncert_after = 20.0; // degrees after target when velocity still set
 
     double max_angle_follow_error = 10.0; // max error when gate stopped is detected
+    double hold_open_offset = 5.0;
 };
 
 

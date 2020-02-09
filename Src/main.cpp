@@ -73,26 +73,6 @@ float get_battery_voltage();
 
 #ifdef GATE_SHORT
 gate_params params {
-        .loop_dt = 10, // milliseconds between loops
-        .enc_ticks_per_deg = 2.725, // encoder ticks per degree of gate angle
-        .angle_open = -93.0, // angle when gate open
-        .angle_closed = 0.0, // angle when gate closed
-        .target_velocity = 15.0, // target opening/closing speed in deg/s
-        .target_velocity_slow = 7.5, // final movement reduced velocity
-        .driver_open_dir = -1, // driver pwm sign for open direction. 1 or -1.
-        .max_pwm = 175, // max driver pwm
-        .pid_kp = 20,
-        .pid_ki = 8,
-        .pid_slow_kp = 10,
-        .pid_slow_ki = 2,
-        .vel_update_tick_num = 5,
-        .zero_vel_timeout = 2000,
-        .move_uncert_before = 20.0, // degrees before target when velocity is reduced
-        .move_uncert_after = 20.0, // degrees after target when velocity still set
-        .max_angle_follow_error = 10.0, // max error when gate stopped is detected
-};
-#else
-gate_params params {
     .loop_dt = 10, // milliseconds between loops
     .enc_ticks_per_deg = 2.725, // encoder ticks per degree of gate angle
     .angle_open = -90.0, // angle when gate open
@@ -110,6 +90,28 @@ gate_params params {
     .move_uncert_before = 10.0, // degrees before target when velocity is reduced
     .move_uncert_after = 30.0, // degrees after target when velocity still set
     .max_angle_follow_error = 10.0, // max error when gate stopped is detected
+    .hold_open_offset = -5.
+};
+#else
+gate_params params {
+    .loop_dt = 10, // milliseconds between loops
+    .enc_ticks_per_deg = 6.1111, // encoder ticks per degree of gate angle
+    .angle_open = 90.0, // angle when gate open
+    .angle_closed = 0.0, // angle when gate closed
+    .target_velocity = 7.0, // target opening/closing speed in deg/s
+    .target_velocity_slow = 3, // final movement reduced velocity
+    .driver_open_dir = -1, // driver pwm sign for open direction. 1 or -1.
+    .max_pwm = 150, // max driver pwm
+    .pid_kp = 30,
+    .pid_ki = 2,
+    .pid_slow_kp = 10,
+    .pid_slow_ki = 0,
+    .vel_update_tick_num = 5,
+    .zero_vel_timeout = 2000,
+    .move_uncert_before = 10.0, // degrees before target when velocity is reduced
+    .move_uncert_after = 30.0, // degrees after target when velocity still set
+    .max_angle_follow_error = 10.0, // max error when gate stopped is detected
+    .hold_open_offset = 5.
 };
 #endif
 
@@ -122,7 +124,9 @@ const uint16_t serial_state_send_interval = 250; // ms
 const uint16_t loop_time = 10; // ms
 
 BLDC_driver BLDC;
+#ifndef GATE_SHORT
 Latch latch;
+#endif
 SimpleSerial simple_serial([]() -> bool { return serial_01.available(); },
                            []() -> uint8_t { return serial_01.read(); },
                            [](uint8_t *buf, uint16_t len) -> int16_t { return serial_01.write(buf, len); });
@@ -197,7 +201,9 @@ int main(void)
     serial_01.begin();  //begin serial comms
 
     gate.set_driver(&BLDC);
+    #ifndef GATE_SHORT
     gate.set_latch(&latch);
+    #endif
     gate.begin();
     debug_print("BEGIN\n");
 
@@ -210,7 +216,7 @@ int main(void)
         loop_start_time = HAL_GetTick();
 
         // power button
-        static bool ignorePowerBtn = false;  //change to false for operation
+        static bool ignorePowerBtn = true;  //change to false for operation
         if(HAL_GPIO_ReadPin(POWER_SW_GPIO_Port, POWER_SW_Pin) == GPIO_PIN_SET && !ignorePowerBtn){ //turn off latch if power switch pressed
             BLDC.disable(); //disable BLDC
             HAL_GPIO_WritePin(POWER_LATCH_GPIO_Port, POWER_LATCH_Pin, GPIO_PIN_RESET);
