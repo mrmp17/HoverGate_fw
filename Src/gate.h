@@ -25,6 +25,7 @@ struct gate_params {
     double pid_ki;
     double pid_slow_kp;
     double pid_slow_ki;
+    double pid_imax;
     uint16_t vel_update_tick_num;
     uint16_t zero_vel_timeout;
     double move_uncert_before; // degrees before target when velocity is reduced
@@ -125,6 +126,7 @@ private:
     double pid_ki = 4;
     double pid_slow_kp = 10;
     double pid_slow_ki = 2;
+    double pid_imax = 300;
 
     uint16_t vel_update_tick_num = 5;
     uint16_t zero_vel_timeout = 2000;

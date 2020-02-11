@@ -29,9 +29,7 @@ Pid::Pid(double kp, double ki, double kd, double dt) {
  * @param dt Time step between pid computations [seconds]
  */
 Pid::Pid(double kp, double ki, double kd, double imax, double dt) {
-  set_parameters(kp, ki, kd, dt);
-  this->imax_enabled = true;
-  this->imax = imax;
+  set_parameters(kp, ki, kd, imax, dt);
   started = false;
 
 }
@@ -47,6 +45,23 @@ void Pid::set_parameters(double kp, double ki, double kd, double dt) {
   this->kp = kp;
   this->ki = ki * dt;
   this->kd = kd / dt;
+}
+
+/**
+ * Set pid parameters (gains).
+ * @param kp Proportional gain
+ * @param ki Integral gain
+ * @param kd Derivative gain
+ *  * @param imax Maximum integral sum
+
+ * @param dt Time step
+ */
+void Pid::set_parameters(double kp, double ki, double kd, double imax, double dt) {
+    this->kp = kp;
+    this->ki = ki * dt;
+    this->kd = kd / dt;
+    this->imax = imax;
+    this->imax_enabled = true;
 }
 
 /**

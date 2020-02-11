@@ -238,7 +238,7 @@ void Gate::loop() {
 }
 
 void Gate::set_pid_(double kp, double ki) {
-    pid->set_parameters(kp, ki, 0.0, 1./loop_dt);
+    pid->set_parameters(kp, ki, 0.0, pid_imax, 1./loop_dt);
 }
 
 void Gate::set_driver(Driver *new_driver) {

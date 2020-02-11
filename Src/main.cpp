@@ -85,6 +85,7 @@ gate_params params {
     .pid_ki = 2,
     .pid_slow_kp = 10,
     .pid_slow_ki = 0,
+    .pid_imax = 300,
     .vel_update_tick_num = 5,
     .zero_vel_timeout = 2000,
     .move_uncert_before = 10.0, // degrees before target when velocity is reduced
@@ -107,6 +108,7 @@ gate_params params {
     .pid_ki = 2,
     .pid_slow_kp = 10,
     .pid_slow_ki = 0,
+    .pid_imax = 300,
     .vel_update_tick_num = 5,
     .zero_vel_timeout = 2000,
     .move_uncert_before = 10.0, // degrees before target when velocity is reduced

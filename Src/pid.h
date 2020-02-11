@@ -8,6 +8,7 @@ class Pid {
     Pid(double kp, double ki, double kd, double dt);
     Pid(double kp, double ki, double kd, double imax, double dt);
     void set_parameters(double kp, double ki, double kd, double dt);
+    void set_parameters(double kp, double ki, double kd, double imax, double dt);
     void start();
     void stop();
     void reset();
