@@ -77,8 +77,8 @@ gate_params params {
     .enc_ticks_per_deg = 2.725, // encoder ticks per degree of gate angle
     .angle_open = -90.0, // angle when gate open
     .angle_closed = 0.0, // angle when gate closed
-    .target_velocity = 15.0, // target opening/closing speed in deg/s
-    .target_velocity_slow = 7.5, // final movement reduced velocity
+    .target_velocity = 12.0, // target opening/closing speed in deg/s
+    .target_velocity_slow = 6, // final movement reduced velocity
     .driver_open_dir = -1, // driver pwm sign for open direction. 1 or -1.
     .max_pwm = 150, // max driver pwm
     .pid_kp = 30,
@@ -93,13 +93,14 @@ gate_params params {
     .hold_open_offset = -5.
 };
 #else
+// Long gate
 gate_params params {
     .loop_dt = 10, // milliseconds between loops
     .enc_ticks_per_deg = 6.1111, // encoder ticks per degree of gate angle
     .angle_open = 90.0, // angle when gate open
     .angle_closed = 0.0, // angle when gate closed
-    .target_velocity = 7.0, // target opening/closing speed in deg/s
-    .target_velocity_slow = 3, // final movement reduced velocity
+    .target_velocity = 10.0, // target opening/closing speed in deg/s
+    .target_velocity_slow = 5, // final movement reduced velocity
     .driver_open_dir = -1, // driver pwm sign for open direction. 1 or -1.
     .max_pwm = 150, // max driver pwm
     .pid_kp = 30,
@@ -111,7 +112,7 @@ gate_params params {
     .move_uncert_before = 10.0, // degrees before target when velocity is reduced
     .move_uncert_after = 30.0, // degrees after target when velocity still set
     .max_angle_follow_error = 10.0, // max error when gate stopped is detected
-    .hold_open_offset = 5.
+    .hold_open_offset = 6.
 };
 #endif
 
@@ -134,7 +135,7 @@ Gate gate(params);
 
 
 float get_battery_voltage(){
-  return ((float)ADC_buffer[0]/4095.)*3.3*30; //TODO: compare with measured voltage
+  return ((float)ADC_buffer[0]/4095.)*3.3*31; //TODO: compare with measured voltage
 }
 
 

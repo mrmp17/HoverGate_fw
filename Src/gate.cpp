@@ -176,22 +176,21 @@ void Gate::loop() {
     }
 
     // Move switch
-    static uint8_t ctrl = 0;
-    switch(ctrl) {
+    switch(move_state_ctrl) {
         case 0:
             if(active_move.status == 1) {
                 pid->reset();
                 set_pid_(pid_kp, pid_ki);
                 enable_motor_();
                 if (latch != nullptr) latch->retract();
-                ctrl = 1;
+                move_state_ctrl = 1;
             }
             break;
         case 1: // first stage
             setpoint = time * active_move.stage_1_k + active_move.stage_1_n;
             if(time > active_move.stage_1_end) {
                 set_pid_(pid_slow_kp, pid_slow_ki);
-                ctrl = 2;
+                move_state_ctrl = 2;
                 break;
             }
             else if(abs(angle - setpoint) > max_angle_follow_error) {
@@ -201,7 +200,7 @@ void Gate::loop() {
                 disable_motor_();
                 if (latch != nullptr) latch->extend();
                 debug_print("GATE stopped before expected\n");
-                ctrl = 0;
+                move_state_ctrl = 0;
                 break;
             }
             break;
@@ -213,7 +212,7 @@ void Gate::loop() {
                 disable_motor_();
                 if (latch != nullptr) latch->extend();
                 debug_print("GATE did not stop\n");
-                ctrl = 0;
+                move_state_ctrl = 0;
                 break;
             }
             else if(abs(angle - setpoint) > max_angle_follow_error) {
@@ -223,7 +222,7 @@ void Gate::loop() {
                 if (latch != nullptr) latch->extend();
                 setpoint = active_move.target;
                 debug_print("GATE stopped in expected zone\n");
-                ctrl = 0;
+                move_state_ctrl = 0;
                 break;
             }
             break;
@@ -260,6 +259,7 @@ uint8_t Gate::get_error_code() {
  */
 void Gate::reset() {
     active_move = {};
+    move_state_ctrl = 0;
     set_pwm_(0);
     pid->reset();
     angle_offset = 0.0;
@@ -308,6 +308,7 @@ void Gate::move_(double target) {
                      n2,
                      1};
     active_move = new_move;
+    move_state_ctrl = 0;
 
 }
 

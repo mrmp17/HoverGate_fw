@@ -88,6 +88,7 @@ private:
     move active_move = {};
     int32_t last_vel_tick = 0;
     uint32_t last_tick_change_time = 0;
+    uint8_t move_state_ctrl = 0;
 
     /*
      * Error codes:
