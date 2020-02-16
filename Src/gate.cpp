@@ -14,9 +14,9 @@ Gate::Gate(gate_params params) {
     enc_ticks_per_deg = params.enc_ticks_per_deg;
     angle_open = params.angle_open;
     angle_closed = params.angle_closed;
-    a_max = params.a_max; // max acceleration
-    v_max = params.v_max; // max velocity
-    v_min = params.v_min;
+    a_max_ = params.a_max; // max acceleration
+    v_max_ = params.v_max; // max velocity
+    v_min_ = params.v_min;
     driver_open_dir = params.driver_open_dir;
     max_pwm = params.max_pwm;
     pid_kp = params.pid_kp;
@@ -451,17 +451,17 @@ void Gate::move_(double target) {
     int8_t dir = (s_first < 0) ? -1 : 1;
 
     // profile selection
-    double s01 = 0.5 * pow(v_max, 2) / a_max;
-    double s12 = 0.5 * (v_max - v_min) / a_max * (v_max + v_min);
+    double s01 = 0.5 * pow(v_max_, 2) / a_max_;
+    double s12 = 0.5 * (v_max_ - v_min_) / a_max_ * (v_max_ + v_min_);
     double s_triang = s01 + s12; // max possible distance using triangular profile
-    double s_min = 0.5 * pow(v_min, 2) / a_max; // max possible distance using ramp profile
+    double s_min = 0.5 * pow(v_min_, 2) / a_max_; // max possible distance using ramp profile
 
     // direction
-    a_max = dir * a_max;
-    v_max = dir * v_max;
-    v_min = dir * v_min;
-    s_triang = s_triang * dir;
-    s_min = s_min * dir;
+    double a_max = dir * a_max_;
+    double v_max = dir * v_max_;
+    double v_min = dir * v_min_;
+    s_triang = dir * s_triang;
+    s_min = dir * s_min;
 
     if (abs(s_first) <= abs(s_min)) {
         // ramp profile

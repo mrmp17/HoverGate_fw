@@ -146,9 +146,9 @@ private:
     double max_angle_follow_error = 10.0; // max error when gate stopped is detected
     double hold_open_offset = 5.0;
 
-    double v_max = 12;
-    double v_min = 4;
-    double a_max = 3;
+    double v_max_ = 12;
+    double v_min_ = 4;
+    double a_max_ = 3;
 };
 
 
