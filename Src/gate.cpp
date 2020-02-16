@@ -180,6 +180,7 @@ void Gate::loop() {
         case 0:
             if(active_move.status == 1) {
                 pid->reset();
+                setpoint = time * active_move.stage_1_k + active_move.stage_1_n;
                 set_pid_(pid_kp, pid_ki);
                 enable_motor_();
                 if (latch != nullptr) latch->retract();
