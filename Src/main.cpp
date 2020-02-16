@@ -46,7 +46,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define ADC_BUFF_LEN 3
-//#define GATE_SHORT // comment if compiling for long gate wing
+#define GATE_SHORT // comment if compiling for long gate wing
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -77,8 +77,9 @@ gate_params params {
     .enc_ticks_per_deg = 2.725, // encoder ticks per degree of gate angle
     .angle_open = -90.0, // angle when gate open
     .angle_closed = 0.0, // angle when gate closed
-    .target_velocity = 12.0, // target opening/closing speed in deg/s
-    .target_velocity_slow = 6, // final movement reduced velocity
+    .a_max = 6.0,
+    .v_max = 16.0,
+    .v_min = 6.0,
     .driver_open_dir = -1, // driver pwm sign for open direction. 1 or -1.
     .max_pwm = 150, // max driver pwm
     .pid_kp = 30,
@@ -100,8 +101,9 @@ gate_params params {
     .enc_ticks_per_deg = 6.1111, // encoder ticks per degree of gate angle
     .angle_open = 90.0, // angle when gate open
     .angle_closed = 0.0, // angle when gate closed
-    .target_velocity = 10.0, // target opening/closing speed in deg/s
-    .target_velocity_slow = 5, // final movement reduced velocity
+    .a_max = 3.0,
+    .v_max = 12.0,
+    .v_min = 4.0,
     .driver_open_dir = -1, // driver pwm sign for open direction. 1 or -1.
     .max_pwm = 150, // max driver pwm
     .pid_kp = 30,

@@ -3,6 +3,7 @@
 //
 
 #include "gate.h"
+#include <math.h>
 
 Gate::Gate() {
     pid = new Pid();
@@ -13,8 +14,9 @@ Gate::Gate(gate_params params) {
     enc_ticks_per_deg = params.enc_ticks_per_deg;
     angle_open = params.angle_open;
     angle_closed = params.angle_closed;
-    target_velocity = params.target_velocity;
-    target_velocity_slow = params.target_velocity_slow;
+    a_max = params.a_max; // max acceleration
+    v_max = params.v_max; // max velocity
+    v_min = params.v_min;
     driver_open_dir = params.driver_open_dir;
     max_pwm = params.max_pwm;
     pid_kp = params.pid_kp;
@@ -113,6 +115,7 @@ void Gate::loop() {
 
     // angle
     time += loop_dt;
+    time_sec = time / 1000.0;
     int32_t ticks = driver->get_encoder();
     angle = ticks / enc_ticks_per_deg + angle_offset;
 
@@ -176,58 +179,205 @@ void Gate::loop() {
     }
 
     // Move switch
-    switch(move_state_ctrl) {
-        case 0:
-            if(active_move.status == 1) {
-                pid->reset();
-                setpoint = time * active_move.stage_1_k + active_move.stage_1_n;
-                set_pid_(pid_kp, pid_ki);
-                enable_motor_();
-                if (latch != nullptr) latch->retract();
-                move_state_ctrl = 1;
+    switch(active_move.profile_type) {
+        case 0: // ramp
+            switch(move_state_ctrl) {
+                case 0: { // start move
+                    if (active_move.status == 1) {
+                        setpoint = active_move.s0;
+                        set_pid_(pid_slow_kp, pid_slow_ki);
+                        enable_motor_();
+                        if (latch != nullptr) latch->retract();
+                        move_state_ctrl = 1;
+                    }
+                }
+                break; // case 0
+                case 1: { // ramp
+                    setpoint = active_move.a_max * pow((time_sec - active_move.t0), 2) / 2 + active_move.s0;
+                    if (time_sec > active_move.t1) {
+                        move_state_ctrl = 2;
+                    }
+                    else if (abs(angle - setpoint) > max_angle_follow_error) {
+                        // stopped before expected zone
+                        active_move.status = 3;
+                        set_pwm_(0);
+                        disable_motor_();
+                        if (latch != nullptr) latch->extend();
+                        move_state_ctrl = 0;
+                    }
+                }
+                break; // case 1
+                case 2: { // constant vel
+                    setpoint = active_move.v_min * (time_sec - active_move.t1) + active_move.s1;
+                    if (abs(angle - setpoint) > max_angle_follow_error) {
+                        // stoped in expected zone
+                        active_move.status = 2;
+                        angle_offset += active_move.target - angle;
+                        if (latch != nullptr) latch->extend();
+                        setpoint = active_move.target;
+                        move_state_ctrl = 0;
+                    }
+                    else if (time_sec > active_move.t2) {
+                        // did not stop in expected zone
+                        active_move.status = 4;
+                        set_pwm_(0);
+                        disable_motor_();
+                        if (latch != nullptr) latch->extend();
+                        move_state_ctrl = 0;
+                    }
+                }
+                break; // case 2
             }
-            break;
-        case 1: // first stage
-            setpoint = time * active_move.stage_1_k + active_move.stage_1_n;
-            if(time > active_move.stage_1_end) {
-                set_pid_(pid_slow_kp, pid_slow_ki);
-                move_state_ctrl = 2;
-                break;
+            break; // case 0 - ramp profile
+        case 1: // triangular
+            switch(move_state_ctrl) {
+                case 0: {
+                    if (active_move.status == 1) {
+                        setpoint = active_move.s0;
+                        set_pid_(pid_kp, pid_ki);
+                        enable_motor_();
+                        if (latch != nullptr) latch->retract();
+                        move_state_ctrl = 1;
+                    }
+                }
+                break; // case 0
+                case 1: { // ramp up
+                    setpoint = active_move.a_max * pow((time_sec - active_move.t0), 2) / 2 + active_move.s0;
+                    if (time_sec > active_move.t1) {
+                        move_state_ctrl = 2;
+                    }
+                    else if (abs(angle - setpoint) > max_angle_follow_error) {
+                        // stopped before expected zone
+                        active_move.status = 3;
+                        set_pwm_(0);
+                        disable_motor_();
+                        if (latch != nullptr) latch->extend();
+                        move_state_ctrl = 0;
+                    }
+                }
+                break; // case 1
+                case 2: { // ramp down
+                    setpoint = -active_move.a_max * pow((time_sec - active_move.t1), 2) / 2 +
+                            active_move.v_max * (time_sec - active_move.t1) + active_move.s1;
+                    if (time_sec > active_move.t2) {
+                        set_pid_(pid_slow_kp, pid_slow_ki);
+                        move_state_ctrl = 3;
+                    }
+                    else if (abs(angle - setpoint) > max_angle_follow_error) {
+                        // stopped before expected zone
+                        active_move.status = 3;
+                        set_pwm_(0);
+                        disable_motor_();
+                        if (latch != nullptr) latch->extend();
+                        move_state_ctrl = 0;
+                    }
+                }
+                break; // case 2
+                case 3: { // const vel
+                    setpoint = active_move.v_min * (time_sec - active_move.t2) + active_move.s2;
+                    if (abs(angle - setpoint) > max_angle_follow_error) {
+                        // stoped in expected zone
+                        active_move.status = 2;
+                        angle_offset += active_move.target - angle;
+                        if (latch != nullptr) latch->extend();
+                        setpoint = active_move.target;
+                        move_state_ctrl = 0;
+                    }
+                    else if (time_sec > active_move.t3) {
+                        // did not stop in expected zone
+                        active_move.status = 4;
+                        set_pwm_(0);
+                        disable_motor_();
+                        if (latch != nullptr) latch->extend();
+                        move_state_ctrl = 0;
+                    }
+                }
+                break; // case 3
             }
-            else if(abs(angle - setpoint) > max_angle_follow_error) {
-                // error - stopped before expected zone
-                active_move.status = 3;
-                set_pwm_(0);
-                disable_motor_();
-                if (latch != nullptr) latch->extend();
-                debug_print("GATE stopped before expected\n");
-                move_state_ctrl = 0;
-                break;
+            break; // case 1 - triangular profile
+        case 2: // trapezoidal profile
+            switch(move_state_ctrl) {
+                case 0: {
+                    if (active_move.status == 1) {
+                        setpoint = active_move.s0;
+                        set_pid_(pid_kp, pid_ki);
+                        enable_motor_();
+                        if (latch != nullptr) latch->retract();
+                        move_state_ctrl = 1;
+                    }
+                }
+                    break; // case 0
+                case 1: { // ramp up
+                    setpoint = active_move.a_max * pow((time_sec - active_move.t0), 2) / 2 + active_move.s0;
+                    if (time_sec > active_move.t1) {
+                        move_state_ctrl = 2;
+                    }
+                    else if (abs(angle - setpoint) > max_angle_follow_error) {
+                        // stopped before expected zone
+                        active_move.status = 3;
+                        set_pwm_(0);
+                        disable_motor_();
+                        if (latch != nullptr) latch->extend();
+                        move_state_ctrl = 0;
+                    }
+                }
+                break; // case 1
+                case 2: { // const vel
+                    setpoint = active_move.v_max * (time_sec - active_move.t1) + active_move.s1;
+                    if (time_sec > active_move.t2) {
+                        move_state_ctrl = 3;
+                    }
+                    else if (abs(angle - setpoint) > max_angle_follow_error) {
+                        // stopped before expected zone
+                        active_move.status = 3;
+                        set_pwm_(0);
+                        disable_motor_();
+                        if (latch != nullptr) latch->extend();
+                        move_state_ctrl = 0;
+                    }
+                }
+                break; // case 2
+                case 3: { // ramp down
+                    setpoint = -active_move.a_max * pow((time_sec - active_move.t2), 2) / 2 +
+                               active_move.v_max * (time_sec - active_move.t2) + active_move.s2;
+                    if (time_sec > active_move.t3) {
+                        set_pid_(pid_slow_kp, pid_slow_ki);
+                        move_state_ctrl = 4;
+                    }
+                    else if (abs(angle - setpoint) > max_angle_follow_error) {
+                        // stopped before expected zone
+                        active_move.status = 3;
+                        set_pwm_(0);
+                        disable_motor_();
+                        if (latch != nullptr) latch->extend();
+                        move_state_ctrl = 0;
+                    }
+                }
+                break; // case 3
+                case 4: { // const vel
+                    setpoint = active_move.v_min * (time_sec - active_move.t3) + active_move.s3;
+                    if (abs(angle - setpoint) > max_angle_follow_error) {
+                        // stoped in expected zone
+                        active_move.status = 2;
+                        angle_offset += active_move.target - angle;
+                        if (latch != nullptr) latch->extend();
+                        setpoint = active_move.target;
+                        move_state_ctrl = 0;
+                    }
+                    else if (time_sec > active_move.t4) {
+                        // did not stop in expected zone
+                        active_move.status = 4;
+                        set_pwm_(0);
+                        disable_motor_();
+                        if (latch != nullptr) latch->extend();
+                        move_state_ctrl = 0;
+                    }
+                }
+                break; // case 4
             }
-            break;
-        case 2: // second stage
-            setpoint = time * active_move.stage_2_k + active_move.stage_2_n;
-            if(time > active_move.stage_2_end) {
-                active_move.status = 4;
-                set_pwm_(0);
-                disable_motor_();
-                if (latch != nullptr) latch->extend();
-                debug_print("GATE did not stop\n");
-                move_state_ctrl = 0;
-                break;
-            }
-            else if(abs(angle - setpoint) > max_angle_follow_error) {
-                // stopped in expected zone
-                active_move.status = 2;
-                angle_offset += active_move.target - angle;
-                if (latch != nullptr) latch->extend();
-                setpoint = active_move.target;
-                debug_print("GATE stopped in expected zone\n");
-                move_state_ctrl = 0;
-                break;
-            }
-            break;
+            break; // case 3 - trapezoidal profile
     }
+
 
     if(motor_enabled) {
         double pwm = pid->compute(angle, setpoint);
@@ -274,43 +424,166 @@ void Gate::reset() {
 }
 
 void Gate::move_(double target) {
-    double  start_angle = angle;
-    uint32_t start_time = time;
-
-    double t1, t2, dist_1, dist_2;
-    if(target >= start_angle) {
-        t1 = target - move_uncert_before;
-        t2 = target + move_uncert_after;
-        dist_1 = t1 - start_angle;
-        dist_2 = t2 - t1;
+    double s = target - angle;
+    double s_first;
+    double s_end;
+    if (s >= 0) {
+        if (s > move_uncert_before) {
+            s_first = s - move_uncert_before;
+        }
+        else {
+            s_first = s;
+        }
+        s_end = s + move_uncert_after;
     }
     else {
-        t1 = target + move_uncert_before;
-        t2 = target - move_uncert_after;
-        dist_1 = t1 - start_angle;
-        dist_2 = t2 - t1;
+        if (s < -move_uncert_before) {
+            s_first = s + move_uncert_before;
+        }
+        else {
+            s_first = s;
+        }
+        s_end = s - move_uncert_after;
     }
 
-    uint32_t time_1 = abs(dist_1) / target_velocity * 1000;
-    double k1 = dist_1 / time_1;
-    double n1 = start_angle - k1 * start_time;
+    double t0 = time_sec;
+    double s0 = angle;
+    int8_t dir = (s_first < 0) ? -1 : 1;
 
-    uint32_t time_2 = abs(dist_2) / target_velocity_slow * 1000;
-    double k2 = dist_2 / time_2;
-    double n2 = t1 - k2 * (start_time + time_1);
+    // profile selection
+    double s01 = 0.5 * pow(v_max, 2) / a_max;
+    double s12 = 0.5 * (v_max - v_min) / a_max * (v_max + v_min);
+    double s_triang = s01 + s12; // max possible distance using triangular profile
+    double s_min = 0.5 * pow(v_min, 2) / a_max; // max possible distance using ramp profile
 
-    move new_move = {start_time,
-                     target,
-                     start_time + time_1,
-                     start_time + time_1 + time_2,
-                     k1,
-                     n1,
-                     k2,
-                     n2,
-                     1};
-    active_move = new_move;
+    // direction
+    a_max = dir * a_max;
+    v_max = dir * v_max;
+    v_min = dir * v_min;
+    s_triang = s_triang * dir;
+    s_min = s_min * dir;
+
+    if (abs(s_first) <= abs(s_min)) {
+        // ramp profile
+        double v_min_limit = sqrt(2 * s * a_max) * dir;
+
+        // 0-1
+        double t01 = v_min_limit / a_max;
+        double t1 = t0 + t01;
+        double s01 = t01 * v_min_limit / 2;
+        double s1 = s0 + s01;
+
+        // 1-2
+        double t12 = (s_end - s_first) / v_min_limit;
+        double t2 = t1 + t12;
+
+        move new_move = {
+                .profile_type = 0,
+                .target = target,
+                .t0 = t0,
+                .s0 = s0,
+                .t1 = t1,
+                .s1  =s1,
+                .t2 = t2,
+                .s2 = 0,
+                .t3 = 0,
+                .s3 = 0,
+                .t4 = 0,
+                .s4 = 0,
+                .v_max = 0,
+                .v_min = v_min_limit,
+                .a_max = a_max,
+                .status = 1
+        };
+        active_move = new_move;
+    }
+    else if (abs(s_first) <= abs(s_triang)) {
+        // triangular profile
+        double v_max_triang = sqrt(a_max * s_first + pow(v_min, 2) / 2) * dir;
+
+        // 0-1
+        double t01 = v_max_triang / a_max;
+        double t1 = t0 + t01;
+        double s01 = t01 * v_max_triang / 2;
+        double s1 = s0 + s01;
+
+        // 1-2
+        double t12 = (v_max_triang - v_min) / a_max;
+        double t2 = t1 + t12;
+        double s12 = t12 * (v_max_triang - v_min) / 2 + t12 * v_min;
+        double s2 = s1 + s12;
+
+        // 2-3
+        double t23 = (s_end - s_first) / v_min;
+        double t3 = t2 + t23;
+
+        move new_move = {
+                .profile_type = 1,
+                .target = target,
+                .t0 = t0,
+                .s0 = s0,
+                .t1 = t1,
+                .s1 = s1,
+                .t2 = t2,
+                .s2 = s2,
+                .t3 = t3,
+                .s3 = 0,
+                .t4 = 0,
+                .s4 = 0,
+                .v_max = v_max_triang,
+                .v_min = v_min,
+                .a_max = a_max,
+                .status = 1
+        };
+        active_move = new_move;
+    }
+    else {
+        // trapezoidal profile
+        double s_v_const = s_first - s_triang;
+
+        // 0-1
+        double t01 = v_max / a_max;
+        double t1 = t0 + t01;
+        double s01 = t01 * v_max / 2;
+        double s1 = s0 + s01;
+
+        // 1-2
+        double t12 = s_v_const / v_max;
+        double t2 = t1 + t12;
+        double s12 = t12 * v_max;
+        double s2 = s1 + s12;
+
+        // 2-3
+        double t23 = (v_max - v_min) / a_max;
+        double t3 = t2 + t23;
+        double s23 = t23 * (v_max - v_min) / 2 + t23 * v_min;
+        double s3 = s2 + s23;
+
+        // 3-4
+        double t34 = (s_end - s_first) / v_min;
+        double t4 = t3 + t34;
+
+        move new_move = {
+                .profile_type = 2,
+                .target = target,
+                .t0 = t0,
+                .s0 = s0,
+                .t1 = t1,
+                .s1 = s1,
+                .t2 = t2,
+                .s2 = s2,
+                .t3 = t3,
+                .s3 = s3,
+                .t4 = t4,
+                .s4 = 0,
+                .v_max = v_max,
+                .v_min = v_min,
+                .a_max = a_max,
+                .status = 1
+        };
+        active_move = new_move;
+    }
     move_state_ctrl = 0;
-
 }
 
 void Gate::set_pwm_(int16_t pwm) {

@@ -17,8 +17,9 @@ struct gate_params {
     double enc_ticks_per_deg; // encoder ticks per degree of gate angle
     double angle_open; // angle when gate open
     double angle_closed; // angle when gate closed
-    double target_velocity; // target opening/closing speed in deg/s
-    double target_velocity_slow; // final movement reduced velocity
+    double a_max; // max acceleration
+    double v_max; // max velocity
+    double v_min; // slow velocity
     int8_t driver_open_dir; // driver pwm sign for open direction. 1 or -1.
     uint16_t max_pwm; // max driver pwm
     double pid_kp;
@@ -61,14 +62,21 @@ public:
 
 private:
     struct move {
-        uint32_t start_time;
-        double_t target;
-        uint32_t stage_1_end;
-        uint32_t stage_2_end;
-        double stage_1_k;
-        double stage_1_n;
-        double stage_2_k;
-        double stage_2_n;
+        uint8_t profile_type;
+        double target;
+        double t0;
+        double s0;
+        double t1;
+        double s1;
+        double t2;
+        double s2;
+        double t3;
+        double s3;
+        double t4;
+        double s4;
+        double v_max;
+        double v_min;
+        double a_max;
         // Move status: 0 not started, 1 in progress, 2 stopped in expected zone,
         // 3 stopped before expected zone, 4 not stopped in expected zone
         uint8_t status;
@@ -76,6 +84,7 @@ private:
 
     // private variables
     uint32_t time = 0; // internal gate time in ms
+    double time_sec = 0.; // internal gate time in seconds
     GateState state = GateState::closed;
     GateState prev_state = GateState::closed;
     Driver *driver = nullptr;
@@ -136,6 +145,10 @@ private:
 
     double max_angle_follow_error = 10.0; // max error when gate stopped is detected
     double hold_open_offset = 5.0;
+
+    double v_max = 12;
+    double v_min = 4;
+    double a_max = 3;
 };
 
 
