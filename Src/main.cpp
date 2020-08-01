@@ -34,7 +34,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include "debug.h"
-#include "SimpleSerial.h"
+#include "simple_serial_arduino/src/SimpleSerial.h"
 #include "latch.h"
 /* USER CODE END Includes */
 
@@ -132,9 +132,7 @@ BLDC_driver BLDC;
 #ifndef GATE_SHORT
 Latch latch;
 #endif
-SimpleSerial simple_serial([]() -> bool { return serial_01.available(); },
-                           []() -> uint8_t { return serial_01.read(); },
-                           [](uint8_t *buf, uint16_t len) -> int16_t { return serial_01.write(buf, len); });
+SimpleSerial simple_serial(&serial_01);
 Gate gate(params);
 
 
@@ -230,14 +228,11 @@ int main(void)
 
         // serial communication receive
         if(simple_serial.available()) {
-            uint8_t id;
-            uint8_t len;
-            uint8_t payload[SimpleSerial::MAX_LEN_PYLD];
-            simple_serial.read(id, len, payload);
+            SimpleSerial::Packet packet = simple_serial.read();
 
-            switch(static_cast<serial_ids>(id)) {
+            switch(static_cast<serial_ids>(packet.id)) {
                 case serial_ids::action_command: {
-                    uint8_t action = SimpleSerial::bytes2Int(payload);
+                    uint8_t action = SimpleSerial::bytes_2_int(packet.payload);
                     switch(action) {
                         case 0:
                             gate.open();
@@ -268,11 +263,11 @@ int main(void)
             payload[0] = static_cast<uint8_t>(gate.get_state());
             payload[1] = gate.get_error_code();
             uint8_t bts[4];
-            SimpleSerial::float2Bytes(gate.get_angle(), bts);
+            SimpleSerial::float_2_bytes(gate.get_angle(), bts);
             for (int i = 0; i < 4; ++i) {
                 payload[2 + i] = bts[i];
             }
-            SimpleSerial::float2Bytes(get_battery_voltage(), bts);
+            SimpleSerial::float_2_bytes(get_battery_voltage(), bts);
             for (int i = 0; i < 4; ++i) {
                 payload[6 + i] = bts[i];
             }
@@ -282,7 +277,7 @@ int main(void)
 
 
         gate.loop();
-        simple_serial.loop(HAL_GetTick());
+        simple_serial.loop();
 
 
         // wait for loop time to finish
