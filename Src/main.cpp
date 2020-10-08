@@ -232,7 +232,7 @@ int main(void)
 
             switch(static_cast<serial_ids>(packet.id)) {
                 case serial_ids::action_command: {
-                    uint8_t action = SimpleSerial::bytes_2_int(packet.payload);
+                    uint8_t action = byte_conversion::bytes_2_int(packet.payload);
                     switch(action) {
                         case 0:
                             gate.open();
@@ -263,11 +263,11 @@ int main(void)
             payload[0] = static_cast<uint8_t>(gate.get_state());
             payload[1] = gate.get_error_code();
             uint8_t bts[4];
-            SimpleSerial::float_2_bytes(gate.get_angle(), bts);
+            byte_conversion::float_2_bytes(gate.get_angle(), bts);
             for (int i = 0; i < 4; ++i) {
                 payload[2 + i] = bts[i];
             }
-            SimpleSerial::float_2_bytes(get_battery_voltage(), bts);
+            byte_conversion::float_2_bytes(get_battery_voltage(), bts);
             for (int i = 0; i < 4; ++i) {
                 payload[6 + i] = bts[i];
             }
