@@ -77,9 +77,16 @@ private:
         double v_max;
         double v_min;
         double a_max;
-        // Move status: 0 not started, 1 in progress, 2 stopped in expected zone,
-        // 3 stopped before expected zone, 4 not stopped in expected zone
-        uint8_t status;
+
+    public:
+        enum class move_status {
+            inactive = 0,
+            in_progress = 1,
+            stopped_expected = 2,
+            stopped_before_expected = 3,
+            not_stopped_expected = 4
+        } status;
+
     };
 
     // private variables
@@ -95,10 +102,12 @@ private:
     double angle = 0.0;
     double angle_offset = 0.0;
     double velocity = 0.0;
+    double angle_setpoint = 0.0;
     move active_move = {};
     int32_t last_vel_tick = 0;
     uint32_t last_tick_change_time = 0;
     uint8_t move_state_ctrl = 0;
+    int8_t open_dir = 1;
 
     /*
      * Error codes:

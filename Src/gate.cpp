@@ -6,6 +6,7 @@
 #include <math.h>
 
 Gate::Gate() {
+    open_dir = (angle_open >= angle_closed) ? 1 : -1;
     pid = new Pid();
 }
 
@@ -30,8 +31,8 @@ Gate::Gate(gate_params params) {
     max_angle_follow_error = params.max_angle_follow_error;
     hold_open_offset = params.hold_open_offset;
 
+    open_dir = (angle_open >= angle_closed) ? 1 : -1;
     pid = new Pid();
-
 }
 
 void Gate::begin() {
@@ -57,6 +58,14 @@ void Gate::open() {
     switch (state) {
         case GateState::closed:
         case GateState::closing: {
+            if (angle * open_dir > angle_open * open_dir) {
+                state = GateState::open;
+                angle_offset += angle_open - angle;
+                angle_setpoint = angle_open + hold_open_offset;
+                pid->reset();
+                enable_motor_();
+                break;
+            }
             move_(angle_open);
             state = GateState::opening;
             debug_print("GATE open start\n");
@@ -69,6 +78,11 @@ void Gate::close() {
     switch (state) {
         case GateState::open:
         case GateState::opening: {
+            if (angle * open_dir < angle_closed * open_dir) {
+                state = GateState::closed;
+                angle_offset += angle_closed - angle;
+                break;
+            }
             move_(angle_closed);
             state = GateState::closing;
             debug_print("GATE close start\n");
@@ -93,6 +107,8 @@ void Gate::toggle() {
 void Gate::stop() {
     state = GateState::error;
     error_code = 3;
+    active_move = {};
+    move_state_ctrl = 0;
     set_pwm_(0);
     disable_motor_();
 }
@@ -132,23 +148,21 @@ void Gate::loop() {
         last_tick_change_time = time;
     }
 
-    static double setpoint = 0.0;
-
     switch (state) {
         case GateState::closed: {
 
         } break;
         case GateState::opening: {
             switch(active_move.status) {
-                case 2:
+                case move::move_status::stopped_expected:
                     state = GateState::open;
-                    setpoint = angle_open + hold_open_offset;
+                    angle_setpoint = angle_open + hold_open_offset;
                     break;
-                case 3:
+                case move::move_status::stopped_before_expected:
                     state = GateState::error;
                     error_code = 1;
                     break;
-                case 4:
+                case move::move_status::not_stopped_expected:
                     state = GateState::error;
                     error_code = 2;
                     break;
@@ -159,15 +173,15 @@ void Gate::loop() {
         } break;
         case GateState::closing: {
             switch(active_move.status) {
-                case 2:
+                case move::move_status::stopped_expected:
                     state = GateState::closed;
                     disable_motor_();
                     break;
-                case 3:
+                case move::move_status::stopped_before_expected:
                     state = GateState::error;
                     error_code = 1;
                     break;
-                case 4:
+                case move::move_status::not_stopped_expected:
                     state = GateState::error;
                     error_code = 2;
                     break;
@@ -183,8 +197,8 @@ void Gate::loop() {
         case 0: // ramp
             switch(move_state_ctrl) {
                 case 0: { // start move
-                    if (active_move.status == 1) {
-                        setpoint = active_move.s0;
+                    if (active_move.status == move::move_status::in_progress) {
+                        angle_setpoint = active_move.s0;
                         set_pid_(pid_slow_kp, pid_slow_ki);
                         enable_motor_();
                         if (latch != nullptr) latch->retract();
@@ -193,13 +207,13 @@ void Gate::loop() {
                 }
                 break; // case 0
                 case 1: { // ramp
-                    setpoint = active_move.a_max * pow((time_sec - active_move.t0), 2) / 2 + active_move.s0;
+                    angle_setpoint = active_move.a_max * pow((time_sec - active_move.t0), 2) / 2 + active_move.s0;
                     if (time_sec > active_move.t1) {
                         move_state_ctrl = 2;
                     }
-                    else if (abs(angle - setpoint) > max_angle_follow_error) {
+                    else if (abs(angle - angle_setpoint) > max_angle_follow_error) {
                         // stopped before expected zone
-                        active_move.status = 3;
+                        active_move.status = move::move_status::stopped_before_expected;
                         set_pwm_(0);
                         disable_motor_();
                         if (latch != nullptr) latch->extend();
@@ -208,18 +222,18 @@ void Gate::loop() {
                 }
                 break; // case 1
                 case 2: { // constant vel
-                    setpoint = active_move.v_min * (time_sec - active_move.t1) + active_move.s1;
-                    if (abs(angle - setpoint) > max_angle_follow_error) {
-                        // stoped in expected zone
-                        active_move.status = 2;
+                    angle_setpoint = active_move.v_min * (time_sec - active_move.t1) + active_move.s1;
+                    if (abs(angle - angle_setpoint) > max_angle_follow_error) {
+                        // stopped in expected zone
+                        active_move.status = move::move_status::stopped_expected;
                         angle_offset += active_move.target - angle;
                         if (latch != nullptr) latch->extend();
-                        setpoint = active_move.target;
+                        angle_setpoint = active_move.target;
                         move_state_ctrl = 0;
                     }
                     else if (time_sec > active_move.t2) {
                         // did not stop in expected zone
-                        active_move.status = 4;
+                        active_move.status = move::move_status::not_stopped_expected;
                         set_pwm_(0);
                         disable_motor_();
                         if (latch != nullptr) latch->extend();
@@ -232,8 +246,8 @@ void Gate::loop() {
         case 1: // triangular
             switch(move_state_ctrl) {
                 case 0: {
-                    if (active_move.status == 1) {
-                        setpoint = active_move.s0;
+                    if (active_move.status == move::move_status::in_progress) {
+                        angle_setpoint = active_move.s0;
                         set_pid_(pid_kp, pid_ki);
                         enable_motor_();
                         if (latch != nullptr) latch->retract();
@@ -242,13 +256,13 @@ void Gate::loop() {
                 }
                 break; // case 0
                 case 1: { // ramp up
-                    setpoint = active_move.a_max * pow((time_sec - active_move.t0), 2) / 2 + active_move.s0;
+                    angle_setpoint = active_move.a_max * pow((time_sec - active_move.t0), 2) / 2 + active_move.s0;
                     if (time_sec > active_move.t1) {
                         move_state_ctrl = 2;
                     }
-                    else if (abs(angle - setpoint) > max_angle_follow_error) {
+                    else if (abs(angle - angle_setpoint) > max_angle_follow_error) {
                         // stopped before expected zone
-                        active_move.status = 3;
+                        active_move.status = move::move_status::stopped_before_expected;
                         set_pwm_(0);
                         disable_motor_();
                         if (latch != nullptr) latch->extend();
@@ -257,15 +271,15 @@ void Gate::loop() {
                 }
                 break; // case 1
                 case 2: { // ramp down
-                    setpoint = -active_move.a_max * pow((time_sec - active_move.t1), 2) / 2 +
+                    angle_setpoint = -active_move.a_max * pow((time_sec - active_move.t1), 2) / 2 +
                             active_move.v_max * (time_sec - active_move.t1) + active_move.s1;
                     if (time_sec > active_move.t2) {
                         set_pid_(pid_slow_kp, pid_slow_ki);
                         move_state_ctrl = 3;
                     }
-                    else if (abs(angle - setpoint) > max_angle_follow_error) {
+                    else if (abs(angle - angle_setpoint) > max_angle_follow_error) {
                         // stopped before expected zone
-                        active_move.status = 3;
+                        active_move.status = move::move_status::stopped_before_expected;
                         set_pwm_(0);
                         disable_motor_();
                         if (latch != nullptr) latch->extend();
@@ -274,18 +288,18 @@ void Gate::loop() {
                 }
                 break; // case 2
                 case 3: { // const vel
-                    setpoint = active_move.v_min * (time_sec - active_move.t2) + active_move.s2;
-                    if (abs(angle - setpoint) > max_angle_follow_error) {
-                        // stoped in expected zone
-                        active_move.status = 2;
+                    angle_setpoint = active_move.v_min * (time_sec - active_move.t2) + active_move.s2;
+                    if (abs(angle - angle_setpoint) > max_angle_follow_error) {
+                        // stopped in expected zone
+                        active_move.status = move::move_status::stopped_expected;
                         angle_offset += active_move.target - angle;
                         if (latch != nullptr) latch->extend();
-                        setpoint = active_move.target;
+                        angle_setpoint = active_move.target;
                         move_state_ctrl = 0;
                     }
                     else if (time_sec > active_move.t3) {
                         // did not stop in expected zone
-                        active_move.status = 4;
+                        active_move.status = move::move_status::not_stopped_expected;
                         set_pwm_(0);
                         disable_motor_();
                         if (latch != nullptr) latch->extend();
@@ -298,8 +312,8 @@ void Gate::loop() {
         case 2: // trapezoidal profile
             switch(move_state_ctrl) {
                 case 0: {
-                    if (active_move.status == 1) {
-                        setpoint = active_move.s0;
+                    if (active_move.status == move::move_status::in_progress) {
+                        angle_setpoint = active_move.s0;
                         set_pid_(pid_kp, pid_ki);
                         enable_motor_();
                         if (latch != nullptr) latch->retract();
@@ -308,13 +322,13 @@ void Gate::loop() {
                 }
                     break; // case 0
                 case 1: { // ramp up
-                    setpoint = active_move.a_max * pow((time_sec - active_move.t0), 2) / 2 + active_move.s0;
+                    angle_setpoint = active_move.a_max * pow((time_sec - active_move.t0), 2) / 2 + active_move.s0;
                     if (time_sec > active_move.t1) {
                         move_state_ctrl = 2;
                     }
-                    else if (abs(angle - setpoint) > max_angle_follow_error) {
+                    else if (abs(angle - angle_setpoint) > max_angle_follow_error) {
                         // stopped before expected zone
-                        active_move.status = 3;
+                        active_move.status = move::move_status::stopped_before_expected;
                         set_pwm_(0);
                         disable_motor_();
                         if (latch != nullptr) latch->extend();
@@ -323,13 +337,13 @@ void Gate::loop() {
                 }
                 break; // case 1
                 case 2: { // const vel
-                    setpoint = active_move.v_max * (time_sec - active_move.t1) + active_move.s1;
+                    angle_setpoint = active_move.v_max * (time_sec - active_move.t1) + active_move.s1;
                     if (time_sec > active_move.t2) {
                         move_state_ctrl = 3;
                     }
-                    else if (abs(angle - setpoint) > max_angle_follow_error) {
+                    else if (abs(angle - angle_setpoint) > max_angle_follow_error) {
                         // stopped before expected zone
-                        active_move.status = 3;
+                        active_move.status = move::move_status::stopped_before_expected;
                         set_pwm_(0);
                         disable_motor_();
                         if (latch != nullptr) latch->extend();
@@ -338,15 +352,15 @@ void Gate::loop() {
                 }
                 break; // case 2
                 case 3: { // ramp down
-                    setpoint = -active_move.a_max * pow((time_sec - active_move.t2), 2) / 2 +
+                    angle_setpoint = -active_move.a_max * pow((time_sec - active_move.t2), 2) / 2 +
                                active_move.v_max * (time_sec - active_move.t2) + active_move.s2;
                     if (time_sec > active_move.t3) {
                         set_pid_(pid_slow_kp, pid_slow_ki);
                         move_state_ctrl = 4;
                     }
-                    else if (abs(angle - setpoint) > max_angle_follow_error) {
+                    else if (abs(angle - angle_setpoint) > max_angle_follow_error) {
                         // stopped before expected zone
-                        active_move.status = 3;
+                        active_move.status = move::move_status::stopped_before_expected;
                         set_pwm_(0);
                         disable_motor_();
                         if (latch != nullptr) latch->extend();
@@ -355,18 +369,18 @@ void Gate::loop() {
                 }
                 break; // case 3
                 case 4: { // const vel
-                    setpoint = active_move.v_min * (time_sec - active_move.t3) + active_move.s3;
-                    if (abs(angle - setpoint) > max_angle_follow_error) {
-                        // stoped in expected zone
-                        active_move.status = 2;
+                    angle_setpoint = active_move.v_min * (time_sec - active_move.t3) + active_move.s3;
+                    if (abs(angle - angle_setpoint) > max_angle_follow_error) {
+                        // stopped in expected zone
+                        active_move.status = move::move_status::stopped_expected;
                         angle_offset += active_move.target - angle;
                         if (latch != nullptr) latch->extend();
-                        setpoint = active_move.target;
+                        angle_setpoint = active_move.target;
                         move_state_ctrl = 0;
                     }
                     else if (time_sec > active_move.t4) {
                         // did not stop in expected zone
-                        active_move.status = 4;
+                        active_move.status = move::move_status::not_stopped_expected;
                         set_pwm_(0);
                         disable_motor_();
                         if (latch != nullptr) latch->extend();
@@ -380,7 +394,7 @@ void Gate::loop() {
 
 
     if(motor_enabled) {
-        double pwm = pid->compute(angle, setpoint);
+        double pwm = pid->compute(angle, angle_setpoint);
         set_pwm_((int16_t) pwm);
     }
 
@@ -493,7 +507,7 @@ void Gate::move_(double target) {
                 .v_max = 0,
                 .v_min = v_min_limit,
                 .a_max = a_max,
-                .status = 1
+                .status = move::move_status::in_progress
         };
         active_move = new_move;
     }
@@ -533,7 +547,7 @@ void Gate::move_(double target) {
                 .v_max = v_max_triang,
                 .v_min = v_min,
                 .a_max = a_max,
-                .status = 1
+                .status = move::move_status::in_progress
         };
         active_move = new_move;
     }
@@ -579,10 +593,11 @@ void Gate::move_(double target) {
                 .v_max = v_max,
                 .v_min = v_min,
                 .a_max = a_max,
-                .status = 1
+                .status = move::move_status::in_progress
         };
         active_move = new_move;
     }
+    pid->reset();
     move_state_ctrl = 0;
 }
 
